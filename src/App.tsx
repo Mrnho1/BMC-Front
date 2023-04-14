@@ -1,24 +1,32 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Login from './paginas/login/Login';
-
+import { useState } from "react";
+import "./App.css";
+import Navbar from "./components/staticos/navbar/Navbar";
+import Footer from "./components/staticos/footer/Footer";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from "./paginas/login/Login";
+import Home from "./paginas/home/Home";
+import Sobre from "./paginas/sobre/Sobre";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <Router>
-    <Routes>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <div style={{ minHeight: "100vh" }}>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+          </Routes>
+        </div>
 
-      <Route path="/" element={<Login  />} />
-
-      <Route path="/login" element={<Login />} />
-
-    </Routes>
-  </Router>
-
-  )
+        <Footer />
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;
