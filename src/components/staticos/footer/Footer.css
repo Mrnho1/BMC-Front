@@ -1,0 +1,14 @@
+.imgOds{
+    width: 30%;
+    border-radius: 10px;
+}
+
+
+.caixaLogo2{
+    display: flex;
+    float: left;
+    align-items: center;
+    font-size: 50px;
+    /*Fonte temporaria*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
