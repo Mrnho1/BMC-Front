@@ -1,0 +1,50 @@
+:root{
+    --color-Thistle: #cdb4db;
+    --color-FaryTale: #ffc8dd;
+    --color-CarnationPink: #ffafcc;
+    --color-UranianBlue: #bde0fe;
+    --color-LightSkyBlue: #a2d2ff;
+    --color-Roxo: #815196;
+    --color-Amarelo: #F6E9A8;
+}
+
+.container {
+    background-color: var(--color-Thistle);
+}
+
+.titulo {
+    color: var(--color-Amarelo) !important;
+    font-weight: "bold" !important;
+    text-align: justify;
+}
+.texto {
+    color: white !important;
+    font-weight: "bold" !important;
+    font-size: 20px;
+}
+
+.fotoHome {
+    width: max(350px, 65%);
+    margin: 0 auto;
+    display: block;
+}
+.containerCards{
+    padding: 40px;
+    justify-content: space-around;
+}
+
+.cardsPink{
+    justify-content: start;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: var(--color-CarnationPink);
+}
+
+.cardsBlue{
+    border-radius: 12px;
+    padding: 10px;
+    background-color: var(--color-UranianBlue);
+    height: 100%; 
+}
+
+
