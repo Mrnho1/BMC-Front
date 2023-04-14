@@ -72,7 +72,7 @@ function Sobre() {
             </Box>
         </Grid>
         <Grid item xs={4}>
-        <Box className="cardsBlue">
+        <Box paddingX={5} className="cardsBlue" >
               <Typography
                 variant="h5"
                 gutterBottom
