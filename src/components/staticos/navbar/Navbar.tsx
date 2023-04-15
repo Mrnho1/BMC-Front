@@ -34,6 +34,13 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
+            <Link to="/team">
+              <Box mx={1} className="cursor btn-legal">
+                <Typography variant="h6" color="inherit">
+                  Equipe
+                </Typography>
+              </Box>
+            </Link>
 
             <Link to="/login">
               <Box mx={1} className="cursor btn-legal">

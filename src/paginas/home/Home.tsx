@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
-import ImgHome from "../../assets/icon/imgHome.png";
 
 function Home() {
   return (
@@ -39,7 +38,6 @@ function Home() {
           </Box>
         </Grid>
         <Grid item xs={6}>
-          <img src={ImgHome} alt="" width="610px" height="700px" />
         </Grid>
         <Grid xs={12} className="postagens"></Grid>
       </Grid>
