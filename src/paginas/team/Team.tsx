@@ -19,50 +19,49 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Team() {
-    const classes = useStyles();
 
-    const content = {
-        'badge': 'Equipe',
-        'header-p1': 'Olá, Seja bem vindo(a),',
-        'header-p2': 'conheça nossa equipe',
-        'description': 'Equipe de desenvolvimento do projeto Bem Me Care',
+  const classes = useStyles();
+  
+  const content = {
+    'badge': 'Equipe',
+    'header-p1': 'Olá, Seja bem vindo(a),',
+    'header-p2': 'conheça nossa equipe',
+    'description': 'Equipe de desenvolvimento do projeto Bem Me Care',
 
-        '01_image': 'https://avatars.githubusercontent.com/u/87100085?v=4',
-        '01_name': 'Danilo Morais',
-        '01_job': 'Desenvolvedor Java Full Stack',
-        '01_link': 'www.github.com/danilomorais',
-        
+    '01_image': 'https://avatars.githubusercontent.com/u/87100085?v=4',
+    '01_name': 'Danilo Moraes',
+    '01_job': 'Desenvolvedor Java Full Stack',
+    '01_link': 'www.github.com/danilomoraes',
 
-        '02_image': 'https://avatars.githubusercontent.com/u/123910445?v=4',
-        '02_name': 'Gustavo Santiago',
-        '02_job': 'Desenvolvedor Java Full Stack',
-        '02_link': 'www.github.com/gustavosantiago',
+    '02_image': 'https://avatars.githubusercontent.com/u/123930982?v=4',
+    '02_name': 'Gabriel Farias',
+    '02_job': 'Desenvolvedor Java Full Stack',
+    '02_link': 'www.github.com/gabrielfarias',
 
-        '03_image': 'https://user-images.githubusercontent.com/91226847/227216220-8761c94f-a161-467d-95c1-0942db54966f.jpeg',
-        '03_name': 'Jennifer Cruz',
-        '03_job': 'Desenvolvedor Java Full Stack',
-        '03_link': 'www.github.com/jennifercruz',
+    '03_image': 'https://avatars.githubusercontent.com/u/123910445?v=4',
+    '03_name': 'Gustavo Santiago',
+    '03_job': 'Desenvolvedor Java Full Stack',
+    '03_link': 'www.github.com/gustavosantiago',
 
-        '04_image': 'https://avatars.githubusercontent.com/u/91226847?v=4',
-        '04_name': 'Laise Farias',
-        '04_job': 'Desenvolvedor Java Full Stack',
-        '04_link': 'www.github.com/laifrance',
+    '04_image': 'https://user-images.githubusercontent.com/91226847/227216220-8761c94f-a161-467d-95c1-0942db54966f.jpeg',
+    '04_name': 'Jennifer Cruz',
+    '04_job': 'Desenvolvedor Java Full Stack',
+    '04_link': 'www.github.com/jennifercruz',
 
-        '05_image': 'https://avatars.githubusercontent.com/u/123930982?v=4',
-        '05_name': 'Gabriel Farias',
-        '05_job': 'Desenvolvedor Java Full Stack',
-        '05_link': 'www.github.com/gabrielfarias',
+    '05_image': 'https://avatars.githubusercontent.com/u/91226847?v=4',
+    '05_name': 'Laise Farias',
+    '05_job': 'Desenvolvedor Java Full Stack',
+    '05_link': 'www.github.com/laifrance',
 
-        '06_image': 'https://avatars.githubusercontent.com/u/123839829?v=4',
-        '06_name': 'Rebeca Damas',
-        '06_job': 'Desenvolvedor Java Full Stack',
-        '06_link': 'www.github.com/rebecadamasc',
+    '06_image': 'https://avatars.githubusercontent.com/u/110050225?v=4',
+    '06_name': 'Lucas Marinho',
+    '06_job': 'Desenvolvedor Java Full Stack',
+    '06_link': 'www.github.com/lucasmarinho',
 
-        '07_image': 'https://avatars.githubusercontent.com/u/110050225?v=4',
-        '07_name': 'Lucas Marinho',
-        '07_job': 'Desenvolvedor Java Full Stack',
-        '07_link': 'www.github.com/lucasmarinho',
-
+    '07_image': 'https://avatars.githubusercontent.com/u/123839829?v=4',
+    '07_name': 'Rebeca Damas',
+    '07_job': 'Desenvolvedor Java Full Stack',
+    '07_link': 'www.github.com/rebecadamasc',
 
     };
 
@@ -159,6 +158,7 @@ function Team() {
                 </Box>
 
             </Container>
+
         </section>
     );
 }
