@@ -73,38 +73,38 @@ function Team() {
             </Container>
           </Box>
           <Grid container spacing={5}>
-            <Grid item xs={12} sm={3} md={3}>
+            <Grid item xs={3} sm={3} md={3}>
               <Avatar alt="" src={content['01_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['01_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['01_job']}</Typography>
             </Grid>
-            <Grid item xs={12} sm={3} md={3}>
+            <Grid item xs={3} sm={3} md={3}>
               <Avatar alt="" src={content['02_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['02_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['02_job']}</Typography>
             </Grid>
-            <Grid item xs={12} sm={3} md={3}>
+            <Grid item xs={3} sm={3} md={3}>
               <Avatar alt="" src={content['03_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['03_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['03_job']}</Typography>
             </Grid>
-            <Grid item xs={12} sm={3} md={3}>
+            <Grid item xs={3} sm={3} md={3}>
               <Avatar alt="" src={content['04_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['04_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['04_job']}</Typography>
             </Grid>
             <Box mt={5} mb={5} />
-            <Grid item xs={12} sm={4} md={3} spacing={5}>
+            <Grid item xs={4} sm={4} md={4} spacing={4}>
               <Avatar alt="" src={content['05_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['05_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['05_job']}</Typography>
             </Grid>
-            <Grid item xs={12} sm={4} md={3}>
+            <Grid item xs={4} sm={4} md={4}>
               <Avatar alt="" src={content['06_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['06_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['06_job']}</Typography>
             </Grid>
-            <Grid item xs={12} sm={4} md={3}>
+            <Grid item xs={4} sm={4} md={4}>
               <Avatar alt="" src={content['07_image']} className={classes.avatar} />
               <Typography variant="h6" component="h6" gutterBottom={true}>{content['07_name']}</Typography>
               <Typography variant="body1" color="textSecondary" component="span">{content['07_job']}</Typography>
