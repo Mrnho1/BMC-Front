@@ -1,77 +1,118 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { jsx } from "@emotion/react";
+import { Grid, Typography, styled } from "@material-ui/core";
 import { Box } from "@mui/material";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import './Footer.css'
+
+const FooterStyle = styled('div')({
+  background: '#CCB3DA',
+  color: 'black',
+  fontSize: '20px',
+  fontStyle:'bold 1.5em',
+  spacebetween: '10px',
+  spacearound: '10px',
+  padding: '20px',
+  marginTop: '20px',
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  '& img': {
+    width: '100px',
+    height: '100px',
+    alignSelf: 'center',
+    borderRadius: '10%',
+    border: '1px solid white',
+
+
+  },
+
+  '& .footer': {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+  },
+
+});
+
 
 function Footer() {
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center" >
-      <Box
-        display={"flex"}
-        alignItems="center"
-        style={{ backgroundColor: "#CCB3DA", height: "120px" }}
-        width={"100%"}
-        justifyContent={"space-around"}
-      >
-        
-        <Box>
-        
-          <Box
-            paddingTop={1}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Typography
-              variant="h5"
-              align="center"
-              gutterBottom
-              style={{ color: "white" }}
-            >
-              Siga-nos nas redes sociais
+    <FooterStyle>
+    <div className="footer">
+      <Grid container spacing={2}>
+        <Grid item xs={3}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <img src="https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-9.svg" alt="Logo" style={{ width: '100px', height: '100px', alignSelf: 'center' }} />
+     
+            <Typography variant="h6" gutterBottom component="div">
+              Sobre
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nunc nisl aliquet nunc, eget aliquam odio nisl sit amet nunc. Nullam eget nisl auctor, aliquam nu
             </Typography>
           </Box>
-          <Box display="flex" alignItems="center" justifyContent="center">
-            <a href="https://www.github.com/" target="_blank">
-              <GitHubIcon style={{ fontSize: 50, color: "white" }} />
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-              <InstagramIcon style={{ fontSize: 60, color: "white" }} />
-            </a>
-            
-            {/* <a href="https://www.linkedin.com/" target="_blank">
-              <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
-            </a> */}
-          </Box>
-          
-        </Box>
-        <Box>
-          <Box paddingTop={1}>
-            <Typography
-              variant="h5"
-              align="center"
-              gutterBottom
-              style={{ color: "white" }}
-              component={"span"}
-            >
-              © 2023 Copyright BMC
+        </Grid>
+        <Grid item xs={3} >
+          <Box sx={{  alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
+            <GitHubIcon />
+            <InstagramIcon />
+            <Typography variant="h6" gutterBottom component="div">
+              Contato
             </Typography>
+            <Typography variant="body2" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nunc nisl aliquet nunc, eget aliquam odio nisl sit amet nunc. Nullam eget nisl auctor, aliquam nu
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={3}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Typography variant="h6" gutterBottom component="div">
+              Redes Sociais
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <InstagramIcon />
+              <Typography variant="body2" gutterBottom>
+                @loremipsum
+              </Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <GitHubIcon />
+              <Typography variant="body2" gutterBottom>
+                @loremipsum
+              </Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <InstagramIcon />
+              <Typography variant="body2" gutterBottom>
+                @loremipsum
+              </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px' }}>
+              </Box>
 
-            <a target="_blank" href="https://brasil.generation.org">
-              <Typography
-                variant="h5"
-                gutterBottom
-                style={{ color: "white" }}
-                align="center"
-                component={"span"}
-              > brasil.generation.org</Typography>
-            </a>
+            </Box>
           </Box>
-        </Box>
-      </Box>
-    </Grid>
+        </Grid>
+        <Grid item xs={3}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Typography variant="h6" gutterBottom component="div">
+              Localização
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nunc nisl aliquet nunc, eget aliquam odio nisl sit amet nunc. Nullam eget nisl auctor, aliquam nu
+            </Typography>
+          </Box>
+        </Grid>
+      </Grid>
+    </div>
+    </FooterStyle>
   );
 }
 
