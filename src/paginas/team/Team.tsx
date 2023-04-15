@@ -124,7 +124,7 @@ function Team() {
                             <Typography variant="body1" color="textSecondary" component="span">{content['04_job']}</Typography>
                         </Grid>
                         <Box mt={5} mb={5} />
-                        <Grid item xs={12} sm={4} md={3} spacing={5}>
+                        <Grid item xs={12} sm={4} md={4} spacing={5}>
                             <Avatar alt="" src={content['05_image']} className={classes.avatar} />
                             <Typography variant="h6" component="h6" gutterBottom={true}>{content['05_name']}</Typography>
                             <p>
@@ -134,7 +134,7 @@ function Team() {
                             </p>
                             <Typography variant="body1" color="textSecondary" component="span">{content['05_job']}</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={4} md={3}>
+                        <Grid item xs={12} sm={4} md={4}>
                             <Avatar alt="" src={content['06_image']} className={classes.avatar} />
                             <Typography variant="h6" component="h6" gutterBottom={true}>{content['06_name']}</Typography>
                             <p>
@@ -144,7 +144,7 @@ function Team() {
                             </p>
                             <Typography variant="body1" color="textSecondary" component="span">{content['06_job']}</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={4} md={3}>
+                        <Grid item xs={12} sm={4} md={4}>
                             <Avatar alt="" src={content['07_image']} className={classes.avatar} />
                             <Typography variant="h6" component="h6" gutterBottom={true}>{content['07_name']}</Typography>
                             <p>
