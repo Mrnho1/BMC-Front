@@ -27,7 +27,7 @@ function Team() {
     'description': 'Equipe de desenvolvimento do projeto Bem Me Care',
 
     '01_image': 'https://avatars.githubusercontent.com/u/87100085?v=4',
-    '01_name': 'Danilo Morais',
+    '01_name': 'Danilo Moraes',
     '01_job': 'Desenvolvedor Java Full Stack',
 
     '02_image': 'https://avatars.githubusercontent.com/u/123910445?v=4',
