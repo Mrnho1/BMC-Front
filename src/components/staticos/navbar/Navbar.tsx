@@ -12,10 +12,10 @@ function Navbar() {
           <Link to="/home">
             <Box className="cursor caixaLogo">
               <Typography variant="h5" color="inherit">
-                <img src="https://i.imgur.com/niT17YS.png" alt="" className="img-logo"/>
-              </Typography> 
+                <img src="https://i.imgur.com/niT17YS.png" alt="" className="img-logo" />
+              </Typography>
               <Typography variant="h5" color="inherit">
-                Bem Me Care 
+                Bem Me Care
               </Typography>
             </Box>
           </Link>
@@ -24,6 +24,13 @@ function Navbar() {
               <Box mx={1} className="cursor btn-legal">
                 <Typography variant="h6" color="inherit">
                   Home
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/produtos">
+              <Box mx={1} className="cursor btn-legal">
+                <Typography variant="h6" color="inherit">
+                  Produtos
                 </Typography>
               </Box>
             </Link>
@@ -38,6 +45,20 @@ function Navbar() {
               <Box mx={1} className="cursor btn-legal">
                 <Typography variant="h6" color="inherit">
                   Equipe
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/cadastro">
+              <Box mx={1} className="cursor btn-legal">
+                <Typography variant="h6" color="inherit">
+                  Cadastro
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/contato">
+              <Box mx={1} className="cursor btn-legal">
+                <Typography variant="h6" color="inherit">
+                  Contato
                 </Typography>
               </Box>
             </Link>
