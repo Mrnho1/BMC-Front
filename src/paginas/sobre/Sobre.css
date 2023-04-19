@@ -1,4 +1,5 @@
 :root{
+<<<<<<< HEAD
     --color-Thistle: #cdb4db;
     --color-FaryTale: #ffc8dd;
     --color-CarnationPink: #ffafcc;
@@ -6,6 +7,15 @@
     --color-LightSkyBlue: #a2d2ff;
     --color-Roxo: #815196;
     --color-Amarelo: #F6E9A8;
+=======
+    --color-OffWhite: #EBEAE5;
+    --color-Yellow: #fefab6;
+    --color-Blue: #77a493;
+    --color-Pink: #c75f77;
+    --color-Purple: #836177;
+    --color-Brown: #654b49;
+    --color-Black: #000000;
+>>>>>>> 895a85bff9c7a1dc4c02331f8f918be2f4fa91d6
 }
 
 .container {
@@ -50,4 +60,7 @@
     justify-content: center;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 895a85bff9c7a1dc4c02331f8f918be2f4fa91d6

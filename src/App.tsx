@@ -7,9 +7,13 @@ import Login from "./paginas/login/Login";
 import Home from "./paginas/home/Home";
 import Sobre from "./paginas/sobre/Sobre";
 import Team from "./paginas/team/Team";
+
 import Produtos from "./paginas/produtos/Produtos";
 import Contato from "./paginas/contato/Contato";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
+
+
+
 
 function App() {
   const [count, setCount] = useState(0);
