@@ -6,8 +6,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 const FooterStyle = styled('div')({
-  background: '#CCB3DA',
-  color: 'black',
+  background: '#c75f77',
+  color: '#fefab6',
   fontSize: '20px',
   fontStyle:'bold 1.5em',
   spacebetween: '10px',

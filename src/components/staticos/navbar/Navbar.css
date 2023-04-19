@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 :root{
     --color-OffWhite: #EBEAE5;
     --color-Yellow: #fefab6;
@@ -10,10 +9,10 @@
     --color-Black: #000000;
 }
 
->>>>>>> 895a85bff9c7a1dc4c02331f8f918be2f4fa91d6
+
 .cursor{
     cursor: pointer;
-    color: white;
+    color: #fefab6;
 }
 
 .btn-legal{
