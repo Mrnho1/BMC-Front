@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 import { LinkedIn } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
