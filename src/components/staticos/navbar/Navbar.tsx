@@ -6,7 +6,7 @@ import './Navbar.css'
 
 function Navbar() {
   return (
-    <AppBar position="static" style={{ background: "#CCB3DA" }}>
+    <AppBar position="static" style={{ background: "#c75f77" }}>
       <Toolbar variant="dense">
         <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
           <Link to="/home">
