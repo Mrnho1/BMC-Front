@@ -1,10 +1,20 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css'
+import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
+  const[token, setToken] = useLocalStorage('token');
+  const history = useNavigate();
+
+  function goLogout(){
+    setToken('');
+    alert('Usuário deslogado')
+    history('/login')
+  }
+
   return (
     <AppBar position="static" style={{ background: "#c75f77" }}>
       <Toolbar variant="dense">
@@ -48,13 +58,13 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to="/cadastro">
+            {/* <Link to="/cadastro">
               <Box mx={1} className="cursor btn-legal">
                 <Typography variant="h6" color="inherit">
                   Cadastro
                 </Typography>
               </Box>
-            </Link>
+            </Link> */}
             <Link to="/contato">
               <Box mx={1} className="cursor btn-legal">
                 <Typography variant="h6" color="inherit">
@@ -65,7 +75,7 @@ function Navbar() {
 
             <Link to="/login">
               <Box mx={1} className="cursor btn-legal">
-                <Typography variant="h6" color="inherit">
+                <Typography variant="h6" color="inherit" onClick={goLogout}>
                   logout
                 </Typography>
               </Box>
