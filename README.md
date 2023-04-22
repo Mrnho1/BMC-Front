@@ -61,3 +61,19 @@ yarn add @mui/material @emotion/react @emotion/styled
 ## Passo 4  : Desenvolvimento do projeto
 
 Agora que o projeto está configurado, é hora de começar a codificar. Abra os arquivos `src/App.tsx` e `src/index.tsx` e comece a codificar o projeto.
+
+## Passo 5: Executar o projeto
+
+Agora que o projeto está pronto, execute o seguinte comando para executar o projeto:
+
+```bash
+npm run dev
+```
+
+ou
+
+```bash
+yarn dev
+```
+
+Isso iniciará o servidor de desenvolvimento e abrirá seu projeto no navegador. Agora você pode começar a testar e desenvolver seu projeto.
