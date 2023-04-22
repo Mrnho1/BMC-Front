@@ -38,13 +38,13 @@ npm install --global yarn
 Agora, você precisará instalar o Vite para usá-lo como servidor de desenvolvimento. Para isso, execute os seguintes comandos:
 
 ```bash
-npm create vite@latest
+npm i vite 
 ```
 
 ou
 
 ```bash
-yarn create vite
+yarn add vite
 ```
 
 ## Passo 3  : Desenvolvimento do projeto
