@@ -11,7 +11,8 @@
 
 
 .caixa {
-  background-color: #ccb3da;
+  background-color: #654b49;
+  direction-xs-column-reverse
 }
 
 .titulo-bem-vindo {

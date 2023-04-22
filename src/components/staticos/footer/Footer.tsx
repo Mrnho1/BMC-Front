@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-const FooterStyle = styled('div')({
+const FooterStyle = styled('div') ({
   background: '#c75f77',
   color: '#fefab6',
   fontSize: '20px',
@@ -13,7 +13,6 @@ const FooterStyle = styled('div')({
   spacebetween: '10px',
   spacearound: '10px',
   padding: '20px',
-  marginTop: '20px',
   width: '100%',
   height: '100%',
   display: 'flex',
