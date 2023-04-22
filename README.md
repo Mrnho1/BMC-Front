@@ -14,6 +14,11 @@ Este é um passo a passo para criar um projeto de aplicação React usando Mater
 ```bash
  git clone https://github.com/Bem-Me-Care/BMC-Front.git
  ```
+ 
+ entre na pasta BMC-Front :
+ ```bash
+ cd BMC-Front
+ ```
 
 
 ## Passo 1: Inicialização do projeto
@@ -21,14 +26,13 @@ Este é um passo a passo para criar um projeto de aplicação React usando Mater
 Para iniciar o projeto, execute o seguinte comando na linha de comando:
 
 ```bash
-npm install
-```
-
-ou
-
-```bash
 yarn install
 ```
+ou 
+```bash
+npm install --global yarn
+```
+
 ## Passo 2: Instalação do Vite
 
 Agora, você precisará instalar o Vite para usá-lo como servidor de desenvolvimento. Para isso, execute os seguintes comandos:
