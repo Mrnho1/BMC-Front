@@ -8,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { Link, redirect } from 'react-router-dom';
 import { LinkedIn } from '@mui/icons-material';
+import './Team.css'
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 'auto',
         marginRight: 'auto',
         marginBottom: theme.spacing(8),
-        boxShadow: '#66096b 2px 2px 2px 2px',
+        boxShadow: '#836177 2px 2px 2px 2px',
     },
 }));
 
@@ -76,23 +77,23 @@ function Team() {
     };
 
     return (
-        <section>
+        <section className='backgroundTeam'>
             <Container maxWidth="lg">
                 <Box pt={8} pb={11} textAlign="center">
                     <Box mb={10}>
                         <Container maxWidth="sm">
-                            <Typography variant="overline" color="textSecondary" paragraph={true}>{content['badge']}</Typography>
+                            <Typography variant="overline" color="textSecondary" paragraph={true} style={{color: '#654b49'}}>{content['badge']}</Typography>
                             <Typography variant="h3" component="h2" gutterBottom={true}>
-                                <Typography variant="h3" component="span" color="primary">{content['header-p1']} </Typography>
-                                <Typography variant="h3" component="span">{content['header-p2']}</Typography>
+                                <Typography variant="h3" component="span" style={{color: '#836177'}}>{content['header-p1']} </Typography>
+                                <Typography variant="h3" component="span" style={{color: '#654b49'}}>{content['header-p2']}</Typography>
                             </Typography>
                             <Typography variant="subtitle1" color="textSecondary" paragraph={true}>{content['description']}</Typography>
                         </Container>
                     </Box>
                     <Grid container spacing={10}>
                         <Grid item xs={12} sm={3} md={3}>
-                            <Avatar alt="perfil" src={content['01_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['01_name']}</Typography>
+                            <Avatar alt="perfil" src={content['01_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['01_name']}</Typography>
                             <p>
                                 <GitHubIcon 
                                 onClick={() => window.open(content['01_link'], '_blank')}   
@@ -104,8 +105,8 @@ function Team() {
                             <Typography variant="body1" color="textSecondary" component="span">{content['01_job']}</Typography>
                         </Grid>
                         <Grid item xs={12} sm={3} md={3}>
-                            <Avatar alt="perfil" src={content['02_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['02_name']}</Typography>
+                            <Avatar alt="perfil" src={content['02_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['02_name']}</Typography>
                             <p>
                                 <GitHubIcon 
                                 onClick={() => window.open(content['02_link'], '_blank')}
@@ -117,8 +118,8 @@ function Team() {
                             <Typography variant="body1" color="textSecondary" component="span">{content['02_job']}</Typography>
                         </Grid>
                         <Grid item xs={12} sm={3} md={3}>
-                            <Avatar alt="perfil" src={content['03_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['03_name']}</Typography>
+                            <Avatar alt="perfil" src={content['03_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['03_name']}</Typography>
                             <p>
                                 <GitHubIcon 
                                 onClick={() => window.open(content['03_link'], '_blank')}
@@ -131,8 +132,8 @@ function Team() {
                             <Typography variant="body1" color="textSecondary" component="span">{content['03_job']}</Typography>
                         </Grid>
                         <Grid item xs={12} sm={3} md={3}>
-                            <Avatar alt="perfil" src={content['04_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['04_name']}</Typography>
+                            <Avatar alt="perfil" src={content['04_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['04_name']}</Typography>
                             <p>
                                 <GitHubIcon 
                                 onClick={() => window.open(content['04_link'], '_blank')}
@@ -146,8 +147,8 @@ function Team() {
                         </Grid>
                         <Box mt={5} mb={5} />
                         <Grid item xs={12} sm={4} md={4} spacing={5}>
-                            <Avatar alt="perfil" src={content['05_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['05_name']}</Typography>
+                            <Avatar alt="perfil" src={content['05_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['05_name']}</Typography>
                             <p>
                                 <GitHubIcon 
                                 onClick={() => window.open(content['05_link'], '_blank')}
@@ -159,8 +160,8 @@ function Team() {
                             <Typography variant="body1" color="textSecondary" component="span">{content['05_job']}</Typography>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4}>
-                            <Avatar alt="perfil" src={content['06_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['06_name']}</Typography>
+                            <Avatar alt="perfil" src={content['06_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['06_name']}</Typography>
                             <p>
                                 <GitHubIcon 
                                 onClick={() => window.open(content['06_link'], '_blank')}
@@ -172,8 +173,8 @@ function Team() {
                             <Typography variant="body1" color="textSecondary" component="span">{content['06_job']}</Typography>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4}>
-                            <Avatar alt="perfil" src={content['07_image']} className={classes.avatar} />
-                            <Typography variant="h6" component="h6" gutterBottom={true}>{content['07_name']}</Typography>
+                            <Avatar alt="perfil" src={content['07_image']} className={classes.avatar} style={{marginBottom: '4vh'}}/>
+                            <Typography variant="h6" component="h6" gutterBottom={true} style={{color: '#654b49'}}>{content['07_name']}</Typography>
                             <p>
                                 <GitHubIcon
                                 onClick={() => window.open(content['07_link'], '_blank')}

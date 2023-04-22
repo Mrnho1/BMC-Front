@@ -7,3 +7,8 @@
     --color-Brown: #654b49;
     --color-Black: #000000;
 }
+
+.backgroundTeam{
+    background-color: var(--color-OffWhite)!important;
+}
+
