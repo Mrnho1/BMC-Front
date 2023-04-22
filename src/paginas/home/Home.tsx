@@ -2,11 +2,12 @@ import React from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
-import ImgHome from "../../assets/icon/imgHome.png";
+import ImgHome from "../../assets/img/figuraHome.png";
 
 function Home() {
   return (
     <>
+      <div></div>
       <Grid
         container
         direction="row"
@@ -60,12 +61,10 @@ function Home() {
             </Box>
           </Grid>
         </Grid>
-
-        <Grid item md={6} >
-          <img src={ImgHome} alt="" width="610px" height="700px" />
+        <Grid md={6}>
+          <img className="imgHome" src={ImgHome} alt="" width='50%' />
         </Grid>
       </Grid>
-
       <Grid xs={12} className="postagens"></Grid>
     </>
   );

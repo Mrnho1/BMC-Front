@@ -12,7 +12,6 @@
 
 .caixa {
   background-color: #654b49;
-  direction-xs-column-reverse
 }
 
 .titulo-bem-vindo {
@@ -30,8 +29,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 8px;
-  top: 35px;
+
+
 }
 
 .botaoHome button {
@@ -42,7 +41,7 @@
   background-color: #A4D1FA;
   color: #ffffff;
   margin-bottom: 8px;
-  top: 35px;
+
 }
 
 .botaoHome button:hover {
@@ -55,4 +54,8 @@
 
 .postagens {
   background-color: white;
+}
+
+.imgHome {
+  border-radius: 50%
 }
