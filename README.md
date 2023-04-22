@@ -47,26 +47,11 @@ ou
 yarn create vite
 ```
 
-## Passo 3: Instalação do Material UI
-
-Agora, você precisará instalar o Material UI para usar em seu projeto. Para isso, execute os seguintes comandos:
-
-```bash
-npm install @mui/material @emotion/react @emotion/styled
-
-```
-
-ou
-
-```bash 
-yarn add @mui/material @emotion/react @emotion/styled
-```
-
-## Passo 4  : Desenvolvimento do projeto
+## Passo 3  : Desenvolvimento do projeto
 
 Agora que o projeto está configurado, é hora de começar a codificar. Abra os arquivos `src/App.tsx` e `src/index.tsx` e comece a codificar o projeto.
 
-## Passo 5: Executar o projeto
+## Passo 4: Executar o projeto
 
 Agora que o projeto está pronto, execute o seguinte comando para executar o projeto:
 
