@@ -31,7 +31,7 @@ const images = [
   {
     label: '',
     imgPath:
-      'https://images.unsplash.com/photo-1662706721887-ed2f97df0d30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80',
+      'https://images.unsplash.com/photo-1603712426309-1a050b0378c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     size: 'large',
     },
   {
