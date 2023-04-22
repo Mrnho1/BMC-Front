@@ -47,7 +47,7 @@ function Login() {
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid alignItems="center" xs={6}>
+      <Grid alignItems="center" xs={12} md={6}>
         <Box paddingX={6}>
           <form onSubmit={onSubmit}>
             <Typography
@@ -105,7 +105,7 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem"></Grid>
+      <Grid xs={12} md={6} className="imagem"></Grid>
     </Grid>
   );
 }
