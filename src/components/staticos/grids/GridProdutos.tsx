@@ -7,6 +7,7 @@ import { Button, Card } from '@material-ui/core';
 import imagem from './logoRosa.png';
 import { ImportContacts } from '@material-ui/icons';
 import './Grid.css'
+import DrawerMenu from '../../drawer/DrawerMenu';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -21,15 +22,7 @@ export default function GridProutos() {
         // 16 cards
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2} style={{ padding: '150px', textAlign: 'center', justifyContent: 'center' }}>
-                <Button
-                    variant="contained"
-                    color="secondary"
-                    style={{ backgroundColor: '#c75f77', color: '#fff', padding: '20px', textAlign: 'center', justifyContent: 'center' }}
-
-                >
-                    CONHEÇA NOSSOS PRODUTOS
-                </Button>
-
+               <DrawerMenu />
             </Grid>
             <Card style={{ backgroundColor: '#816470', color: '#fff', padding: '20px', textAlign: 'center', justifyContent: 'center' }}>
                 <Grid container spacing={2} style={{ textAlign: 'center', justifyContent: 'center', padding: '20px' }}>
