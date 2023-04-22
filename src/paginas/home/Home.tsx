@@ -61,8 +61,8 @@ function Home() {
             </Box>
           </Grid>
         </Grid>
-        <Grid alignItems="center" alignContent="center" justifyContent="center" item md={6}>
-          <Box display={'flex'} justifyContent={'center'}>
+        <Grid  alignItems="center" alignContent="center" justifyContent="center" item md={6}>
+          <Box paddingY={'10px'} display={'flex'} justifyContent={'center'}>
             <img  className="imgHome" src={ImgHome} alt="" width='50%' />
           </Box>
           
