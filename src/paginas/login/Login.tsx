@@ -4,12 +4,12 @@ import { Box, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/Service";
 import useLocalStorage from "react-use-localstorage";
-import UserLogin from '../../models/UserLogin'
+import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 
 function Login() {
   const [token, setToken] = useLocalStorage("token");
-  const useHistory = useNavigate()
+  const useHistory = useNavigate();
 
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
@@ -39,15 +39,15 @@ function Login() {
     }
   }
 
-  useEffect(()=>{
-    if(token !== ""){
-        useHistory('/home')
+  useEffect(() => {
+    if (token !== "") {
+      useHistory("/home");
     }
-}, [token])
+  }, [token]);
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid alignItems="center" xs={6}>
+      <Grid item alignItems="center" xs={12} md={6}>
         <Box paddingX={6}>
           <form onSubmit={onSubmit}>
             <Typography
@@ -67,7 +67,9 @@ function Login() {
               name="usuario"
               margin="normal"
               value={userLogin.usuario}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                updateModel(event)
+              }
               fullWidth
             />
             <TextField
@@ -78,13 +80,15 @@ function Login() {
               margin="normal"
               type="password"
               value={userLogin.senha}
-              onChange={(event:ChangeEvent<HTMLInputElement>)=>updateModel(event)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                updateModel(event)
+              }
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-                <Button type="submit" variant="contained" color="primary" >
-                    Logar
-                </Button>
+              <Button type="submit" variant="contained" color="primary">
+                Logar
+              </Button>
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
@@ -105,7 +109,8 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem"></Grid>
+
+      <Grid item xs={12} md={6} className="imagem"></Grid>
     </Grid>
   );
 }
