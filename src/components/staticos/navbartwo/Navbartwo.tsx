@@ -8,11 +8,11 @@ import Button from '@mui/material/Button';
 
 export default function  Navbartwo() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ padding: 0, margin: 0}}>
       <AppBar position="static" style={{backgroundColor: '#78a493'}}>
         <Toolbar>
          
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ padding: 0, margin: 0}}>
             
           </Typography>
           <Button color="inherit">Login</Button>

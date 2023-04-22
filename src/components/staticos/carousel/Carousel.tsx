@@ -10,31 +10,39 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import styled from '@emotion/styled';
+import imagem1 from './imagens-carousel/imagem1.jpg'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+// https://ibb.co/NmbvHrC
+// https://ibb.co/Lh0NM4d
+// https://ibb.co/ZGx8Wcv
+// https://ibb.co/C8m7KS7
+// https://ibb.co/SRQ5qhN
+// https://ibb.co/523DSMS
+// https://ibb.co/gtmTtbc
 
 const images = [
   {
     label: '',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: 'https://images.unsplash.com/photo-1606226287089-5b5896241e11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' ,
     size: 'large',
     },
   {
     label: '',
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://images.unsplash.com/photo-1662706721887-ed2f97df0d30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80',
     size: 'large',
     },
   {
     label: '',
-    imgPath: 'https://images.unsplash.com/photo-1537868224539-8c3a7d0d6f8a?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: 'https://images.unsplash.com/photo-1612882514847-57bcc4223456?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     size: 'large',
   },
   {
     label: '',
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://images.unsplash.com/photo-1613732899584-22b68758d40b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1179&q=80',
     size: 'large',
     },
 ];
@@ -58,14 +66,13 @@ function Carousel() {
 
   return (
     // carousel ocupa toda a largura da tela
-    <Box sx={{ width: '100%', flexGrow: 1 }}>
+    <Box sx={{ width: '100%', flexGrow: 1 , padding: 0, margin: 0}}>
       <Paper
         square
         elevation={0}
         sx={{
           display: 'flex',
           alignItems: 'center',
-          height: 50,
           pl: 2,
           bgcolor: 'background.default',
         }}
