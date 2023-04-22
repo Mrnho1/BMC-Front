@@ -6,16 +6,17 @@ import './Navbar.css'
 import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
-  const[token, setToken] = useLocalStorage('token');
+  const [token, setToken] = useLocalStorage('token');
   const history = useNavigate();
 
-  function goLogout(){
+  function goLogout() {
     setToken('');
     alert('Usuário deslogado')
     history('/login')
   }
 
   return (
+
     <AppBar position="static" style={{ background: "#c75f77" }}>
       <Toolbar variant="dense">
         <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
@@ -84,6 +85,7 @@ function Navbar() {
         </Box>
       </Toolbar>
     </AppBar>
+
   );
 }
 
