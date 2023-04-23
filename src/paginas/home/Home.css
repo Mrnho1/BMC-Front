@@ -11,45 +11,41 @@
 
 
 .caixa {
-  background-color: #654b49;
+  background-color: #EBEAE5;
 }
 
 .titulo-bem-vindo {
-  color: #f6e9a8 !important;
+  color: #c75f77 !important;
   font-weight: bold !important;
+  padding-top: 3rem;
 }
 
 .sub-titulo {
-  font-size: 23px;
-  color: white;
+  font-size: 30px !important;
+  color: #77a493;
   align-items: center;
+  padding-bottom: 2rem;
 }
 
 .botaoHome {
-  display: flex;
   justify-content: center;
   flex-direction: column;
-
-
+  padding: 3rem;
 }
 
 .botaoHome button {
-  display: flex;
   justify-content: center;
-  border-color: #815196;
   border-radius: 20px;
-  background-color: #A4D1FA;
+  background-color: #836177;
   color: #ffffff;
   margin-bottom: 8px;
 
 }
 
 .botaoHome button:hover {
-  display: flex;
   justify-content: center;
-  border-color: solid 2px #815196;
-  background-color: #ffafcb;
-  color: #815196;
+  color: #ffffff;
+  background-color: #77a493;
 }
 
 .postagens {

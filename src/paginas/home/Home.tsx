@@ -33,7 +33,7 @@ function Home() {
                 align="center"
                 className="titulo-bem-vindo"
               >
-                Seja bem vinde ao <br /> Bem Me Care!!
+                Seja bem vinde ao <br /> Bem Me Care!
               </Typography>
               <Typography
                 variant="h5"
@@ -68,11 +68,21 @@ function Home() {
           md={6}
         >
           <Box paddingY={"10px"} display={"flex"} justifyContent={"center"}>
-            <img className="imgHome" src={ImgHome} alt="" width="50%" />
+            <img className="imgHome" src={ImgHome} alt="" width="80%" />
           </Box>
         </Grid>
       </Grid>
-      <Grid xs={12} className="postagens"></Grid>
+      <Grid xs={12} className="postagens">
+      <Typography
+                variant="h5"
+                component="h5"
+                align="center"
+                className="sub-titulo"
+              >
+                EM BREVE NOVAS POSTAGENS!
+              </Typography>
+
+      </Grid>
     </>
   );
 }
