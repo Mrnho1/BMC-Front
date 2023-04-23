@@ -1,13 +1,4 @@
 :root{
-<<<<<<< HEAD
-    --color-Thistle: #cdb4db;
-    --color-FaryTale: #ffc8dd;
-    --color-CarnationPink: #ffafcc;
-    --color-UranianBlue: #bde0fe;
-    --color-LightSkyBlue: #a2d2ff;
-    --color-Roxo: #815196;
-    --color-Amarelo: #F6E9A8;
-=======
     --color-OffWhite: #EBEAE5;
     --color-Yellow: #fefab6;
     --color-Blue: #77a493;
@@ -15,52 +6,49 @@
     --color-Purple: #836177;
     --color-Brown: #654b49;
     --color-Black: #000000;
->>>>>>> 895a85bff9c7a1dc4c02331f8f918be2f4fa91d6
 }
 
+
 .container {
-    background-color: var(--color-Thistle);
+    background-color: var(--color-Pink);
+
 }
 
 .titulo {
-    color: var(--color-Amarelo) !important;
+    color: var(--color-Yellow) !important;
     font-weight: "bold" !important;
     text-align: justify;
+    font-size: 2vw !important;
 }
 .texto {
-    color: white !important;
+    color: var(--color-OffWhite) !important;
     font-weight: "bold" !important;
-    font-size: 20px;
+    font-size: 2vw !important;
 }
 
-.fotoHome {
-    width: max(350px, 65%);
+.fotoSobre {
+    width: 60%;
     margin: 0 auto;
     display: block;
 }
 .containerCards{
-    padding: 40px;
+    padding: 20px;
     justify-content: space-around;
+    background-color: var(--color-OffWhite);
+    width: 100vh;
 }
 
-.cardsPink{
+.cards{
     justify-content: start;
-    border-radius: 12px;
     padding: 10px;
-    background-color: var(--color-CarnationPink);
 }
 
-.cardsBlue{
-    border-radius: 12px;
-    padding: 10px;
-    background-color: var(--color-UranianBlue);
-    height: 100%;
+.textoCard{
+    color: var(--color-Brown) !important;
+    font-weight: "bold" !important;
+    font-size: 20px;
+}
+
+.tituloSobre {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 895a85bff9c7a1dc4c02331f8f918be2f4fa91d6
