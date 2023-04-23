@@ -33,12 +33,12 @@
      background-image: url(../../assets/logo-login.png);
      background-repeat: no-repeat;
      width: 100vh;
-     min-height: 50vh;
+     min-height: 100vh;
      background-size: cover;
      background-position: center;
  }
 
  .reverse{
     display:flex;
-    flex-direction: column-reverse;
+    flex-direction: direction-xs-column-reverse;
  }
