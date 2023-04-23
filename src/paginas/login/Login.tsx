@@ -46,7 +46,7 @@ function Login() {
   }, [token]);
 
   return (
-    <Grid container justifyContent="center" alignItems="center" className="reverse">
+    <Grid container justifyContent="center" alignItems="center" >
       <Grid item xs={12} md={6}>
         <Box paddingX={6}>
           <form onSubmit={onSubmit}>
