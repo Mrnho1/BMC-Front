@@ -5,12 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/Service";
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import "./Login.css";
 
 function Login() {
   const [token, setToken] = useLocalStorage("token");
   const useHistory = useNavigate();
-
+  const largeScreen = useMediaQuery(theme => theme.breakpoints.up('md'));
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
@@ -46,9 +47,9 @@ function Login() {
   }, [token]);
 
   return (
-    <Grid container justifyContent="center" alignItems="center" >
+    <Grid container justifyContent="center" alignItems="center" direction={ largeScreen? 'row':"column-reverse"}>
       <Grid item xs={12} md={6}>
-        <Box paddingX={6}>
+        <Box paddingX={6} >
           <form onSubmit={onSubmit}>
             <Typography
               variant="h3"
