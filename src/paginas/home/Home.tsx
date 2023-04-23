@@ -7,7 +7,6 @@ import ImgHome from "../../assets/img/figuraHome.png";
 function Home() {
   return (
     <>
-      <div></div>
       <Grid
         container
         direction="row"
