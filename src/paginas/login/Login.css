@@ -37,3 +37,8 @@
      background-size: cover;
      background-position: center;
  }
+
+ .reverse{
+    display:flex;
+    flex-direction: column-reverse;
+ }
