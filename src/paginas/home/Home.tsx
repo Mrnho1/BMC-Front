@@ -15,7 +15,6 @@ function Home() {
         alignItems="center"
         alignContent="center"
         className="caixa"
-        spaci
       >
         <Grid
           container
