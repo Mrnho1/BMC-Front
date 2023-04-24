@@ -5,13 +5,12 @@ import "./Home.css";
 import ImgHome from "../../assets/img/figuraHome.png";
 import { Link } from "react-router-dom";
 import Carousel from "../../components/staticos/carousel/Carousel";
+import Navbartwo from "../../components/staticos/navbartwo/Navbartwo";
 
 function Home() {
   return (
     <>
-    <Grid>
-    <Carousel/>
-    </Grid>
+      <Navbartwo/>
       <Grid
         container
         direction="row"
