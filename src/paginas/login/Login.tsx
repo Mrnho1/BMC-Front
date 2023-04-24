@@ -1,17 +1,19 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
-import { Grid, Typography, TextField } from "@material-ui/core";
+import { Grid, Typography, TextField, Theme} from "@material-ui/core";
 import { Box, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/Service";
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import "./Login.css";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from "@material-ui/core/styles";
 
 function Login() {
   const [token, setToken] = useLocalStorage("token");
   const useHistory = useNavigate();
-  const largeScreen = useMediaQuery(theme => theme.breakpoints.up('md'));
+  const theme = useTheme();
+  const largeScreen = useMediaQuery(theme.breakpoints.up('md') );
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
