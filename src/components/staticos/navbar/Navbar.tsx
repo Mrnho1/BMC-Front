@@ -131,14 +131,11 @@ function ResponsiveAppBar() {
               >
                 <Link to={pageslinks[pages.indexOf(page)]} className='link'>
                   {page}
-
                 </Link>
-
-                
-
 
               </Button>
             ))}
+
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
