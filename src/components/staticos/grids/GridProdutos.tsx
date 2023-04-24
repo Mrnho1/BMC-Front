@@ -162,7 +162,7 @@ export default function GridProdutos() {
                 "gray",
                 "brown"
             ],
-            material: ["algodão", "poliester", "seda", "linho"],
+            material: ["algodão", "poliester", "seda", "linho "],
             tamanho: ["P", "M", "G", "GG", "XG", "XXG", "XXXG", "XXXXG"],
             categoria: [
                 "absorvente",
