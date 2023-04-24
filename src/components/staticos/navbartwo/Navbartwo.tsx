@@ -19,9 +19,12 @@ export default function  Navbartwo() {
   return (
     <Box sx={{ padding: 0, margin: 0}}>
       <AppBar position="static" style={{backgroundColor: '#78a493'}}>
-        <Toolbar>
+        <Toolbar sx={{
+          justifyContent: 'center',
+        }}
+        >
         {pagesLinks.map((item) => (
-          <Link
+          <Link 
           href={item.href}
           >
             {item.name}
