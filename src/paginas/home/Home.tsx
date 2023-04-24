@@ -3,11 +3,11 @@ import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
 import ImgHome from "../../assets/img/figuraHome.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
-      <div></div>
       <Grid
         container
         direction="row"
@@ -34,7 +34,7 @@ function Home() {
                 align="center"
                 className="titulo-bem-vindo"
               >
-                Seja bem vinde ao <br /> Bem Me Care!!
+                Seja bem vinde ao <br /> Bem Me Care!
               </Typography>
               <Typography
                 variant="h5"
@@ -51,9 +51,12 @@ function Home() {
             <Box className="botaoHome">
               {/* <Box marginX={'10px'}></Box> */}
               <Grid alignItems="center" alignContent="center">
-                <Button fullWidth variant="outlined">
-                  Veja os nossos produtos
-                </Button>
+                <Link to={"/produtos"}>
+                  <Button fullWidth variant="outlined">
+                    Veja os nossos produtos
+                  </Button>
+                </Link>
+
                 <Button fullWidth variant="outlined">
                   Apoie o nosso trabalho
                 </Button>
@@ -69,11 +72,20 @@ function Home() {
           md={6}
         >
           <Box paddingY={"10px"} display={"flex"} justifyContent={"center"}>
-            <img className="imgHome" src={ImgHome} alt="" width="50%" />
+            <img className="imgHome" src={ImgHome} alt="" width="80%" />
           </Box>
         </Grid>
       </Grid>
-      <Grid xs={12} className="postagens"></Grid>
+      <Grid xs={12} className="postagens">
+        <Typography
+          variant="h5"
+          component="h5"
+          align="center"
+          className="sub-titulo"
+        >
+          EM BREVE NOVAS POSTAGENS!
+        </Typography>
+      </Grid>
     </>
   );
 }
