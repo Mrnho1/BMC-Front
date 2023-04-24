@@ -5,6 +5,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
+const pagesLinks = [
+  { name: "Home", href: "#about" },
+  { name: "Sobre", href: "#about" },
+  { name: "Produtos", href: "#about" },
+  { name: "Equipe", href: "#about" },
+  { name: "Contato", href: "#about" },
+];
 
 export default function  Navbartwo() {
   return (
