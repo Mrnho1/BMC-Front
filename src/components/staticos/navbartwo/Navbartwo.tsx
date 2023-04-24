@@ -8,11 +8,11 @@ import Link from "@mui/material/Link";
 import { makeStyles } from "@mui/material/styles";
 
 const pagesLinks = [
-  { name: "Home", href: "" },
-  { name: "Sobre", href: "" },
-  { name: "Produtos", href: "" },
-  { name: "Equipe", href: "" },
-  { name: "Contato", href: "" },
+  { name: "Home", href: "/home" },
+  { name: "Sobre", href: "/sobre" },
+  { name: "Produtos", href: "/produtos" },
+  { name: "Equipe", href: "/equipe" },
+  { name: "Contato", href: "/contato" },
 ];
 
 export default function Navbartwo() {
