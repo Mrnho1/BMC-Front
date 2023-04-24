@@ -9,7 +9,9 @@ import Carousel from "../../components/staticos/carousel/Carousel";
 function Home() {
   return (
     <>
+    <Grid>
     <Carousel/>
+    </Grid>
       <Grid
         container
         direction="row"
