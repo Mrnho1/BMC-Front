@@ -16,6 +16,9 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css"
 
 const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Cadastro'];
+
+const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/cadastro'];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -126,7 +129,14 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link to={pageslinks[pages.indexOf(page)]} className='link'>
+                  {page}
+
+                </Link>
+
+                
+
+
               </Button>
             ))}
           </Box>
@@ -137,7 +147,7 @@ function ResponsiveAppBar() {
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip> */}
-            <Link to={''} >
+            <Link to={'/login'} className='link'>
             <Typography className='text-color'>
             LOGOUT
             </Typography>

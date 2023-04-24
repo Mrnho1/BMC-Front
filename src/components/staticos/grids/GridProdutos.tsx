@@ -284,9 +284,9 @@ export default function GridProdutos() {
         },
         {
             id: 7,
-            name: "Sabonete liquido", 
+            name: "Sabonete liquido lavanda",
             description:
-                "sabonete liquido intimo melaleuca e óleo de coco.",
+                "sabonete liquido intimo melaleuca e óleo de coco e glicerina vegetal.  ",
             img: logoRosa,
             price: 34.95,
             colors: [
