@@ -4,10 +4,12 @@ import { Box } from "@mui/material";
 import "./Home.css";
 import ImgHome from "../../assets/img/figuraHome.png";
 import { Link } from "react-router-dom";
+import Carousel from "../../components/staticos/carousel/Carousel";
 
 function Home() {
   return (
     <>
+    <Carousel/>
       <Grid
         container
         direction="row"
