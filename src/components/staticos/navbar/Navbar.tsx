@@ -157,10 +157,12 @@ function ResponsiveAppBar() {
               </IconButton>
             </Tooltip> */}
             <Box
-              display={"flex"}
-              alignContent={"center"}
-              alignItems={"center"}
-              justifyItems={"center"}
+              sx={{
+                display: "flex",
+                alignContent: "center",
+                alignItems: "center",
+                justifyItems: "center",
+              }}
             >
               <Link to={"/login"} className="link">
                 <Typography className="text-color">Login</Typography>
