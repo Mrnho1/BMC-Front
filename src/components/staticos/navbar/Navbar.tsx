@@ -12,12 +12,15 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link as linkUm } from "react-router-dom";
+import Link  from "@mui/material/Link";
 import Divider from "@mui/material/Divider";
 import "./Navbar.css";
 import { colors } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import useLocalStorage from "react-use-localstorage";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem/ListItem";
 
 const pages = ["Home", "Sobre", "Contato", "Produtos", "Sobre", "Cadastro"];
 
@@ -30,21 +33,19 @@ const pageslinks = [
   "/cadastro",
 ];
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = [{name: "Perfil", href: ""}, {name: "Logout", href: "/login"}];
 
 function ResponsiveAppBar() {
   const [token, setToken] = useLocalStorage("token");
   const [log, setLog] = useState(token);
   //setLog(()=> token);
-console.log(log)
-const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
+  console.log(log);
+  const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
 
   // if (token !== '') {
   //   setnavbarUserIsLogged(true);
   //   setTrend(count > prevCount ? 'increasing' : 'decreasing');
   // }
-
-  
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -174,9 +175,9 @@ const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link to={pageslinks[pages.indexOf(page)]} className="link">
+                {/* <Link to={pageslinks[pages.indexOf(page)]} className="link">
                   {page}
-                </Link>
+                </Link> */}
               </Button>
             ))}
           </Box>
@@ -195,17 +196,28 @@ const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
                 justifyItems: "center",
               }}
             >
-              {log  ? (<Avatar />  ) : (
-                <Box sx={{
-                  display: "flex",
-                  alignContent: "center",
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
+              {log ? (
+                
+                <Tooltip title={""}>
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src="/static/images/avatar/2.jpg"
+                    />
+                  </IconButton>
+                </Tooltip>
+              ) : (
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignContent: "center",
+                    alignItems: "center",
+                    justifyItems: "center",
+                  }}
                 >
-                  <Link to={"/login"} className="link">
+                  {/* <Link to={"/login"} className="link">
                     <Typography className="text-color">Login</Typography>
-                  </Link>
+                  </Link> */}
 
                   <Divider
                     sx={{ backgroundColor: "white", marginX: "8px" }}
@@ -213,9 +225,9 @@ const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
                     flexItem
                   />
 
-                  <Link to={"/cadastro"} className="link">
+                  {/* <Link to={"/cadastro"} className="link">
                     <Typography className="text-color">Cadastro</Typography>
-                  </Link>
+                  </Link> */}
                 </Box>
               )}
             </Box>
@@ -236,11 +248,20 @@ const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <List>
+                {settings.map((setting) => (
+                <ListItem key={setting.name}>
+                <Link
+                  variant="button"
+                  underline="none"
+                  href={setting.href}
+                >
+                  {setting.name}
+                </Link>
+              </ListItem>
+
+              ))} 
+              </List>
             </Menu>
           </Box>
         </Toolbar>
