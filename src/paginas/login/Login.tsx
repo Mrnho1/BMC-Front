@@ -49,7 +49,7 @@ function Login() {
   }, [token]);
 
   return (
-    <Grid container justifyContent="center" alignItems="center" direction={ largeScreen? 'row':"column-reverse"}>
+    <Grid container justifyContent="center" alignItems="center" direction={largeScreen? 'row':"column-reverse"}>
       <Grid item xs={12} md={6}>
         <Box paddingX={6} >
           <form onSubmit={onSubmit}>
