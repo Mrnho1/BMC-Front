@@ -16,6 +16,8 @@ import { Link } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import "./Navbar.css";
 import { colors } from "@material-ui/core";
+import { useEffect, useState } from "react";
+import useLocalStorage from "react-use-localstorage";
 
 const pages = ["Home", "Sobre", "Contato", "Produtos", "Sobre", "Cadastro"];
 
@@ -31,6 +33,8 @@ const pageslinks = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
+  const [token, setToken] = useLocalStorage("token");
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -52,6 +56,15 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  // useEffect(() => {
+  //   const loggedIn = false
+  //   if (token === "") {
+  //     setLogado(false)
+  //   } else {
+  //     setLogado = true
+  //   }
+  // }, [token]);
 
   return (
     <AppBar position="static" style={{ backgroundColor: "#c75f77" }}>
@@ -164,19 +177,30 @@ function ResponsiveAppBar() {
                 justifyItems: "center",
               }}
             >
-              <Link to={"/login"} className="link">
-                <Typography className="text-color">Login</Typography>
-              </Link>
+              {token != "" ? (<img src="" alt="" />
+                
+              ) : (
+                <Box sx={{
+                  display: "flex",
+                  alignContent: "center",
+                  alignItems: "center",
+                  justifyItems: "center",
+                }} >
+                  <Link to={"/login"} className="link">
+                    <Typography className="text-color">Login</Typography>
+                  </Link>
 
-              <Divider
-                sx={{ backgroundColor: "white", marginX: "8px" }}
-                orientation="vertical"
-                flexItem
-              />
+                  <Divider
+                    sx={{ backgroundColor: "white", marginX: "8px" }}
+                    orientation="vertical"
+                    flexItem
+                  />
 
-              <Link to={"/cadastro"} className="link">
-                <Typography className="text-color">Cadastro</Typography>
-              </Link>
+                  <Link to={"/cadastro"} className="link">
+                    <Typography className="text-color">Cadastro</Typography>
+                  </Link>
+                </Box>
+              )}
             </Box>
 
             <Menu
