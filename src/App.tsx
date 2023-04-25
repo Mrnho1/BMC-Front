@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ButtonAppBar from "./components/staticos/navbar/Navbar";
+import Navbartwo from "./components/staticos/navbartwo/Navbartwo";
 import Footer from "./components/staticos/footer/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from "./paginas/login/Login";
@@ -22,6 +23,7 @@ function App() {
     <>
       <BrowserRouter>
         <ButtonAppBar />
+        <Navbartwo />
         <div style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<Login />} />

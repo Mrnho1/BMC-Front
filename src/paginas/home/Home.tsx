@@ -10,7 +10,6 @@ import Navbartwo from "../../components/staticos/navbartwo/Navbartwo";
 function Home() {
   return (
     <>
-      <Navbartwo/>
       <Grid
         container
         direction="row"
