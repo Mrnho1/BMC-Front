@@ -34,6 +34,17 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
   const [token, setToken] = useLocalStorage("token");
+  const [log, setLog] = useState(token);
+  //setLog(()=> token);
+console.log(log)
+const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
+
+  // if (token !== '') {
+  //   setnavbarUserIsLogged(true);
+  //   setTrend(count > prevCount ? 'increasing' : 'decreasing');
+  // }
+
+  
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -65,6 +76,13 @@ function ResponsiveAppBar() {
   //     setLogado = true
   //   }
   // }, [token]);
+
+  useEffect(() => {
+    (async () => {
+      const loggedIn = await token;
+      if (loggedIn) setnavbarUserIsLogged(true);
+    })();
+  }, [navbarUserIsLogged]);
 
   return (
     <AppBar position="static" style={{ backgroundColor: "#c75f77" }}>
@@ -177,15 +195,14 @@ function ResponsiveAppBar() {
                 justifyItems: "center",
               }}
             >
-              {token != "" ? (<img src="" alt="" />
-                
-              ) : (
+              {log  ? (<Avatar />  ) : (
                 <Box sx={{
                   display: "flex",
                   alignContent: "center",
                   alignItems: "center",
                   justifyItems: "center",
-                }} >
+                }}
+                >
                   <Link to={"/login"} className="link">
                     <Typography className="text-color">Login</Typography>
                   </Link>
