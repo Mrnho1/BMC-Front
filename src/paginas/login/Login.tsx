@@ -8,9 +8,12 @@ import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from "@material-ui/core/styles";
+import { addToken } from "../../store/tokens/actions";
+import { useDispatch } from "react-redux";
 
 function Login() {
-  const [token, setToken] = useLocalStorage("token");
+  const [token, setToken] = useState("");
+  const dispatch = useDispatch();
   const useHistory = useNavigate();
   const theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up('md') );
@@ -44,6 +47,7 @@ function Login() {
 
   useEffect(() => {
     if (token !== "") {
+      dispatch(addToken(token));
       useHistory("/home");
     }
   }, [token]);
