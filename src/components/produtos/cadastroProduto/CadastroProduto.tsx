@@ -106,7 +106,7 @@ function CadastroProduto() {
                         variant="h3"
                         component="h1"
                         align="center"
-                        className="textoCP"
+                        className="textoProd"
                     >
                         {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
                     </Typography>
@@ -142,23 +142,25 @@ function CadastroProduto() {
                             <InputLabel id="demo-simple-select-helper-label">
                                 Categoria
                             </InputLabel>
+                            <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
                             <Select
                                 labelId="demo-simple-select-helper-label"
                                 id="demo-simple-select-helper"
                                 onChange={(event) =>
-                                    getById(`/categoria/${event.target.value}`, setCategorias, {
+                                    getById(`/categoria/${event.target.value}`, setCategoria, {
                                         headers: {
                                             Authorization: token,
                                         },
                                     })
                                 }>
+                                    
                                 {categorias.map((categorias) => (
                                     
                                         <MenuItem value={categorias.id}>{categorias.tipo} {categorias.fluxo} {categorias.cor}</MenuItem>
                                   
                                 ))}
                             </Select>
-                            <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
+                         
                             <Button
                                 type="submit"
                                 variant="contained"
