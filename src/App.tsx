@@ -14,6 +14,7 @@ import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import ListaCategoria from "./components/categoria/listaCategoria/ListaCategoria";
+import CadastroCategoria from "./components/categoria/cadastroCategoria/CadastroCategoria";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,6 +34,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/cadastro" element={<CadastroUsuario />} />
             <Route path="/editar-categoria/:id" element={<ListaCategoria />} />
+            <Route path="/categoria" element={<CadastroCategoria />} />
           </Routes>
         </div>
 
