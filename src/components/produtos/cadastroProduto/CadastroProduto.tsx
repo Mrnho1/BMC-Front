@@ -150,11 +150,12 @@ function CadastroProduto() {
                                         headers: {
                                             Authorization: token,
                                         },
-
                                     })
                                 }>
-                                {categorias.map((categoria) => (
-                                    <option value={categoria.id}>{categoria.tipo}, {categoria.cor}, {categoria.fluxo}</option>
+                                {categorias.map((categorias) => (
+                                    
+                                        <MenuItem value={categorias.id}>{categorias.tipo} {categorias.fluxo} {categorias.cor}</MenuItem>
+                                  
                                 ))}
                             </Select>
                             <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
