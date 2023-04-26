@@ -3,13 +3,14 @@ import * as React from 'react';
 import Navbartwo from '../../components/staticos/navbartwo/Navbartwo';
 import Carousel from '../../components/staticos/carousel/Carousel';
 import GridProdutos from '../../components/staticos/grids/GridProdutos';
+//import Shopcart from '../carrinhoCompras/Shopcart';
 
 function Produtos() {
     return (
     <>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={12}>
-         <Navbartwo />
+         
             <Carousel />
         </Grid>
         
@@ -18,6 +19,7 @@ function Produtos() {
         <Box>
           <Box>
           <GridProdutos />
+          
           </Box>
           {/* navbar #78a493 */}
           

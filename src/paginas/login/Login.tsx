@@ -1,16 +1,22 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
-import { Grid, Typography, TextField } from "@material-ui/core";
+import { Grid, Typography, TextField, Theme} from "@material-ui/core";
 import { Box, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/Service";
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
 import "./Login.css";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from "@material-ui/core/styles";
+import { addToken } from "../../store/tokens/actions";
+import { useDispatch } from "react-redux";
 
 function Login() {
-  const [token, setToken] = useLocalStorage("token");
+  const [token, setToken] = useState("");
+  const dispatch = useDispatch();
   const useHistory = useNavigate();
-
+  const theme = useTheme();
+  const largeScreen = useMediaQuery(theme.breakpoints.up('md') );
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
@@ -41,14 +47,15 @@ function Login() {
 
   useEffect(() => {
     if (token !== "") {
+      dispatch(addToken(token));
       useHistory("/home");
     }
   }, [token]);
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container justifyContent="center" alignItems="center" direction={ largeScreen? 'row':"column-reverse"}>
       <Grid item xs={12} md={6}>
-        <Box paddingX={6}>
+        <Box paddingX={6} >
           <form onSubmit={onSubmit}>
             <Typography
               variant="h3"

@@ -3,7 +3,7 @@
 
 💧✨ Bem-vindo à nossa loja virtual de produtos de higiene íntima! O nosso objetivo é ajudar a dar visibilidade à consciência da pobreza menstrual no Brasil. 
 
-Usamos React, Material UI, TypeScript e Vite para desenvolver esse projeto. Aqui, você pode navegar facilmente entre os nossos produtos, escolher o que deseja comprar 
+Usamos React, Material UI, TypeScript e Vite para desenvolver esse projeto. Aqui, você pode navegar facilmente entre os nossos produtos e escolher o que deseja comprar.
  Além disso, parte das nossas vendas serão doadas para ONGs brasileiras que trabalham com pessoas em situação de pobreza menstrual. 
 
 😍 Esperamos que você aproveite a nossa loja e que contribua com o nosso objetivo de dar maior visibilidade à consciência da pobreza menstrual no Brasil. 🤝
@@ -107,5 +107,5 @@ Se você quiser ajudar, você pode nos ajudar de várias maneiras 🤝:
 - Você pode contribuir com feedbacks e ideias 💡
 - Você pode nos ajudar a divulgar o nosso projeto 📢
 
-Qualquer ajuda será muito bem-vinda 🤗!
+Qualquer ajuda será muito bem-vinda. 🤗!
 
