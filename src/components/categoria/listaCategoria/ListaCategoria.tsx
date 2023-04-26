@@ -23,7 +23,7 @@ export default function listaCategoria() {
 
     useEffect(() => {
         getAllCategorias();
-    },[categorias.length])
+    },[])
 
     useEffect(() => {
         if(token === ''){

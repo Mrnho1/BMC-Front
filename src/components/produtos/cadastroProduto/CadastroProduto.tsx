@@ -4,9 +4,8 @@ import { getAll, getById, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { Categoria } from '../../../models/Categoria';
-import { Box, Button, FormControl, FormHelperText, Grid, InputLabel, MenuItem, TextField, Typography } from '@mui/material';
+import { Box, Button, FormControl, FormHelperText, Grid, InputLabel, List, ListItem, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { Produto } from '../../../models/Produto';
-import { Select } from '@material-ui/core';
 
 function CadastroProduto() {
     const history = useNavigate();
@@ -14,7 +13,7 @@ function CadastroProduto() {
     const token = useSelector<TokenState, TokenState['tokens']>(
         (state) => state.tokens
     )
-    
+
     const { id } = useParams<{ id: string }>();
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
@@ -56,7 +55,7 @@ function CadastroProduto() {
     }, [id])
 
     async function getCategoria() {
-        await getAll("/categoria", setCategoria, {
+        await getAll("/categoria", setCategorias, {
             headers: {
                 Authorization: token,
             },
@@ -147,7 +146,7 @@ function CadastroProduto() {
                                 labelId="demo-simple-select-helper-label"
                                 id="demo-simple-select-helper"
                                 onChange={(event) =>
-                                    getById(`/categoria/${event.target.value}`, setCategoria, {
+                                    getById(`/categoria/${event.target.value}`, setCategorias, {
                                         headers: {
                                             Authorization: token,
                                         },
@@ -155,9 +154,7 @@ function CadastroProduto() {
                                     })
                                 }>
                                 {categorias.map((categoria) => (
-                                    <div> <MenuItem value={categoria.id}>{categoria.tipo}</MenuItem>
-                                        <MenuItem value={categoria.id}>{categoria.cor}</MenuItem>
-                                        <MenuItem value={categoria.id}>{categoria.fluxo}</MenuItem></div>
+                                    <option value={categoria.id}>{categoria.tipo}, {categoria.cor}, {categoria.fluxo}</option>
                                 ))}
                             </Select>
                             <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
