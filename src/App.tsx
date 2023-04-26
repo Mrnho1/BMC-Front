@@ -11,6 +11,8 @@ import Team from "./paginas/team/Team";
 import Produtos from "./paginas/produtos/Produtos";
 import Contato from "./paginas/contato/Contato";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 
 
@@ -19,7 +21,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <Provider store= {store}>
       <BrowserRouter>
         <ButtonAppBar />
         <div style={{ minHeight: "100vh" }}>
@@ -37,7 +39,7 @@ function App() {
 
         <Footer />
       </BrowserRouter>
-    </>
+    </Provider>
   );
 }
 
