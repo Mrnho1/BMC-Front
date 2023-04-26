@@ -115,8 +115,13 @@ function CadastroProduto() {
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} className="nomeProduto">
-                    <Typography variant="h3" component="h1" align="center" className="textoCP">
-                        {produto.id !== 0 ? 'Editar produto' : 'Cadastrar produto'}
+                    <Typography
+                        variant="h3"
+                        component="h1"
+                        align="center"
+                        className="textoCP"
+                    >
+                        {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -204,68 +209,24 @@ function CadastroProduto() {
                             <InputLabel id="demo-simple-select-helper-label">
                                 Fluxo
                             </InputLabel>
+                            <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
                             <Select
                                 labelId="demo-simple-select-helper-label"
                                 id="demo-simple-select-helper"
-                                value={categoria}
-                                label="Fluxo"
-                                onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                    setCategoria(event.target.value as Categoria)
-                                }
-                            >
-                                {categorias.map((categoria) => (
-                                    <MenuItem value={categoria}>{categoria.fluxo}</MenuItem>
+                                onChange={(event) =>
+                                    getById(`/categoria/${event.target.value}`, setCategorias, {
+                                        headers: {
+                                            Authorization: token,
+                                        },
+                                    })
+                                }>
+                                {categorias.map((categorias) => (
+                                    
+                                        <MenuItem value={categorias.id}>{categorias.tipo} {categorias.fluxo} {categorias.cor}</MenuItem>
+                                  
                                 ))}
                             </Select>
-                        </FormControl>
-
-                        <FormControl
-                            variant="outlined"
-                            margin="normal"
-                            fullWidth
-                        >
-                            <InputLabel id="demo-simple-select-helper-label">
-                                Cor
-                            </InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                id="demo-simple-select-helper"
-                                value={categoria}
-                                label="Cor"
-                                onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                    setCategoria(event.target.value as Categoria)
-                                }
-                            >
-                                {categorias.map((categoria) => (
-                                    <MenuItem value={categoria}>{categoria.cor}</MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-
-                        <FormControl
-                            variant="outlined"
-                            margin="normal"
-                            fullWidth
-                        >
-                            <InputLabel id="demo-simple-select-helper-label">
-                                Tipo
-                            </InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                id="demo-simple-select-helper"
-                                value={categoria}
-                                label="Tipo"
-                                onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                    setCategoria(event.target.value as Categoria)
-                                }
-                            >
-                                {categorias.map((categoria) => (
-                                    <MenuItem value={categoria}>{categoria.tipo}</MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-
-                        <Box className="botao">
+                            <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
                             <Button
                                 type="submit"
                                 variant="contained"
