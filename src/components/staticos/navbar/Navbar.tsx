@@ -12,8 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link as linkUm } from "react-router-dom";
-import Link  from "@mui/material/Link";
+import { Link as linkUm, useNavigate } from "react-router-dom";
+import Link from "@mui/material/Link";
 import Divider from "@mui/material/Divider";
 import "./Navbar.css";
 import { colors } from "@material-ui/core";
@@ -33,14 +33,23 @@ const pageslinks = [
   "/cadastro",
 ];
 
-const settings = [{name: "Perfil", href: ""}, {name: "Logout", href: "/login"}];
+const settings = [
+  { name: "Perfil", href: "" },
+  { name: "Logout", href: "/login" },
+];
 
 function ResponsiveAppBar() {
   const [token, setToken] = useLocalStorage("token");
   const [log, setLog] = useState(token);
-  //setLog(()=> token);
+  function goLogout() {
+    setToken("");
+    setLog(token);
+    alert("Usuário deslogado");
+  }
+
   console.log(log);
-  const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const history = useNavigate();
 
   // if (token !== '') {
   //   setnavbarUserIsLogged(true);
@@ -78,12 +87,18 @@ function ResponsiveAppBar() {
   //   }
   // }, [token]);
 
-  useEffect(() => {
-    (async () => {
-      const loggedIn = await token;
-      if (loggedIn) setnavbarUserIsLogged(true);
-    })();
-  }, [navbarUserIsLogged]);
+  // useEffect(() => {
+  //   (async () => {
+  //     const loggedIn = await token;
+  //     if (loggedIn) setnavbarUserIsLogged(true);
+  //   })();
+  // }, [navbarUserIsLogged]);
+
+  // useEffect(() => {
+  //   if (token !== "") {
+  //     setLog(token)
+  //   }
+  // });
 
   return (
     <AppBar position="static" style={{ backgroundColor: "#c75f77" }}>
@@ -196,8 +211,7 @@ function ResponsiveAppBar() {
                 justifyItems: "center",
               }}
             >
-              {log ? (
-                
+              {token !== "" ? (
                 <Tooltip title={""}>
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar
@@ -215,9 +229,9 @@ function ResponsiveAppBar() {
                     justifyItems: "center",
                   }}
                 >
-                  {/* <Link to={"/login"} className="link">
+                  <Link href={"/login"} className="link">
                     <Typography className="text-color">Login</Typography>
-                  </Link> */}
+                  </Link>
 
                   <Divider
                     sx={{ backgroundColor: "white", marginX: "8px" }}
@@ -225,9 +239,9 @@ function ResponsiveAppBar() {
                     flexItem
                   />
 
-                  {/* <Link to={"/cadastro"} className="link">
+                  <Link href={"/cadastro"} className="link">
                     <Typography className="text-color">Cadastro</Typography>
-                  </Link> */}
+                  </Link>
                 </Box>
               )}
             </Box>
@@ -250,17 +264,18 @@ function ResponsiveAppBar() {
             >
               <List>
                 {settings.map((setting) => (
-                <ListItem key={setting.name}>
-                <Link
-                  variant="button"
-                  underline="none"
-                  href={setting.href}
-                >
-                  {setting.name}
-                </Link>
-              </ListItem>
-
-              ))} 
+                  <ListItem key={setting.name}>
+                    <Link
+                      onClick={goLogout}
+                      variant="button"
+                      underline="none"
+                      href={setting.href}
+                    >
+                      {setting.name}
+                      {/* {setting.name === 'LOGOUT' ? (goLogout) : ('') } */}
+                    </Link>
+                  </ListItem>
+                ))}
               </List>
             </Menu>
           </Box>
