@@ -54,7 +54,7 @@ function CadastroCategoria() {
             try {
                 await put("/categoria", categoria, setCategoria, {
                     headers: {
-                        'Authorization': token
+                        'Authorization': token,
                     },
                 })
                 alert("Categoria atualizada com sucesso!")
@@ -63,10 +63,10 @@ function CadastroCategoria() {
                 alert("Falha ao atualizar a categoria!")
             }
         } else {
-            try {
+            try { console.log(categoria)
                 await post("/categoria", categoria, setCategoria, {
                     headers: {
-                        'Authorization': token
+                        'Authorization': token,
                     },
                 })
                 alert("Categoria cadastrada com sucesso!")
