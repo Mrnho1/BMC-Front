@@ -15,12 +15,11 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import "./Navbar.css"
 
-const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Cadastrar Categoria','Cadastro'];
+const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Cadastrar Categoria', 'Cadastrar Produto','Cadastro'];
 
-const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/categoria', '/cadastro'];
+const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/cadastroCategoria', '/cadastroProduto', '/cadastro'];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 
 
 function ResponsiveAppBar() {

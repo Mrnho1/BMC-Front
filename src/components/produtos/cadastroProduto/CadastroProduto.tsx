@@ -4,14 +4,17 @@ import { getAll, getById, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { Categoria } from '../../../models/Categoria';
-import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, FormControl, FormHelperText, Grid, InputLabel, MenuItem, TextField, Typography } from '@mui/material';
 import { Produto } from '../../../models/Produto';
+import { Select } from '@material-ui/core';
 
-function CadastroCategoria() {
+function CadastroProduto() {
     const history = useNavigate();
+    const [categorias, setCategorias] = useState<Categoria[]>([])
     const token = useSelector<TokenState, TokenState['tokens']>(
         (state) => state.tokens
     )
+    
     const { id } = useParams<{ id: string }>();
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
@@ -45,7 +48,7 @@ function CadastroCategoria() {
         })
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         getCategoria();
         if (id !== undefined) {
             getProdutoById(id)
@@ -54,11 +57,11 @@ function CadastroCategoria() {
 
     async function getCategoria() {
         await getAll("/categoria", setCategoria, {
-          headers: {
-            Authorization: token,
-          },
+            headers: {
+                Authorization: token,
+            },
         });
-      }
+    }
 
     useEffect(() => {
         if (token === '') {
@@ -96,56 +99,77 @@ function CadastroCategoria() {
         }
     }
 
-    // CONTINUAR DEPOIS DO ALMOÇO
-
     return (
         <>
-            <Grid container justifyContent='center'>
-                <Grid item xs={4}>
+            <Grid container>
+                <Grid item xs={12} className="nomeProduto">
                     <Typography
-                        className='textoCadastro'
-                        variant='h3'
-                        gutterBottom
+                        variant="h3"
+                        component="h1"
+                        align="center"
+                        className="textoCP"
                     >
-                        {categoria.id !== 0 ? 'Editar categoria' : 'Cadastrar categoria'}
+                        {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
                     </Typography>
                     <form onSubmit={onSubmit}>
-                        <Box display='flex' flexDirection='column' gap={2}>
-                            <TextField
-                                label='Tipo'
-                                name='tipo'
-                                value={categoria.tipo}
-                                onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                    updateCategoria(event)
-                                }
-                            />
-                            <Box display='flex' flexDirection='column' gap={2}>
-                                <TextField
-                                    label='Cor'
-                                    name='cor'
-                                    value={categoria.cor}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                        updateCategoria(event)
-                                    }
-                                />
-                                <Box display='flex' flexDirection='column' gap={2}>
-                                    <TextField
-                                        label='Fluxo'
-                                        name='fluxo'
-                                        value={categoria.fluxo}
-                                        onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                            updateCategoria(event)
-                                        }
-                                    />
-                                    <Button
-                                        type='submit'
-                                        variant='contained'
-                                        disabled={((categoria.tipo.length && categoria.cor.length && categoria.fluxo.length) < 3)}>
-                                        Finalizar
-                                    </Button>
-                                </Box>
-                            </Box>
-                        </Box>
+                        <TextField
+                            value={produto.nome}
+                            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                                updateProduto(event)
+                            }
+                            id="nome"
+                            label="nome"
+                            variant="outlined"
+                            name="nome"
+                            margin="normal"
+                            fullWidth
+                        />
+                        <TextField
+                            value={produto.preco}
+                            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                                updateProduto(event)
+                            }
+                            id="preco"
+                            label="preco"
+                            name="preco"
+                            variant="outlined"
+                            margin="normal"
+                            fullWidth
+                            multiline
+                            minRows={4}
+                        />
+
+                        <FormControl className="formulario">
+                            <InputLabel id="demo-simple-select-helper-label">
+                                Categoria
+                            </InputLabel>
+                            <Select
+                                labelId="demo-simple-select-helper-label"
+                                id="demo-simple-select-helper"
+                                onChange={(event) =>
+                                    getById(`/categoria/${event.target.value}`, setCategoria, {
+                                        headers: {
+                                            Authorization: token,
+                                        },
+
+                                    })
+                                }>
+                                {categorias.map((categoria) => (
+                                    <div> <MenuItem value={categoria.id}>{categoria.tipo}</MenuItem>
+                                        <MenuItem value={categoria.id}>{categoria.cor}</MenuItem>
+                                        <MenuItem value={categoria.id}>{categoria.fluxo}</MenuItem></div>
+                                ))}
+                            </Select>
+                            <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                disabled={categoria.id === 0}
+                                className="buttonProduto"
+                            >
+                                Finalizar
+                            </Button>
+                        </FormControl>
                     </form>
                 </Grid>
             </Grid>
@@ -153,4 +177,4 @@ function CadastroCategoria() {
     )
 }
 
-export default CadastroCategoria
+export default CadastroProduto
