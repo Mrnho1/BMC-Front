@@ -139,14 +139,14 @@ function CadastroProduto() {
                         />
 
                         <FormControl className="formulario">
-                            <InputLabel id="demo-simple-select-helper-label">
+                            <InputLabel required id="demo-simple-select-helper-label">
                                 Categoria
                             </InputLabel>
                             <Select
                                 labelId="demo-simple-select-helper-label"
                                 id="demo-simple-select-helper"
                                 onChange={(event) =>
-                                    getById(`/categoria/${event.target.value}`, setCategorias, {
+                                    getById(`/categoria/${event.target.value}`, setCategoria, {
                                         headers: {
                                             Authorization: token,
                                         },
