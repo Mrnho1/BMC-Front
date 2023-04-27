@@ -3,12 +3,16 @@ import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
 import ImgHome from "../../assets/img/figuraHome.png";
-import Navbartwo from "../../components/staticos/navbartwo/Navbartwo";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> 750d2ef796d582c0c6617454892048df161f6dad
 const history = useNavigate();
 const token = useSelector<TokenState, TokenState["tokens"]>(
   (state) => state.tokens
@@ -24,7 +28,6 @@ useEffect(() => {
 
   return (
     <>
-     <Navbartwo/>
       <Grid
         container
         direction="row"
