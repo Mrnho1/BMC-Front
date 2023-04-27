@@ -218,6 +218,7 @@ function CadastroProduto() {
                     {produto.id !== 0 ? "Editar" : "Cadastrar"}
                   </Button>
 
+
                   <Button
                     variant="contained"
                     color="secondary"
@@ -234,5 +235,6 @@ function CadastroProduto() {
       </Box>
     </>
   );
+
 }
 export default CadastroProduto;

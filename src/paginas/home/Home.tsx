@@ -3,7 +3,6 @@ import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
 import ImgHome from "../../assets/img/figuraHome.png";
-import Navbartwo from "../../components/staticos/navbartwo/Navbartwo";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
@@ -25,7 +24,6 @@ useEffect(() => {
 
   return (
     <>
-      <Navbartwo/>
       <Grid
         container
         direction="row"
