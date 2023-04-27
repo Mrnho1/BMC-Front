@@ -7,5 +7,5 @@ export interface Produto {
     img: string;
     descricao: string;
     data: string;
-    categoria: Categoria | null
+    categoria?: Categoria | null
 }
