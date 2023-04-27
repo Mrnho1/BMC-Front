@@ -8,11 +8,7 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
-<<<<<<< HEAD
-=======
 
-  
->>>>>>> 750d2ef796d582c0c6617454892048df161f6dad
 const history = useNavigate();
 const token = useSelector<TokenState, TokenState["tokens"]>(
   (state) => state.tokens
