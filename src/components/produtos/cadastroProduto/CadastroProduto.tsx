@@ -145,6 +145,8 @@ function CadastroProduto() {
                   variant="outlined"
                   name="descricao"
                   margin="normal"
+                  multiline
+                  minRows={3}
                   fullWidth
                 />
                 <TextField
