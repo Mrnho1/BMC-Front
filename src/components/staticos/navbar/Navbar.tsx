@@ -15,9 +15,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import "./Navbar.css"
 
-const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Cadastrar Categoria', 'Cadastrar Produto','Cadastro'];
+const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Categorias', 'Cadastrar Categoria', 'Cadastrar Produto','Cadastro'];
 
-const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/cadastroCategoria', '/cadastroProduto', '/cadastro'];
+const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/categoria', '/cadastroCategoria', '/cadastroProduto', '/cadastro'];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -130,14 +130,10 @@ function ResponsiveAppBar() {
               >
                 <Link to={pageslinks[pages.indexOf(page)]} className='link'>
                   {page}
-
                 </Link>
-
-
-
-
               </Button>
             ))}
+
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
