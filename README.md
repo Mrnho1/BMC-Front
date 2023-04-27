@@ -107,5 +107,5 @@ Se você quiser ajudar, você pode nos ajudar de várias maneiras 🤝:
 - Você pode contribuir com feedbacks e ideias 💡
 - Você pode nos ajudar a divulgar o nosso projeto 📢
 
-Qualquer ajuda será muito bem-vinda 🤗!
+Qualquer ajuda será muito bem-vinda. 🤗!
 

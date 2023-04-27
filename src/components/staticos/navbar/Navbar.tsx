@@ -15,12 +15,11 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import "./Navbar.css"
 
-const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Cadastro'];
+const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Categorias', 'Cadastrar Categoria', 'Cadastrar Produto','Cadastro'];
 
-const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/cadastro'];
+const pageslinks = ['/home', '/sobre', '/contato', '/produtos', '/sobre', '/categoria', '/cadastroCategoria', '/cadastroProduto', '/cadastro'];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 
 
 function ResponsiveAppBar() {
@@ -43,11 +42,11 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static"  style={{backgroundColor:'#c75f77'}}>
+    <AppBar position="static" style={{ backgroundColor: '#c75f77' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <img src="https://avatars.githubusercontent.com/u/129092790?s=96&v=4" alt="Logo da marca BMC" style={{width:'70px', padding:'10px'}} />
+          <img src="https://avatars.githubusercontent.com/u/129092790?s=96&v=4" alt="Logo da marca BMC" style={{ width: '70px', padding: '10px' }} />
           {/* <Typography
             variant="h6"
             noWrap
@@ -132,7 +131,6 @@ function ResponsiveAppBar() {
                 <Link to={pageslinks[pages.indexOf(page)]} className='link'>
                   {page}
                 </Link>
-
               </Button>
             ))}
 
@@ -145,9 +143,9 @@ function ResponsiveAppBar() {
               </IconButton>
             </Tooltip> */}
             <Link to={'/login'} className='link'>
-            <Typography className='text-color'>
-            LOGOUT
-            </Typography>
+              <Typography className='text-color'>
+                LOGOUT
+              </Typography>
             </Link>
             <Menu
               sx={{ mt: '45px' }}
