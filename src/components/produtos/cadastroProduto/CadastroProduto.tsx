@@ -35,7 +35,7 @@ function CadastroProduto() {
   const [produto, setProduto] = useState<Produto>({
     id: 0,
     nome: "",
-    preco: null,
+    preco: "",
     img: "",
     categoria: null,
   });
@@ -47,7 +47,6 @@ function CadastroProduto() {
       categoria: categoria,
     });
   }
-
   async function getProdutoById(id: string) {
     getById(`/produtos/${id}`, setProduto, {
       headers: {

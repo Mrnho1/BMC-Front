@@ -22,7 +22,6 @@ useEffect(() => {
   }
 }, [token]);
 
-
   return (
     <>
       <Grid
