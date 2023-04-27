@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Home.css";
 import ImgHome from "../../assets/img/figuraHome.png";
-import { Link } from "react-router-dom";
-import Carousel from "../../components/staticos/carousel/Carousel";
 import Navbartwo from "../../components/staticos/navbartwo/Navbartwo";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
+
+const history = useNavigate();
+const token = useSelector<TokenState, TokenState["tokens"]>(
+  (state) => state.tokens
+);
+
+useEffect(() => {
+  if (token == "") {
+    alert("Você precisa estar logado");
+    history("/login");
+  }
+}, [token]);
+
+
   return (
     <>
       <Navbartwo/>
