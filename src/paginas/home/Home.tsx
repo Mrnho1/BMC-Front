@@ -6,6 +6,7 @@ import ImgHome from "../../assets/img/figuraHome.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
+import Navbartwo from '../../components/staticos/navbartwo/Navbartwo';
 
 function Home() {
 
@@ -24,6 +25,7 @@ useEffect(() => {
 
   return (
     <>
+      <Navbartwo/>
       <Grid
         container
         direction="row"
