@@ -15,32 +15,33 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import './CadastroProduto.css'
+import "./CadastroProduto.css";
 
 function CadastroProduto() {
   const history = useNavigate();
-  const [categorias, setCategorias] = useState<Categoria[]>([]);
+  const [categorias, setCategorias] = useState([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
 
-  const { id } = useParams<{ id: string }>();
-  const [categoria, setCategoria] = useState<Categoria>({
+  const { id } = useParams();
+  const [categoria, setCategoria] = useState({
     id: 0,
     tipo: "",
     cor: "",
     fluxo: "",
   });
 
-  const [produto, setProduto] = useState<Produto>({
+  const [produto, setProduto] = useState({
     id: 0,
     nome: "",
+    descricao: "",
     preco: null,
     img: "",
     categoria: null,
   });
 
-  function updateProduto(event: ChangeEvent<HTMLInputElement>) {
+  function updateProduto(event) {
     setProduto({
       ...produto,
       [event.target.name]: event.target.value,
@@ -48,7 +49,7 @@ function CadastroProduto() {
     });
   }
 
-  async function getProdutoById(id: string) {
+  async function getProdutoById(id) {
     getById(`/produtos/${id}`, setProduto, {
       headers: {
         Authorization: token,
@@ -78,7 +79,7 @@ function CadastroProduto() {
     }
   }, [token]);
 
-  async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+  async function onSubmit(event) {
     event.preventDefault();
     if (id !== undefined) {
       try {
@@ -121,21 +122,34 @@ function CadastroProduto() {
               {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <form onSubmit={onSubmit}>
+          <Grid item xs={12} className="formProduto">
+            <form onSubmit={onSubmit} style={{display: "flex", justifyContent: "center"}}>
               <Box
                 sx={{
+
                   display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  "& .MuiTextField-root": { m: 1, width: "40ch" },
+                    flexWrap: "wrap",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    boxShadow: "0px 0px 1px 1px black",
+                    borderRadius: "5px",
+                    width: "50ch",
+                    padding: "20px",
+                    color: "black",
+                    backgroundColor: "#f5f5f5",
                 }}
-              >
+                noValidate
+                autoComplete="on"
+                >
+
                 <TextField
                   value={produto.nome}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
+                  onChange={(event) => updateProduto(event)}
                   id="nome"
                   label="Nome"
                   variant="outlined"
@@ -144,95 +158,66 @@ function CadastroProduto() {
                   fullWidth
                 />
                 <TextField
-                  value={produto.descricao}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
-                  id="descricao"
-                  label="Descricao"
-                  name="descricao"
-                  variant="outlined"
-                  margin="normal"
-                  multiline
-                  minRows={4}
-                  fullWidth
-                />
+                    value={produto.descricao}
+                    onChange={(event) => updateProduto(event)}
+                    id="descricao"
+                    label="Descrição"
+                    variant="outlined"
+                    name="descricao"
+                    margin="normal"
+                    fullWidth
+                    />
                 <TextField
-                  value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
-                  id="preco"
-                  label="preco"
-                  name="preco"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                />
+                    value={produto.preco}
+                    onChange={(event) => updateProduto(event)}
+                    id="preco"
+                    label="Preço"
+                    variant="outlined"
+                    name="preco"
+                    margin="normal"
+                    fullWidth
+                    />
                 <TextField
-                  value={produto.img}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
-                  id="img"
-                  label="img"
-                  name="img"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                />
-                <FormControl variant="outlined" margin="normal" className="formularioCategoria">
-                  <InputLabel id="demo-simple-select-helper-label">
+                    value={produto.img}
+                    onChange={(event) => updateProduto(event)}
+                    id="img"
+                    label="Imagem"
+                    variant="outlined"
+                    name="img"
+                    margin="normal"
+                    fullWidth
+                    />
+                <FormControl sx={{ m: 1, minWidth: 120 , width: "40ch", bottom: "20px", top: "20px"}}>
+                    <InputLabel id="demo-simple-select-helper-label">
                     Categoria
-                  </InputLabel>
-                  <Select
+                    </InputLabel>
+                    <Select
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"
-                    onChange={(event) =>
-                      getById(
-                        `/categoria/${event.target.value}`,
-                        setCategoria,
-                        {
-                          headers: {
-                            Authorization: token,
-                          },
-                        }
-                      )
-                    }
-                  >
-                    {categorias.map((categorias) => (
-                      <MenuItem value={categorias.id}>
-                        {categorias.tipo} {categorias.fluxo} {categorias.cor}
-                      </MenuItem>
+                    value={categoria}
+                    label="Categoria"
+                    onChange={(event) => setCategoria(event.target.value)}
+                    >
+                    {categorias.map((categoria: Categoria) => (
+                        <MenuItem value={categoria}>{categoria.tipo}</MenuItem>
                     ))}
-                  </Select>
+                    </Select>
                 </FormControl>
-
-                <Box className="botao">
-                  <Button
+                <Button style={{marginBottom: "20px", marginTop: "50px", backgroundColor: "#c75f77", color: "white", boxShadow:  "0px 0px 1px 1px black", borderRadius: "5px"}}
                     type="submit"
                     variant="contained"
                     color="primary"
-                    size="large"
-                  >
+                    className="botao"
+                >
                     {produto.id !== 0 ? "Editar" : "Cadastrar"}
-                  </Button>
-
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="large"
-                    onClick={() => history("/produtos")}
-                  >
-                    Cancelar
-                  </Button>
+                </Button>
                 </Box>
-              </Box>
             </form>
-          </Grid>
+            </Grid>
         </Grid>
-      </Box>
+        </Box>
     </>
-  );
+    );
 }
+
 export default CadastroProduto;
