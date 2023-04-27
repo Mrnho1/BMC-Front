@@ -41,72 +41,82 @@ export default function Navbartwo() {
   return (
     <Box sx={{ padding: 0, margin: 0 }}>
       <AppBar position="static" style={{ backgroundColor: "#78a493" }}>
-      <Container maxWidth="xl">
-        <Toolbar
-          sx={{
-            justifyContent: "center",
-          }}
-        >
-          <Box sx={{ justifyContent: "center", flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+        <Container maxWidth="xl">
+          <Toolbar
+            sx={{
+              justifyContent: "center",
+            }}
+          >
+            <Box
               sx={{
-                display: { xs: "block", md: "none" },
+                justifyContent: "center",
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
               }}
             >
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {pagesLinksTwo.map((pageTw) => (
+                  <List>
+                    <MenuItem key={pageTw.href} onClick={handleCloseNavMenu}>
+                      <ListItem>
+                        <Link href={pageTw.href}>
+                          <Typography
+                            textAlign="center"
+                            className="botoesNavbarTwo"
+                          >
+                            {pageTw.name}
+                          </Typography>
+                        </Link>
+                      </ListItem>
+                    </MenuItem>
+                  </List>
+                ))}
+              </Menu>
+            </Box>
 
-
-              {pagesLinksTwo.map((pageTw) => (
-                <List>
-                  <MenuItem key={pageTw.href} onClick={handleCloseNavMenu}>
-                    <ListItem>
-                      <Link href={pageTw.href}>
-                        <Typography textAlign="center">
-                          {pageTw.name}
-                        </Typography>
-                      </Link>
-                    </ListItem>
-                  </MenuItem>
-                </List>
-              ))}
-            </Menu>
-          </Box>
-
-          <Box sx={{ justifyContent: "center", flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
-            {pagesLinksTwo.map((item) => (
-              <Button>
-                
+            <Box
+              sx={{
+                justifyContent: "center",
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              {pagesLinksTwo.map((item) => (
+                <Button>
                   <Link href={item.href} marginX={20}>
-                  {item.name}
-                </Link>
-                
-                
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
+                    {item.name}
+                  </Link>
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
         </Container>
       </AppBar>
     </Box>
