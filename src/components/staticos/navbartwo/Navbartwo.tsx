@@ -100,7 +100,6 @@ export default function Navbartwo() {
                 ))}
               </Menu>
             </Box>
-
             <Box
               sx={{
                 justifyContent: "center",
