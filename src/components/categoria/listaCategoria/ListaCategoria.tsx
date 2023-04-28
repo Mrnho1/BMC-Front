@@ -6,6 +6,7 @@ import { Categoria } from '../../../models/Categoria'
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokensReducer'
 import { getAll } from '../../../services/Service'
+import { CategoryOutlined } from '@mui/icons-material'
 
 export default function listaCategoria() {
     const [categorias, setCategorias] = useState<Categoria[]>([])
@@ -13,29 +14,30 @@ export default function listaCategoria() {
         (state) => state.tokens
     )
     const history = useNavigate();
+
     async function getAllCategorias() {
         await getAll('/categoria', setCategorias, {
             headers: {
                 'Authorization': token
             }
-        })
+        });
     }
 
     useEffect(() => {
         getAllCategorias();
-    },[token])
+    },[categorias.length])
 
     useEffect(() => {
         if(token === ''){
             alert ('Efetue o Login')
             history('/login')
         }
-    })
+    }, [token])
 
 
   return (
     <>
-      {categorias.map((categorias) => (
+      {categorias.map((categoria) => (
         <Box m={4}>
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
@@ -44,22 +46,22 @@ export default function listaCategoria() {
                 color="text.secondary"
                 gutterBottom
               >
-                Tema:
+                Categoria:
               </Typography>
               <Typography variant="h5" component="div">
-                {categorias.tipo}
+                {categoria.tipo}
               </Typography>
               <Typography variant="h5" component="div">
-                {categorias.cor}
+                {categoria.cor}
               </Typography>
               <Typography variant="h5" component="div">
-                {categorias.fluxo}
+                {categoria.fluxo}
               </Typography>
             </CardContent>
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                   <Box mx={1}>
-                  <Link to={`/editar-categoria/${categorias.id}`}>
+                  <Link to={`/editar-categoria/${categoria.id}`}>
                     <Button
                       variant="contained"
                       size="small"
@@ -68,7 +70,7 @@ export default function listaCategoria() {
                     </Button>
                     </Link>
                   </Box>
-                <Link to={`/deletar-tema/${categorias.id}`}>
+                <Link to={`/deletar-categoria/${categoria.id}`}>
                   <Box mx={1}>
                     <Button
                       variant="contained"
