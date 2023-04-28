@@ -15,9 +15,12 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import './CadastroProduto.css'
-import CurrencyInput from 'react-currency-input-field';
-
+import './CadastroProduto.css';
+import {
+  CurrencyInput, 
+  Currencies, 
+  Locales 
+} from 'input-currency-react';
 
 
 function CadastroProduto() {
@@ -38,8 +41,10 @@ function CadastroProduto() {
   const [produto, setProduto] = useState<Produto>({
     id: 0,
     nome: "",
-    preco: "",
+    preco: 0,
     img: "",
+    descricao: "",
+    data: "",
     categoria: null,
   });
 
@@ -109,12 +114,13 @@ function CadastroProduto() {
     }
   }
 
-  const currencies = [
-    {
-      value: 'BR',
-      label: 'R$',
-    }
-  ];
+  // const MyCustomForm = () => {
+  //   const { 
+  //       control,
+  //       handleSubmit, 
+  //   } = useForm();
+
+    const handleOnChange = (inputElement, maskedValue, value) => {};
 
   return (
     <>
@@ -166,19 +172,7 @@ function CadastroProduto() {
                   minRows={4}
                   fullWidth
                 />
-                <TextField
-                  value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
-                  id="preco"
-                  label="preco"
-                  name="preco"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                />
-                <TextField
+                {/* <TextField
                   value={produto.img}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
                     updateProduto(event)
@@ -189,7 +183,17 @@ function CadastroProduto() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-                />
+                /> */}
+                
+          <CurrencyInput className="formCadastro"
+            value={ "000" } 
+            options={{allowNegative: false, locale: Locales["Portuguese (Brazil)"], // Format Type
+            i18nCurrency: Currencies["Brazilian Real"], precision: 2,
+            style: "currency"}}
+            onChangeEvent={handleOnChange}
+            required={true}
+          />
+          </Box>
                 <FormControl variant="outlined" margin="normal" className="formularioCategoria">
                   <InputLabel id="demo-simple-select-helper-label">
                     Categoria
@@ -236,7 +240,6 @@ function CadastroProduto() {
                     Cancelar
                   </Button>
                 </Box>
-              </Box>
             </form>
           </Grid>
         </Grid>

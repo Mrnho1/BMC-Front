@@ -1268,10 +1268,12 @@ __metadata:
     "@types/redux": 3.6.0
     "@vitejs/plugin-react": ^3.1.0
     axios: 0.21.4
+    input-currency-react: ^1.0.1
     react: ^17
     react-alice-carousel: ^2.7.1
     react-currency-input-field: ^3.6.10
     react-dom: ^17
+    react-input-mask: ^2.0.4
     react-redux: 7.2.5
     react-router-dom: 6
     react-swipeable-views: ^0.14.0
@@ -1906,6 +1908,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"input-currency-react@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "input-currency-react@npm:1.0.1"
+  peerDependencies:
+    react: ">=16"
+  checksum: bbd61196bc3771b6f7f9225b5c7763952eb177a6903a509f7657499e9b24a68db6a2493c918b66d37a0f58b272035b829e42bf8efd3df43b70af47021509c555
+  languageName: node
+  linkType: hard
+
+"invariant@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "invariant@npm:2.2.4"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
+  languageName: node
+  linkType: hard
+
 "ip@npm:^2.0.0":
   version: 2.0.0
   resolution: "ip@npm:2.0.0"
@@ -2508,6 +2528,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-input-mask@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "react-input-mask@npm:2.0.4"
+  dependencies:
+    invariant: ^2.2.4
+    warning: ^4.0.2
+  peerDependencies:
+    react: ">=0.14.0"
+    react-dom: ">=0.14.0"
+  checksum: 429b46c54c9572fe2d4856c399c41c3b02b3ac398adde88e6f8f5f6dd95999528551d84222e0925a538eec775b2330e7b56c40dd79549addfe8b10e901ed4446
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -3052,7 +3085,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"warning@npm:^4.0.1":
+"warning@npm:^4.0.1, warning@npm:^4.0.2":
   version: 4.0.3
   resolution: "warning@npm:4.0.3"
   dependencies:
