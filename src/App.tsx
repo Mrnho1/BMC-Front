@@ -17,6 +17,8 @@ import { Provider } from 'react-redux';
 import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
 import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCategoria";
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
 
   return (
     <Provider store={store}>
+      <ToastContainer/>
       <BrowserRouter>
         <ButtonAppBar />
         <div style={{ minHeight: "100vh" }}>
