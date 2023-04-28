@@ -117,6 +117,22 @@ function CadastroProduto() {
 
   const handleOnChange = (inputElement, maskedValue, value) => {};
 
+  const mask = (
+    <CurrencyInput
+      variant="outlined"
+      value={"000"}
+      options={{
+        allowNegative: false,
+        locale: Locales["Portuguese (Brazil)"], // Format Type
+        i18nCurrency: Currencies["Brazilian Real"],
+        precision: 2,
+        style: "currency",
+      }}
+      onChangeEvent={handleOnChange}
+      onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+      required={true}
+    />
+  );
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -132,8 +148,11 @@ function CadastroProduto() {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <form onSubmit={onSubmit} style={{ display: "flex", justifyContent: "center" }}>
-              <Box className='formCadastro'>
+            <form
+              onSubmit={onSubmit}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <Box className="formCadastro">
                 <TextField
                   value={produto.nome}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -160,7 +179,7 @@ function CadastroProduto() {
                   minRows={4}
                   fullWidth
                 />
-                {/* <TextField
+                <TextField
                   value={produto.img}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
                     updateProduto(event)
@@ -171,50 +190,60 @@ function CadastroProduto() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-                /> */}
-                
+                />
+
                   <CurrencyInput
                   variant="outlined"
-                    value={"000"}
-                    options={{
-                      allowNegative: false,
-                      locale: Locales["Portuguese (Brazil)"], // Format Type
-                      i18nCurrency: Currencies["Brazilian Real"],
-                      precision: 2,
-                      style: "currency",
-                    }}
-                    onChangeEvent={handleOnChange}
-                    required={true}
-                  />
-                
-        
-              <FormControl
-                variant="outlined"
-                margin="normal"
-                className="formularioCategoria"
-              >
-                <InputLabel id="demo-simple-select-helper-label">
-                  Categoria
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-helper-label"
-                  id="demo-simple-select-helper"
-                  onChange={(event) =>
-                    getById(`/categoria/${event.target.value}`, setCategoria, {
-                      headers: {
-                        Authorization: token,
-                      },
-                    })
+                  value={""}
+                  options={{
+                    allowNegative: false,
+                    locale: Locales["Portuguese (Brazil)"], // Format Type
+                    i18nCurrency: Currencies["Brazilian Real"],
+                    precision: 2,
+                    style: "currency",
+                  }}
+                  onChangeEvent={handleOnChange}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
                   }
+                  autoFocus={true}
+                  required={true}
                 >
-                  {categorias.map((categorias) => (
-                    <MenuItem value={categorias.id}>
-                      {categorias.tipo} {categorias.fluxo} {categorias.cor}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                  <TextField fullWidth></TextField>
+                 </CurrencyInput>
 
+
+                
+                <FormControl
+                  variant="outlined"
+                  margin="normal"
+                  className="formularioCategoria"
+                >
+                  <InputLabel id="demo-simple-select-helper-label">
+                    Categoria
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper"
+                    onChange={(event) =>
+                      getById(
+                        `/categoria/${event.target.value}`,
+                        setCategoria,
+                        {
+                          headers: {
+                            Authorization: token,
+                          },
+                        }
+                      )
+                    }
+                  >
+                    {categorias.map((categorias) => (
+                      <MenuItem value={categorias.id}>
+                        {categorias.tipo} {categorias.fluxo} {categorias.cor}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
 
                 <Button
                   type="submit"
