@@ -1,21 +1,25 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
+import '../carousel/Carousel.css'
 
 
 
 function Carousel() {
   const items = [
-    <>
-      <img src="https://github.com/tjfaccipieri.png" alt="" />
-      <h2>Thiago Faccipieri</h2>
-    </>,
-    <img className='imgCar' src="https://images.pexels.com/photos/7282104/pexels-photo-7282104.jpeg" alt="" />,
-    <img className='imgCar' src="https://cdn.discordapp.com/attachments/1070726742672679023/1101221857723687002/Captura_de_Tela_283.png" alt="" />,
-    <img className='imgCar' src="https://github.com/JaineSantos0.png" alt="" />,
-    <img className='imgCar' src="https://github.com/ElizangelaXavierS.png" alt="" />,
+    <img className='imgCar' src='https://i.imgur.com/T6qYVJR.png' alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/eWrfSlT.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/rFj22Vd.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/VRGhATR.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/xquMUpQ.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/7CXltqL.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/BsKfZn8.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/Z9XTO7S.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/98wCNx5.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/XWxCHXK.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/Ke3yTPm.png" alt="" />,
+    <img className='imgCar' src="https://i.imgur.com/r42ujtF.png" alt="" />,
   ]
 
   const responsivo = {
@@ -23,7 +27,7 @@ function Carousel() {
         items: 1,
     },
     1024: {
-        items: 2,
+        items: 3,
         itemsFit: 'contain',
     }
   }
@@ -38,7 +42,7 @@ function Carousel() {
       responsive={responsivo}
       disableDotsControls={true}
       disableButtonsControls={true}
-      autoPlayInterval={500} />
+      autoPlayInterval={1500} />
   );
 }
 
