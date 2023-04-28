@@ -15,13 +15,8 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import './CadastroProduto.css';
-import {
-  CurrencyInput, 
-  Currencies, 
-  Locales 
-} from 'input-currency-react';
-
+import "./CadastroProduto.css";
+import { CurrencyInput, Currencies, Locales } from "input-currency-react";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -115,12 +110,12 @@ function CadastroProduto() {
   }
 
   // const MyCustomForm = () => {
-  //   const { 
+  //   const {
   //       control,
-  //       handleSubmit, 
+  //       handleSubmit,
   //   } = useForm();
 
-    const handleOnChange = (inputElement, maskedValue, value) => {};
+  const handleOnChange = (inputElement, maskedValue, value) => {};
 
   return (
     <>
@@ -184,62 +179,68 @@ function CadastroProduto() {
                   margin="normal"
                   fullWidth
                 /> */}
-                
-          <CurrencyInput className="formCadastro"
-            value={ "000" } 
-            options={{allowNegative: false, locale: Locales["Portuguese (Brazil)"], // Format Type
-            i18nCurrency: Currencies["Brazilian Real"], precision: 2,
-            style: "currency"}}
-            onChangeEvent={handleOnChange}
-            required={true}
-          />
-          </Box>
-                <FormControl variant="outlined" margin="normal" className="formularioCategoria">
-                  <InputLabel id="demo-simple-select-helper-label">
-                    Categoria
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-helper-label"
-                    id="demo-simple-select-helper"
-                    onChange={(event) =>
-                      getById(
-                        `/categoria/${event.target.value}`,
-                        setCategoria,
-                        {
-                          headers: {
-                            Authorization: token,
-                          },
-                        }
-                      )
-                    }
-                  >
-                    {categorias.map((categorias) => (
-                      <MenuItem value={categorias.id}>
-                        {categorias.tipo} {categorias.fluxo} {categorias.cor}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
+                <div>
+                  <CurrencyInput
+                    className="formCadastro"
+                    value={"000"}
+                    options={{
+                      allowNegative: false,
+                      locale: Locales["Portuguese (Brazil)"], // Format Type
+                      i18nCurrency: Currencies["Brazilian Real"],
+                      precision: 2,
+                      style: "currency",
+                    }}
+                    onChangeEvent={handleOnChange}
+                    required={true}
+                  />
+                </div>
+              </Box>
+              <FormControl
+                variant="outlined"
+                margin="normal"
+                className="formularioCategoria"
+              >
+                <InputLabel id="demo-simple-select-helper-label">
+                  Categoria
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  onChange={(event) =>
+                    getById(`/categoria/${event.target.value}`, setCategoria, {
+                      headers: {
+                        Authorization: token,
+                      },
+                    })
+                  }
+                >
+                  {categorias.map((categorias) => (
+                    <MenuItem value={categorias.id}>
+                      {categorias.tipo} {categorias.fluxo} {categorias.cor}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
 
-                <Box className="botao">
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                  >
-                    {produto.id !== 0 ? "Editar" : "Cadastrar"}
-                  </Button>
+              <Box className="botao">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                >
+                  {produto.id !== 0 ? "Editar" : "Cadastrar"}
+                </Button>
 
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="large"
-                    onClick={() => history("/produtos")}
-                  >
-                    Cancelar
-                  </Button>
-                </Box>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={() => history("/produtos")}
+                >
+                  Cancelar
+                </Button>
+              </Box>
             </form>
           </Grid>
         </Grid>
