@@ -6,6 +6,7 @@ import { Categoria } from '../../../models/Categoria';
 import { deleteId, getById } from '../../../services/Service';
 import { Box, CardContent } from '@mui/material';
 import { Button, Card, CardActions, Typography } from '@material-ui/core';
+import { toast } from 'react-toastify';
 
 function DeletarCategoria() {
 
@@ -18,7 +19,16 @@ function DeletarCategoria() {
     
       useEffect(() => {
         if (token === "") {
-          alert('Efetue o Login')
+          toast.info('Efetue o Login', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
           history("/login");
         }
       }, [token]);
@@ -43,7 +53,16 @@ function DeletarCategoria() {
               }
             })
             history('/categoria')
-            alert('Categoria deletada com sucesso')
+            toast.success('Categoria deletada com sucesso', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              });
         }
     
       function nao() {

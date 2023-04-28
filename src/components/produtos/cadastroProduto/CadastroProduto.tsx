@@ -22,6 +22,9 @@ import {
   Locales 
 } from 'input-currency-react';
 
+import "./CadastroProduto.css";
+import { Categoria } from "../../../models/Categoria";
+import { toast } from "react-toastify";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -80,7 +83,16 @@ function CadastroProduto() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Efetue o login");
+      toast.info('Efetue o login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   }, [token]);
@@ -94,10 +106,28 @@ function CadastroProduto() {
             Authorization: token,
           },
         });
-        alert("Produto atualizado com sucesso!");
+        toast.success('Produto atualizado com sucesso!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history("/produtos");
       } catch (error) {
-        alert("Falha ao atualizar o produto!");
+        toast.error('Falha ao atualizar o produto!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     } else {
       try {
@@ -106,10 +136,28 @@ function CadastroProduto() {
             Authorization: token,
           },
         });
-        alert("Produto cadastrado com sucesso!");
+        toast.success('Produto cadastrado com sucesso!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history("/produtos");
       } catch (error) {
-        alert("Falha ao cadastrar o produto!");
+        toast.error('Falha ao cadastrar o produto!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     }
   }

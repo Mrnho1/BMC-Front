@@ -6,6 +6,7 @@ import { Produto } from '../../../models/Produto';
 import { deleteId, getById } from '../../../services/Service';
 import { Box, Card } from '@mui/material';
 import { Button, CardActions, CardContent, Typography } from '@material-ui/core';
+import { toast } from 'react-toastify';
 
 function DeletarProduto() {
 
@@ -18,7 +19,16 @@ function DeletarProduto() {
     
       useEffect(() => {
         if (token === "") {
-         alert('Efetue o Login');
+         toast.info('Efetue o Login', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
           history("/login");
         }
       }, [token]);
@@ -43,7 +53,16 @@ function DeletarProduto() {
                 Authorization: token
               }
             })
-            alert('Postagem deletada com sucesso');
+            toast.success('Postagem deletada com sucesso', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              });
         }
     
       function nao() {

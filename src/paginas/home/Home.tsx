@@ -6,6 +6,8 @@ import ImgHome from "../../assets/img/figuraHome.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
+import TabProdutos from '../../components/produtos/tabProdutos/TabProdutos';
 
 function Home() {
 
@@ -17,7 +19,16 @@ const token = useSelector<TokenState, TokenState["tokens"]>(
 
 useEffect(() => {
   if (token == "") {
-    alert("Você precisa estar logado");
+    toast.info('Você precisa estar logado', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     history("/login");
   }
 }, [token]);
@@ -93,14 +104,7 @@ useEffect(() => {
         </Grid>
       </Grid>
       <Grid xs={12} className="postagens">
-        <Typography
-          variant="h5"
-          component="h5"
-          align="center"
-          className="sub-titulo"
-        >
-          EM BREVE NOVAS POSTAGENS!
-        </Typography>
+        <TabProdutos />
       </Grid>
     </>
   );
