@@ -16,6 +16,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import './CadastroProduto.css'
+import CurrencyInput from 'react-currency-input-field';
+
+
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -105,6 +108,13 @@ function CadastroProduto() {
       }
     }
   }
+
+  const currencies = [
+    {
+      value: 'BR',
+      label: 'R$',
+    }
+  ];
 
   return (
     <>
