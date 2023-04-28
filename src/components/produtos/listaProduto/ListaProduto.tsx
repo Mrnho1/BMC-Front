@@ -47,8 +47,6 @@ function ListaProduto() {
             
           </Grid>
           <Paper>
-
-         
             <div>
             <Grid container spacing={4} style={{ padding: 24, margin: 0, width: "100%", textAlign: "center", justifyContent: "center", display: "flex" }}>
             {produtos.map((produto) => (
