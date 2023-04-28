@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import TabProdutos from '../../components/produtos/tabProdutos/TabProdutos';
 
 function Home() {
 
@@ -73,19 +74,15 @@ useEffect(() => {
           </Grid>
 
           <Grid item>
-            <Box className="botaoHome">
-              {/* <Box marginX={'10px'}></Box> */}
-              <Grid alignItems="center" alignContent="center">
+            <Box className="botaoHome" marginX={15}>
                 <Link to={"/produtos"}>
-                  <Button fullWidth variant="outlined">
+                  <Button fullWidth variant="outlined" style={{margin: '10px'}}>
                     Veja os nossos produtos
                   </Button>
                 </Link>
-
                 <Button fullWidth variant="outlined">
                   Apoie o nosso trabalho
                 </Button>
-              </Grid>
             </Box>
           </Grid>
         </Grid>
@@ -97,19 +94,12 @@ useEffect(() => {
           md={6}
         >
           <Box paddingY={"10px"} display={"flex"} justifyContent={"center"}>
-            <img className="imgHome" src={ImgHome} alt="" width="80%" />
+            <img className="imgHome" src='/src/assets/BMC-IMAGENS/1.png' alt="" width="80%" />
           </Box>
         </Grid>
       </Grid>
       <Grid xs={12} className="postagens">
-        <Typography
-          variant="h5"
-          component="h5"
-          align="center"
-          className="sub-titulo"
-        >
-          EM BREVE NOVAS POSTAGENS!
-        </Typography>
+        <TabProdutos />
       </Grid>
     </>
   );
