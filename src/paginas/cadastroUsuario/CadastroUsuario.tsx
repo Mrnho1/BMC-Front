@@ -102,7 +102,7 @@ function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className="fundoCadastro">
       <Grid item xs={12} md={6} className="imagem2"></Grid>
       <Grid item xs={12} md={6} alignItems="center">
         <Box paddingX={10} marginBottom={5}>

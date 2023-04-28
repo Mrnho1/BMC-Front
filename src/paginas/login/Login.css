@@ -15,6 +15,11 @@
   text-decoration: none;
 }
 
+.btnCadastro {
+  color: #836177 !important;
+  font-weight: bold !important;
+}
+
 .tituloLogin {
   font-weight: bold !important;
   color: #836177 !important;

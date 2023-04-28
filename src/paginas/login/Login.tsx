@@ -126,7 +126,7 @@ function Login() {
               </Typography>
             </Box>
 
-            <Typography variant="subtitle1" gutterBottom align="center">
+            <Typography variant="subtitle1" gutterBottom align="center" className="btnCadastro">
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
