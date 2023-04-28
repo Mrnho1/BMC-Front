@@ -56,7 +56,7 @@ function ListaProduto() {
                   <Box boxShadow={4}>
                     <div className='produto' style={{ padding: "25px", margin: "15px" }}>
                       <h1>{produto.nome}</h1>
-                      <img  src={produto.img} alt={produto.nome} />
+                      <img src={produto.img} alt={produto.nome} className='imgProduto'/>
                       <h3>{produto.descricao}</h3>
                       <h3>{produto.preco}</h3>
                       <h3> Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'short'}).format(new Date(produto.data))}</h3>
@@ -71,7 +71,6 @@ function ListaProduto() {
                                 <Button variant='contained' size="small">Deletar</Button>
                             </Box>
                             </Link>
-                            
                             </Box>
                     </div>
                   </Box>

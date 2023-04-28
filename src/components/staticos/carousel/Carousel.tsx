@@ -12,10 +12,10 @@ function Carousel() {
       <img src="https://github.com/tjfaccipieri.png" alt="" />
       <h2>Thiago Faccipieri</h2>
     </>,
-    <img src="https://github.com/Wall90s.png" alt="" />,
-    <img src="https://github.com/kaluribr.png" alt="" />,
-    <img src="https://github.com/JaineSantos0.png" alt="" />,
-    <img src="https://github.com/ElizangelaXavierS.png" alt="" />,
+    <img className='imgCar' src="https://images.pexels.com/photos/7282104/pexels-photo-7282104.jpeg" alt="" />,
+    <img className='imgCar' src="https://cdn.discordapp.com/attachments/1070726742672679023/1101221857723687002/Captura_de_Tela_283.png" alt="" />,
+    <img className='imgCar' src="https://github.com/JaineSantos0.png" alt="" />,
+    <img className='imgCar' src="https://github.com/ElizangelaXavierS.png" alt="" />,
   ]
 
   const responsivo = {
@@ -38,7 +38,7 @@ function Carousel() {
       responsive={responsivo}
       disableDotsControls={true}
       disableButtonsControls={true}
-      autoPlayInterval={2500} />
+      autoPlayInterval={500} />
   );
 }
 
