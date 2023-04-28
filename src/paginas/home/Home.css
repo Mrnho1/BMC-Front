@@ -36,14 +36,6 @@
   padding: 3rem;
 }
 
-
-
-.botaoHome button:hover {
-  justify-content: center;
-  color: #ffffff;
-  background-color: #77a493;
-}
-
 .imgHome {
   border-radius: 50%
 }
