@@ -81,7 +81,6 @@ useEffect(() => {
                     Veja os nossos produtos
                   </Button>
                 </Link>
-
                 <Button fullWidth variant="outlined">
                   Apoie o nosso trabalho
                 </Button>
