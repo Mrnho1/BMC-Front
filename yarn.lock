@@ -1274,6 +1274,7 @@ __metadata:
     react-router-dom: 6
     react-swipeable-views: ^0.14.0
     react-swipeable-views-utils: ^0.14.0
+    react-toastify: 8.0.3
     react-use-localstorage: 3.5.3
     typescript: ^4.9.3
     vite: ^4.2.0
@@ -2595,6 +2596,18 @@ __metadata:
   peerDependencies:
     react: ^15.3.0 || ^16.0.0 || ^17.0.0
   checksum: 477bcf2d6b88312cd74c069c23aff48983209ce74b8d10c0d6adabf00795735f55a9c12dc3f23e5d7168308959f18c178d486821abec02e8a562295eada3568b
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:8.0.3":
+  version: 8.0.3
+  resolution: "react-toastify@npm:8.0.3"
+  dependencies:
+    clsx: ^1.1.1
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: a428f310bfb7b02dd67559ac6377509fe602e1c85bc831bf079a4694d56b1251e79ef9a4d1b2035a4564690aa4ede7de4886d6fe7ab311fb96dcd15a0e17b051
   languageName: node
   linkType: hard
 

@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-color: #ebeae5;
+  background-color: var(--color-OffWhite);
 }
 
 .titulo1 {
@@ -33,10 +33,6 @@
   justify-content: center;
   text-align: center;
   padding: 1rem;
-}
-
-.texto1 a {
-  color: #b4d121;
 }
 
 .texto2 {

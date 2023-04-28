@@ -10,6 +10,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from "@material-ui/core/styles";
 import { addToken } from "../../store/tokens/actions";
 import { useDispatch } from "react-redux";
+import {toast} from 'react-toastify';
 
 function Login() {
   const [token, setToken] = useState("");
@@ -38,10 +39,27 @@ function Login() {
 
     try {
       await login("/usuarios/logar", userLogin, setToken);
-      alert("Usuario logado com sucesso");
+      toast.success('Usuario logado com sucesso', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } catch (error) {
-      console.log(error);
-      alert("Usúario ou senha invalidos");
+      toast.error('Usúario ou senha invalidos', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
 
