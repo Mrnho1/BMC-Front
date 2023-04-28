@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 :root{
   --color-OffWhite: #EBEAE5;
@@ -11,45 +12,28 @@
 
 
 .caixa {
-  background-color: #EBEAE5;
+  background-color: var(--color-Purple);
 }
 
 .titulo-bem-vindo {
-  color: #c75f77 !important;
-  font-weight: bold !important;
+  color: var(--color-Yellow) !important;
+  font-weight: bolder !important;
   padding-top: 3rem;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .sub-titulo {
-  font-size: 30px !important;
+  font-size: 40px !important;
   color: #77a493;
   align-items: center;
   padding-bottom: 2rem;
+  font-weight: 400;
 }
 
 .botaoHome {
   justify-content: center;
   flex-direction: column;
   padding: 3rem;
-}
-
-.botaoHome button {
-  justify-content: center;
-  border-radius: 20px;
-  background-color: #836177;
-  color: #ffffff;
-  margin-bottom: 8px;
-
-}
-
-.botaoHome button:hover {
-  justify-content: center;
-  color: #ffffff;
-  background-color: #77a493;
-}
-
-.postagens {
-  background-color: white;
 }
 
 .imgHome {
