@@ -8,6 +8,7 @@ import { Produto } from '../../../models/Produto';
 import { Link, useNavigate } from 'react-router-dom'
 import { getAll } from '../../../services/Service'
 import './ListaProduto.css'
+import { toast } from 'react-toastify'
 
 function ListaProduto() {
 
@@ -32,7 +33,16 @@ function ListaProduto() {
   
     useEffect(() => {
       if(token === '') {
-        alert('Efetue o login')
+        toast.info('Efetue o login', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         history('/login')
       }
     }, [token])

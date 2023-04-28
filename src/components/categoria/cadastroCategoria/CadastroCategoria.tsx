@@ -6,6 +6,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { Categoria } from '../../../models/Categoria';
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import './CadastroCategoria.css'
+import { toast } from 'react-toastify';
 
 function CadastroCategoria() {
     const history = useNavigate();
@@ -43,7 +44,16 @@ function CadastroCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Efetue o login')
+            toast.info('Efetue o Login', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
             history('/login')
         }
     }, [token])
@@ -57,10 +67,28 @@ function CadastroCategoria() {
                         'Authorization': token,
                     },
                 })
-                alert("Categoria atualizada com sucesso!")
+                toast.success('Categoria atualizada com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
                 history("/categoria")
             } catch (error) {
-                alert("Falha ao atualizar a categoria!")
+                toast.error('Falha ao atualizar a categoria!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
             }
         } else {
             try { console.log(categoria)
@@ -69,10 +97,28 @@ function CadastroCategoria() {
                         'Authorization': token,
                     },
                 })
-                alert("Categoria cadastrada com sucesso!")
+                toast.success('Categoria cadastrada com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
                 history("/categoria")
             } catch (error) {
-                alert("Falha ao cadastrar a categoria!")
+                toast.error('Falha ao cadastrar a categoria!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
             }
         }
     }

@@ -6,6 +6,7 @@ import ImgHome from "../../assets/img/figuraHome.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function Home() {
 
@@ -17,7 +18,16 @@ const token = useSelector<TokenState, TokenState["tokens"]>(
 
 useEffect(() => {
   if (token == "") {
-    alert("Você precisa estar logado");
+    toast.info('Você precisa estar logado', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     history("/login");
   }
 }, [token]);

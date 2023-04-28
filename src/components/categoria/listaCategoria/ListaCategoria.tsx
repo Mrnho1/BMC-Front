@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokensReducer'
 import { getAll } from '../../../services/Service'
 import { CategoryOutlined } from '@mui/icons-material'
+import { toast } from 'react-toastify'
 
 export default function listaCategoria() {
     const [categorias, setCategorias] = useState<Categoria[]>([])
@@ -29,7 +30,16 @@ export default function listaCategoria() {
 
     useEffect(() => {
         if(token === ''){
-            alert ('Efetue o Login')
+            toast.info('Efetue o Login', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              });
             history('/login')
         }
     }, [token])
