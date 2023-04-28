@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
-import { Produto } from '../../../models/Produto';
+import { Produto } from "../../../models/Produto";
 import { getAll, getById, post, put } from "../../../services/Service";
 import { Box, FormControl } from "@mui/material";
 import {
@@ -74,7 +74,7 @@ function CadastroProduto() {
 
   useEffect(() => {
     if (token === "") {
-      toast.info('Efetue o login', {
+      toast.info("Efetue o login", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -83,7 +83,7 @@ function CadastroProduto() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       history("/login");
     }
   }, [token]);
@@ -97,7 +97,7 @@ function CadastroProduto() {
             Authorization: token,
           },
         });
-        toast.success('Produto atualizado com sucesso!', {
+        toast.success("Produto atualizado com sucesso!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -106,10 +106,10 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
         history("/produtos");
       } catch (error) {
-        toast.error('Falha ao atualizar o produto!', {
+        toast.error("Falha ao atualizar o produto!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -118,7 +118,7 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     } else {
       try {
@@ -127,7 +127,7 @@ function CadastroProduto() {
             Authorization: token,
           },
         });
-        toast.success('Produto cadastrado com sucesso!', {
+        toast.success("Produto cadastrado com sucesso!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -136,10 +136,10 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
         history("/produtos");
       } catch (error) {
-        toast.error('Falha ao cadastrar o produto!', {
+        toast.error("Falha ao cadastrar o produto!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -148,7 +148,7 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     }
   }
@@ -162,20 +162,20 @@ function CadastroProduto() {
               variant="h3"
               component="h1"
               align="center"
-              className="textoCP"
-            >
+              className="textoCP">
               {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
             </Typography>
           </Grid>
           <Grid item xs={12} className="formProduto">
             <form
               onSubmit={onSubmit}
-              style={{ display: "flex", justifyContent: "center" }}
-            >
+              style={{ display: "flex", justifyContent: "center" }}>
               <Box className="formCadastro">
                 <TextField
                   value={produto.nome}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="nome"
                   label="Nome"
                   variant="outlined"
@@ -185,7 +185,9 @@ function CadastroProduto() {
                 />
                 <TextField
                   value={produto.descricao}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="descricao"
                   label="Descrição"
                   variant="outlined"
@@ -197,7 +199,9 @@ function CadastroProduto() {
                 />
                 <TextField
                   value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="preco"
                   label="Preço"
                   variant="outlined"
@@ -207,7 +211,9 @@ function CadastroProduto() {
                 />
                 <TextField
                   value={produto.img}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="img"
                   label="Imagem"
                   variant="outlined"
@@ -222,8 +228,7 @@ function CadastroProduto() {
                     width: "40ch",
                     bottom: "20px",
                     top: "20px",
-                  }}
-                >
+                  }}>
                   <InputLabel id="demo-simple-select-helper-label">
                     Categoria
                   </InputLabel>
@@ -240,8 +245,7 @@ function CadastroProduto() {
                           },
                         }
                       )
-                    }
-                  >
+                    }>
                     {categorias.map((categoria) => (
                       <MenuItem value={categoria.id}>
                         {categoria.tipo} {categoria.fluxo} {categoria.cor}
@@ -261,8 +265,7 @@ function CadastroProduto() {
                   type="submit"
                   variant="contained"
                   color="primary"
-                  className="botao"
-                >
+                  className="botao">
                   {produto.id !== 0 ? "Editar" : "Cadastrar"}
                 </Button>
               </Box>

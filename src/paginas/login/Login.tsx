@@ -1,23 +1,22 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
-import { Grid, Typography, TextField, Theme} from "@material-ui/core";
+import { Grid, Typography, TextField } from "@material-ui/core";
 import { Box, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/Service";
-import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
 import "./Login.css";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { addToken } from "../../store/tokens/actions";
 import { useDispatch } from "react-redux";
-import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
 
 function Login() {
   const [token, setToken] = useState("");
   const dispatch = useDispatch();
   const useHistory = useNavigate();
   const theme = useTheme();
-  const largeScreen = useMediaQuery(theme.breakpoints.up('md') );
+  const largeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
@@ -39,7 +38,7 @@ function Login() {
 
     try {
       await login("/usuarios/logar", userLogin, setToken);
-      toast.success('Usuario logado com sucesso', {
+      toast.success("Usuario logado com sucesso", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -48,9 +47,9 @@ function Login() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     } catch (error) {
-      toast.error('Usúario ou senha invalidos', {
+      toast.error("Usúario ou senha invalidos", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -59,7 +58,7 @@ function Login() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
   }
 
@@ -71,23 +70,27 @@ function Login() {
   }, [token]);
 
   return (
-    <Grid container justifyContent="center" alignItems="center" direction={ largeScreen? 'row':"column-reverse"}>
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      direction={largeScreen ? "row" : "column-reverse"}
+      className="FundoLogin">
       <Grid item xs={12} md={6}>
-        <Box paddingX={6} >
-          <form onSubmit={onSubmit}>
+        <Box paddingX={6}>
+          <form onSubmit={onSubmit} className="formLogin">
             <Typography
               variant="h3"
               gutterBottom
               color="textPrimary"
               component="h3"
               align="center"
-              className="textos1"
-            >
-              Entrar
+              className="tituloLogin">
+              Faça o seu Login
             </Typography>
             <TextField
               id="usuario"
-              label="usuário"
+              label="Digite o seu e-mail"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -99,7 +102,7 @@ function Login() {
             />
             <TextField
               id="senha"
-              label="senha"
+              label="Digite a sua senha"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -123,13 +126,8 @@ function Login() {
               </Typography>
             </Box>
 
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              align="center"
-              className="textos1"
-            >
-              <Link to="/cadastro">Cadastre-se</Link>{" "}
+            <Typography variant="subtitle1" gutterBottom align="center">
+              <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
         </Box>
