@@ -15,6 +15,8 @@ import CadastroCategoria from "./components/categoria/cadastroCategoria/Cadastro
 import CadastroProduto from "./components/produtos/cadastroProduto/CadastroProduto";
 import { Provider } from 'react-redux';
 import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
+import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCategoria";
+import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 
 
 function App() {
@@ -34,9 +36,10 @@ function App() {
             <Route path="/produtos" element={<ListaProduto />} />
             <Route path="/team" element={<Team />} />
             <Route path="/cadastro" element={<CadastroUsuario />} />
-            <Route path="/editar-categoria/:id" element={<ListaCategoria />} />
-            <Route path="/editar-produto/:id" element={<ListaProduto />} />
-            <Route path="/deletar-produto/:id" element={<ListaProduto />} />
+            <Route path="/editar-categoria/:id" element={<CadastroCategoria />} />
+            <Route path="/editar-produto/:id" element={<CadastroProduto />} />
+            <Route path="/deletar-produto/:id" element={<DeletarProduto />} />
+            <Route path="/deletar-categoria/:id" element={<DeletarCategoria />} />
             <Route path="/cadastroCategoria" element={<CadastroCategoria />} />
             <Route path="/categoria" element={<ListaCategoria />} />
             <Route path="/cadastroProduto" element={<CadastroProduto />} />
