@@ -132,15 +132,8 @@ function CadastroProduto() {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <form onSubmit={onSubmit}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  "& .MuiTextField-root": { m: 1, width: "40ch" },
-                }}
-              >
+            <form onSubmit={onSubmit} style={{ display: "flex", justifyContent: "center" }}>
+              <Box className='formCadastro'>
                 <TextField
                   value={produto.nome}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -179,9 +172,9 @@ function CadastroProduto() {
                   margin="normal"
                   fullWidth
                 /> */}
-                <div>
+                
                   <CurrencyInput
-                    className="formCadastro"
+                  variant="outlined"
                     value={"000"}
                     options={{
                       allowNegative: false,
@@ -193,8 +186,8 @@ function CadastroProduto() {
                     onChangeEvent={handleOnChange}
                     required={true}
                   />
-                </div>
-              </Box>
+                
+        
               <FormControl
                 variant="outlined"
                 margin="normal"
@@ -222,7 +215,7 @@ function CadastroProduto() {
                 </Select>
               </FormControl>
 
-              <Box className="botao">
+
                 <Button
                   type="submit"
                   variant="contained"
