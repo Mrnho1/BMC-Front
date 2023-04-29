@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Box } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import User from "../../models/User";
 import "./CadastroUsuario.css";
 import { cadastroUsuario } from "../../services/Service";
@@ -45,7 +45,7 @@ function CadastroUsuario() {
     if (confirmarSenha === user.senha) {
       try {
         await cadastroUsuario("/usuarios/cadastrar", user, setUserResult);
-        toast.success('Usuário cadastrado com sucesso', {
+        toast.success("Usuário cadastrado com sucesso", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -54,9 +54,9 @@ function CadastroUsuario() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       } catch (error) {
-        toast.error('Por favor, verifique os campos', {
+        toast.error("Por favor, verifique os campos", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -65,10 +65,10 @@ function CadastroUsuario() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     } else {
-      toast.warn('As senhas não coincidem', {
+      toast.warn("As senhas não coincidem", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -77,7 +77,7 @@ function CadastroUsuario() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       setConfirmarSenha("");
       setUser({
         ...user,
@@ -102,24 +102,23 @@ function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className="fundoCadastro">
       <Grid item xs={12} md={6} className="imagem2"></Grid>
       <Grid item xs={12} md={6} alignItems="center">
         <Box paddingX={10} marginBottom={5}>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="form-Cadastro">
             <Typography
               variant="h3"
               gutterBottom
               color="textPrimary"
               component="h3"
               align="center"
-              className="textos2"
-            >
-              Cadastrar
+              className="tituloCadastro">
+              Faça o seu cadastro
             </Typography>
             <TextField
               id="nome"
-              label="nome"
+              label="Nome e Sobrenome"
               variant="outlined"
               name="nome"
               margin="normal"
@@ -133,7 +132,7 @@ function CadastroUsuario() {
             <TextField
               type="email"
               id="usuario"
-              label="usuario"
+              label="Digite um e-mail"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -146,7 +145,7 @@ function CadastroUsuario() {
             />
             <TextField
               id="foto"
-              label='foto "entrar com a URL"'
+              label="Adicione a URL de uma foto (opcional)"
               variant="outlined"
               name="foto"
               margin="normal"
@@ -158,7 +157,7 @@ function CadastroUsuario() {
             />
             <TextField
               id="senha"
-              label="senha"
+              label="Digite uma senha"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -172,7 +171,7 @@ function CadastroUsuario() {
             />
             <TextField
               id="confirmarSenha"
-              label="confirmarSenha"
+              label="Confirme a senha"
               variant="outlined"
               name="confirmarSenha"
               margin="normal"
@@ -185,16 +184,10 @@ function CadastroUsuario() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button
-                onClick={back}
-                variant="contained"
-                color="secondary"
-                className="btn-cancelar"
-              >
+              <Button onClick={back} variant="contained">
                 Cancelar
               </Button>
-
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained">
                 Cadastrar
               </Button>
             </Box>
