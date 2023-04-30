@@ -1283,6 +1283,7 @@ __metadata:
     react-swipeable-views: ^0.14.0
     react-swipeable-views-utils: ^0.14.0
     react-text-mask: ^5.5.0
+    react-toastify: 8.0.3
     react-use-localstorage: 3.5.3
     text-mask-addons: ^3.8.0
     typescript: ^4.9.3
@@ -2706,6 +2707,18 @@ __metadata:
   peerDependencies:
     react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: ccfd425a66cf074fd3e4823bf4d1a4f07caf81309f7c1461e524c32ae53b17a666855a8dcc1c73206e9d8e4a6a9460f66f767aac6ba18034b663521848294c5c
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:8.0.3":
+  version: 8.0.3
+  resolution: "react-toastify@npm:8.0.3"
+  dependencies:
+    clsx: ^1.1.1
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: a428f310bfb7b02dd67559ac6377509fe602e1c85bc831bf079a4694d56b1251e79ef9a4d1b2035a4564690aa4ede7de4886d6fe7ab311fb96dcd15a0e17b051
   languageName: node
   linkType: hard
 
