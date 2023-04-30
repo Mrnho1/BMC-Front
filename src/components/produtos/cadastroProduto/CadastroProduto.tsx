@@ -18,6 +18,7 @@ import {
 import "./CadastroProduto.css";
 import NumberFormat from "react-number-format";
 import { CurrencyTextField } from "../../input/CurrencyTextField";
+import MoedaFormato from "../../input/MoedaFormato";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -177,11 +178,15 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <CurrencyTextField
+                <TextField
+                  label="Valor"
                   value={produto.preco}
-                  onValueChange={(event: ChangeEvent<HTMLInputElement>) => {
-                    updateProduto(event);
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)}
+                  InputProps={{
+                    inputComponent: MoedaFormato as any
                   }}
+                  fullWidth
                 />
 
                 <FormControl
