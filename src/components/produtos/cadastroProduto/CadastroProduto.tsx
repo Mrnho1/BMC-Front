@@ -119,6 +119,11 @@ function CadastroProduto() {
 
   const handleOnChange = (inputElement, maskedValue, value) => {};
 
+  const [value, setValue] = useState('');
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -179,7 +184,11 @@ function CadastroProduto() {
                 />
 
                 <TextField
-                  label="Valor"
+                  id='preco'
+                  variant="outlined"
+                  margin="normal"
+                  label="Preço"
+                  name = 'preco'
                   value={produto.preco}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
                     updateProduto(event)}

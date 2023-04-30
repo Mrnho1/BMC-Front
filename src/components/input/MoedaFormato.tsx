@@ -21,7 +21,7 @@ function MoedaFormato(props: any) {
         inputRef(ref ? ref.inputElement : null);
       }}
       mask={currencyMask}
-      guide={false}
+      guide={true}
       onChange={(event: any) => {
         onChange(event.target.value);
       }}
