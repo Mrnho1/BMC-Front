@@ -17,7 +17,7 @@ import {
 } from "@material-ui/core";
 import "./CadastroProduto.css";
 import NumberFormat from "react-number-format";
-import CurrencyInput from "../../input/CurrencyInput";
+import { CurrencyTextField } from "../../input/CurrencyTextField";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -177,12 +177,11 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <CurrencyInput
-                  name="preco"
+                <CurrencyTextField
                   value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)}
-                  label="Valor"
+                  onValueChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    updateProduto(event);
+                  }}
                 />
 
                 <FormControl
