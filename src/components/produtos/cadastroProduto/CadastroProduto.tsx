@@ -19,8 +19,34 @@ import "./CadastroProduto.css";
 import NumberFormat from "react-number-format";
 import { CurrencyTextField } from "../../input/CurrencyTextField";
 import MoedaFormato from "../../input/MoedaFormato";
+import CurrencyInputMask from "../../input/CurrencyInputMask";
 
 function CadastroProduto() {
+  const [value, setValue] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+
+    // Remove todos os caracteres não numéricos
+    const numericValue = inputValue.replace(/\D/g, "");
+
+    // Formata o valor para a máscara de moeda
+    const formattedValue = formatCurrency(numericValue);
+
+    setValue(formattedValue);
+    updateProduto(event);
+  };
+
+  const formatCurrency = (value: string) => {
+    const numberFormat = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      minimumFractionDigits: 2,
+    });
+
+    return numberFormat.format(Number(value) / 100);
+  };
+
   const history = useNavigate();
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -117,11 +143,16 @@ function CadastroProduto() {
   //       handleSubmit,
   //   } = useForm();
 
-  const handleOnChange = (inputElement, maskedValue, value) => {};
+  // const handleOnChange = (inputElement, maskedValue, value) => {};
 
-  const [value, setValue] = useState('');
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+  // const [value, setValue] = useState("");
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setValue(event.target.value);
+  // };
+
+  const validateNumber = (value: string) => {
+    const numericValue = value.replace(/\D/g, '');
+    return !isNaN(Number(numericValue));
   };
 
   return (
@@ -183,20 +214,59 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <TextField
-                  id='preco'
+                {/* <TextField
+                  label="Preço"
+                  fullWidth
+                  name="preco"
+                  value={value}
+                  onChange={(handleChange)}
+                  InputProps={{
+                    inputProps: {
+                      inputMode: "numeric",
+                    },
+                  }}
+                /> */}
+
+<TextField
+      label="Valor"
+      value={value}
+      onChange={handleChange}
+      onBlur={(event) => {
+        const numericValue = event.target.value.replace(/\D/g, '');
+        setValue(formatCurrency(numericValue));
+      }}
+      InputProps={{
+        inputProps: {
+          type: 'text',
+          inputMode: 'numeric',
+          pattern: '[0-9]*',
+          onKeyPress: (event) => {
+            if (event.key === 'Enter') {
+              event.preventDefault();
+            }
+          },
+        },
+      }}
+      error={!validateNumber(value)}
+      helperText={!validateNumber(value) ? 'Valor inválido' : ''}
+    />
+
+
+                {/* <TextField
+                  id="preco"
                   variant="outlined"
                   margin="normal"
                   label="Preço"
-                  name = 'preco'
+                  name="preco"
                   value={produto.preco}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)}
+                    updateProduto(event)
+                  }
                   InputProps={{
-                    inputComponent: MoedaFormato as any
+                    inputComponent: MoedaFormato as any,
                   }}
                   fullWidth
-                />
+                /> */}
 
                 <FormControl
                   variant="outlined"
@@ -255,3 +325,44 @@ function CadastroProduto() {
   );
 }
 export default CadastroProduto;
+
+// function CurrencyInputMaskDois() {
+//   const [value, setValue] = useState('');
+
+//   const handleChangeDois = (event: React.ChangeEvent<HTMLInputElement>) => {
+//       const inputValue = event.target.value;
+
+//       // Remove todos os caracteres não numéricos
+//       const numericValue = inputValue.replace(/\D/g, '');
+
+//       // Formata o valor para a máscara de moeda
+//       const formattedValue = formatCurrency(numericValue);
+
+//       setValue(formattedValue);
+//     };
+
+//     const formatCurrency = (value: string) => {
+//       const numberFormat = new Intl.NumberFormat('pt-BR', {
+//         style: 'currency',
+//         currency: 'BRL',
+//         minimumFractionDigits: 2,
+//       });
+
+//       return numberFormat.format(Number(value) / 100);
+//     };
+
+//     return (
+//       <TextField
+//         label="Preço"
+//         value={value}
+//         fullWidth
+//         onChange={(event: ChangeEvent<HTMLInputElement>) =>
+//           updateProduto(event)}
+//         InputProps={{
+//           inputProps: {
+//             inputMode: 'numeric',
+//           },
+//         }}
+//       />
+// )
+// }
