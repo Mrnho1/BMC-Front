@@ -16,7 +16,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import "./CadastroProduto.css";
-import { CurrencyInput, Currencies, Locales } from "input-currency-react";
+import NumberFormat from "react-number-format";
+import CurrencyInput from "../../input/CurrencyInput";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -117,22 +118,6 @@ function CadastroProduto() {
 
   const handleOnChange = (inputElement, maskedValue, value) => {};
 
-  const mask = (
-    <CurrencyInput
-      variant="outlined"
-      value={"000"}
-      options={{
-        allowNegative: false,
-        locale: Locales["Portuguese (Brazil)"], // Format Type
-        i18nCurrency: Currencies["Brazilian Real"],
-        precision: 2,
-        style: "currency",
-      }}
-      onChangeEvent={handleOnChange}
-      onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
-      required={true}
-    />
-  );
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -192,28 +177,14 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                  <CurrencyInput
-                  variant="outlined"
-                  value={""}
-                  options={{
-                    allowNegative: false,
-                    locale: Locales["Portuguese (Brazil)"], // Format Type
-                    i18nCurrency: Currencies["Brazilian Real"],
-                    precision: 2,
-                    style: "currency",
-                  }}
-                  onChangeEvent={handleOnChange}
+                <CurrencyInput
+                  name="preco"
+                  value={produto.preco}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
-                  autoFocus={true}
-                  required={true}
-                >
-                  <TextField fullWidth></TextField>
-                 </CurrencyInput>
+                    updateProduto(event)}
+                  label="Valor"
+                />
 
-
-                
                 <FormControl
                   variant="outlined"
                   margin="normal"
