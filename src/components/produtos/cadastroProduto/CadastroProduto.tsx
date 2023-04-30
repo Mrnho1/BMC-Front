@@ -19,6 +19,7 @@ import "./CadastroProduto.css";
 import NumberFormat from "react-number-format";
 import { CurrencyTextField } from "../../input/CurrencyTextField";
 import MoedaFormato from "../../input/MoedaFormato";
+import { InputNumber } from "primereact/inputnumber";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -119,10 +120,20 @@ function CadastroProduto() {
 
   const handleOnChange = (inputElement, maskedValue, value) => {};
 
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
+
+  const onInputChange = (event: ChangeEvent<HTMLInputElement>, name) => {
+    console.log(event.target.value);
+    const val = (event.target && event.target.value) || '';
+    let _produto = { ...produto };
+    _produto[`${name}`] = val;
+
+    setProduto(_produto);
+}
+
 
   return (
     <>
@@ -206,7 +217,16 @@ function CadastroProduto() {
                   fullWidth
                 /> */}
 
-                
+                <InputNumber
+                  inputId="preco"
+                  id="preco"
+                  value={produto.preco}
+                  onValueChange={(event) => onInputChange(event, 'valorCusto')}
+                  mode="currency"
+                  currency="BRL"
+                  locale="pt-BR"
+                />
+
                 <FormControl
                   variant="outlined"
                   margin="normal"
