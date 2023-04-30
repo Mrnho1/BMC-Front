@@ -229,11 +229,15 @@ function CadastroProduto() {
 
 <TextField
       label="Valor"
-      value={value}
-      onChange={handleChange}
+      value={produto.preco}
+      name="preco"
+      id="preco"
+      onChange={(event: ChangeEvent<HTMLInputElement>) =>
+        updateProduto(event)}
+      fullWidth
       onBlur={(event) => {
         const numericValue = event.target.value.replace(/\D/g, '');
-        setValue(formatCurrency(numericValue));
+        updateProduto(formatCurrency(numericValue));
       }}
       InputProps={{
         inputProps: {
