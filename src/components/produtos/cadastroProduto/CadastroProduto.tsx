@@ -20,6 +20,7 @@ import NumberFormat from "react-number-format";
 import { CurrencyTextField } from "../../input/CurrencyTextField";
 import MoedaFormato from "../../input/MoedaFormato";
 import { InputNumber } from "primereact/inputnumber";
+import CurrencyInput from 'react-currency-masked-input'
 
 function CadastroProduto() {
   const history = useNavigate();
