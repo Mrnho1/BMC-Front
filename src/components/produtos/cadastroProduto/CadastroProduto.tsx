@@ -20,7 +20,7 @@ import NumberFormat from "react-number-format";
 import { CurrencyTextField } from "../../input/CurrencyTextField";
 import MoedaFormato from "../../input/MoedaFormato";
 import { InputNumber } from "primereact/inputnumber";
-import CurrencyInput from 'react-currency-masked-input'
+import CurrencyInput from "react-currency-masked-input";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -126,16 +126,6 @@ function CadastroProduto() {
     setValue(event.target.value);
   };
 
-  const onInputChange = (event: ChangeEvent<HTMLInputElement>, name) => {
-    console.log(event.target.value);
-    const val = (event.target && event.target.value) || '';
-    let _produto = { ...produto };
-    _produto[`${name}`] = val;
-
-    setProduto(_produto);
-}
-
-
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -195,37 +185,15 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                {/* <NumberFormat
-                  id='preco'
-                  customInput={TextField}
-                  variant="outlined"
-                  margin="normal"
-                  label="Preço"
-                  name = 'preco'
+                <InputNumber
+                  inputId="currency-us"
                   value={produto.preco}
-                  thousandSeparator={'.'}
-                  decimalSeparator={','}
-                  decimalScale={2}
-                  fixedDecimalScale={true}
-                  prefix={'R$'}
-                  onValueChange={(values: any) => {
-                    const {formattedValue, value} = values;
-                    setProduto({
-                        ...produto,
-                        preco: value
-                    });
-                  }}
-                  fullWidth
-                /> */}
-
-                <CurrencyInput
-                  inputId="preco"
-                  id="preco"
-                  name='preco'
-                  value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)
-                  }
+                  name="preco"
+                  onValueChange={(e) => setProduto({
+                    ...produto,
+                    [e.target.name]: e.target.value,
+                    categoria: categoria,
+                  })}
                   mode="currency"
                   currency="BRL"
                   locale="pt-BR"
