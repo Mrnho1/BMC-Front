@@ -16,11 +16,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import "./CadastroProduto.css";
-import NumberFormat from "react-number-format";
-import { CurrencyTextField } from "../../input/CurrencyTextField";
-import MoedaFormato from "../../input/MoedaFormato";
 import { InputNumber } from "primereact/inputnumber";
-import CurrencyInput from "react-currency-masked-input";
+
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -112,20 +109,7 @@ function CadastroProduto() {
       }
     }
   }
-
-  // const MyCustomForm = () => {
-  //   const {
-  //       control,
-  //       handleSubmit,
-  //   } = useForm();
-
-  const handleOnChange = (inputElement, maskedValue, value) => {};
-
-  const [value, setValue] = useState("");
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
+  
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
