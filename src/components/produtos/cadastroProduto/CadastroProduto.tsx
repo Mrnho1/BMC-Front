@@ -183,7 +183,7 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <NumberFormat
+                {/* <NumberFormat
                   id='preco'
                   customInput={TextField}
                   variant="outlined"
@@ -204,8 +204,9 @@ function CadastroProduto() {
                     });
                   }}
                   fullWidth
-                />
+                /> */}
 
+                
                 <FormControl
                   variant="outlined"
                   margin="normal"
