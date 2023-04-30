@@ -1274,6 +1274,7 @@ __metadata:
     react: ^17
     react-alice-carousel: ^2.7.1
     react-currency-input-field: ^3.6.10
+    react-currency-masked-input: ^2.5.0
     react-dom: ^17
     react-input-mask: ^2.0.4
     react-number-format: ^5.1.4
@@ -2524,6 +2525,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-currency-masked-input@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "react-currency-masked-input@npm:2.5.0"
+  dependencies:
+    prop-types: ^15.7.2
+    react: ^16.8.6
+  checksum: f933be9797e763600a92ad916c986d59cfa0ab4112bb2aab492ced0f97120f1019b60823b921c80f7b498a391389182db0e1766650d5770b9f46040fb9aec1e0
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^17":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
@@ -2722,6 +2733,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react@npm:^16.8.6":
+  version: 16.14.0
+  resolution: "react@npm:16.14.0"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+    prop-types: ^15.6.2
+  checksum: 8484f3ecb13414526f2a7412190575fc134da785c02695eb92bb6028c930bfe1c238d7be2a125088fec663cc7cda0a3623373c46807cf2c281f49c34b79881ac
+  languageName: node
+  linkType: hard
+
 "react@npm:^17":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
@@ -2818,8 +2840,8 @@ __metadata:
   linkType: hard
 
 "rollup@npm:^3.21.0":
-  version: 3.21.1
-  resolution: "rollup@npm:3.21.1"
+  version: 3.21.2
+  resolution: "rollup@npm:3.21.2"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -2827,7 +2849,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 88d2f2fdd10ecd44739d359c495bd3459c055599dca415a9456c0eb4c161fc35b16a24be440a82f26cd1f06633c902aca8432da37e3493ac6bc2c9b667b281b1
+  checksum: 1a0261b551ea7846f4ef7514930263c28c67e356ab1cbbe9e69e923a081b571fb483576ea53b69e851df9e58be36ab135057d21635d8bbdb5e63c3ccc34a0419
   languageName: node
   linkType: hard
 

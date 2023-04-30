@@ -218,11 +218,14 @@ function CadastroProduto() {
                   fullWidth
                 /> */}
 
-                <InputNumber
+                <CurrencyInput
                   inputId="preco"
                   id="preco"
+                  name='preco'
                   value={produto.preco}
-                  onValueChange={(event) => onInputChange(event, 'valorCusto')}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   mode="currency"
                   currency="BRL"
                   locale="pt-BR"
