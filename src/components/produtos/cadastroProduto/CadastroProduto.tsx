@@ -183,17 +183,25 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <TextField
+                <NumberFormat
                   id='preco'
+                  customInput={TextField}
                   variant="outlined"
                   margin="normal"
                   label="Preço"
                   name = 'preco'
                   value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateProduto(event)}
-                  InputProps={{
-                    inputComponent: MoedaFormato as any
+                  thousandSeparator={'.'}
+                  decimalSeparator={','}
+                  decimalScale={2}
+                  fixedDecimalScale={true}
+                  prefix={'R$'}
+                  onValueChange={(values: any) => {
+                    const {formattedValue, value} = values;
+                    setProduto({
+                        ...produto,
+                        preco: value
+                    });
                   }}
                   fullWidth
                 />
