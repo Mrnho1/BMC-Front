@@ -1,5 +1,6 @@
 # BMC-Front
 
+
 💧✨ Bem-vindo à nossa loja virtual de produtos de higiene íntima! O nosso objetivo é ajudar a dar visibilidade à consciência da pobreza menstrual no Brasil. 
 
 Usamos React, Material UI, TypeScript e Vite para desenvolver esse projeto. Aqui, você pode navegar facilmente entre os nossos produtos e escolher o que deseja comprar.
