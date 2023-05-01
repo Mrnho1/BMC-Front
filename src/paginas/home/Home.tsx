@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import TabProdutos from '../../components/produtos/tabProdutos/TabProdutos';
+import Navbartwo from '../../components/staticos/navbartwo/Navbartwo';
 
 function Home() {
 
@@ -34,6 +35,7 @@ useEffect(() => {
 
   return (
     <>
+      <Navbartwo/>
       <Grid
         container
         direction="row"
