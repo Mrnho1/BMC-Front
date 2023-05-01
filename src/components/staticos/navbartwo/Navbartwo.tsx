@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import { AlignHorizontalCenter } from "@mui/icons-material";
+import './Navbartwo.css'
 
 
 export default function  Navbartwo() {
@@ -110,8 +111,8 @@ export default function  Navbartwo() {
               }}
             >
               {pagesLinksTwo.map((item) => (
-                <Button>
-                  <Link href={item.href} marginX={20}>
+                <Button className="buttonNavDois" sx={{backgroundColor: '#78a493' }}>
+                  <Link className="linkNavDois" href={item.href} marginX={20} sx={{backgroundColor: '#78a493', textDecoration: 'none', color: 'white'}}>
                     {item.name}
                   </Link>
                 </Button>

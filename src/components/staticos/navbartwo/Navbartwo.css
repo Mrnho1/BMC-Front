@@ -1,0 +1,10 @@
+.buttonNavDois {
+    color: Black !important;
+    background-color: var(--color-Blue) !important;
+    text-decorator: none !important;
+}
+
+.linkNavDois {
+    color: 'White' !important;
+    text-color: var(--color-Yellow) !important;
+}
