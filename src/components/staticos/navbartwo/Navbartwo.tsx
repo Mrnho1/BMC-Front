@@ -28,7 +28,7 @@ export default function  Navbartwo() {
     { name: "Home", href: "/home" },
     { name: "Sobre", href: "/sobre" },
     { name: "Produtos", href: "/produtos" },
-    { name: "Equipe", href: "/equipe" },
+    { name: "Equipe", href: "/team" },
     { name: "Contato", href: "/contato" },
   ];
 
