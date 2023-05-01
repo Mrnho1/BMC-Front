@@ -15,13 +15,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import './CadastroProduto.css';
-import {
-  CurrencyInput, 
-  Currencies, 
-  Locales 
-} from 'input-currency-react';
-
-import "./CadastroProduto.css";
+import { InputNumber } from "primereact/inputnumber";
 import { Categoria } from "../../../models/Categoria";
 import { toast } from "react-toastify";
 
@@ -161,14 +155,6 @@ function CadastroProduto() {
     }
   }
 
-  // const MyCustomForm = () => {
-  //   const { 
-  //       control,
-  //       handleSubmit, 
-  //   } = useForm();
-
-    const handleOnChange = (inputElement, maskedValue, value) => {};
-
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -183,15 +169,11 @@ function CadastroProduto() {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <form onSubmit={onSubmit}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  "& .MuiTextField-root": { m: 1, width: "40ch" },
-                }}
-              >
+            <form
+              onSubmit={onSubmit}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <Box className="formCadastro">
                 <TextField
                   value={produto.nome}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -218,7 +200,7 @@ function CadastroProduto() {
                   minRows={4}
                   fullWidth
                 />
-                {/* <TextField
+                <TextField
                   value={produto.img}
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
                     updateProduto(event)
@@ -229,18 +211,27 @@ function CadastroProduto() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-                /> */}
-                
-          <CurrencyInput className="formCadastro"
-            value={ "000" } 
-            options={{allowNegative: false, locale: Locales["Portuguese (Brazil)"], // Format Type
-            i18nCurrency: Currencies["Brazilian Real"], precision: 2,
-            style: "currency"}}
-            onChangeEvent={handleOnChange}
-            required={true}
-          />
-          </Box>
-                <FormControl variant="outlined" margin="normal" className="formularioCategoria">
+                />
+
+                <InputNumber
+                  inputId="preco"
+                  value={produto.preco}
+                  name="preco"
+                  onValueChange={(e) => setProduto({
+                    ...produto,
+                    [e.target.name]: e.target.value,
+                    categoria: categoria,
+                  })}
+                  mode="currency"
+                  currency="BRL"
+                  locale="pt-BR"
+                />
+
+                <FormControl
+                  variant="outlined"
+                  margin="normal"
+                  className="formularioCategoria"
+                >
                   <InputLabel id="demo-simple-select-helper-label">
                     Categoria
                   </InputLabel>
@@ -267,25 +258,24 @@ function CadastroProduto() {
                   </Select>
                 </FormControl>
 
-                <Box className="botao">
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                  >
-                    {produto.id !== 0 ? "Editar" : "Cadastrar"}
-                  </Button>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                >
+                  {produto.id !== 0 ? "Editar" : "Cadastrar"}
+                </Button>
 
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="large"
-                    onClick={() => history("/produtos")}
-                  >
-                    Cancelar
-                  </Button>
-                </Box>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={() => history("/produtos")}
+                >
+                  Cancelar
+                </Button>
+              </Box>
             </form>
           </Grid>
         </Grid>
