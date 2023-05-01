@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
+import { Link } from 'react-router-dom';
 import { makeStyles } from "@mui/material/styles";
 import { Container, IconButton } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -31,6 +31,9 @@ export default function  Navbartwo() {
     { name: "Produtos", href: "/produtos" },
     { name: "Equipe", href: "/team" },
     { name: "Contato", href: "/contato" },
+    { name: "Categorias", href: "/categoria" },
+    { name: "Cadastrar Categoria", href: "/cadastroCategoria" },
+    { name: "Cadastrar Produto", href: "/cadastroProduto" }
   ];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -64,6 +67,7 @@ export default function  Navbartwo() {
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
                 color="inherit"
+                className="buttonNavDois"
               >
                 <MenuIcon />
               </IconButton>
@@ -89,7 +93,7 @@ export default function  Navbartwo() {
                   <List>
                     <MenuItem key={pageTw.href} onClick={handleCloseNavMenu}>
                       <ListItem>
-                        <Link href={pageTw.href}>
+                        <Link to={pageTw.href}>
                           <Typography
                             textAlign="center"
                             className="botoesNavbarTwo"
@@ -112,7 +116,7 @@ export default function  Navbartwo() {
             >
               {pagesLinksTwo.map((item) => (
                 <Button className="buttonNavDois" sx={{backgroundColor: '#78a493' }}>
-                  <Link className="linkNavDois" href={item.href} marginX={20} sx={{backgroundColor: '#78a493', textDecoration: 'none', color: 'white'}}>
+                  <Link className="linkNavDois" to={item.href} >
                     {item.name}
                   </Link>
                 </Button>
