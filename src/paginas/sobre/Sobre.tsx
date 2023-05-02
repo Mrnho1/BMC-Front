@@ -136,7 +136,7 @@ function Sobre() {
               gutterBottom
               component="h6"
               className="textoCard"
-            >
+            > 
               Nossa ideia é incluir todas as pessoas que menstruam em um
               movimento sustentável e inovador, onde todes possam se sentir
               acolhidos, independentemente de gênero e condições sociais, além
