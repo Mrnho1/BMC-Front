@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/material/styles";
 import { Container, IconButton } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,11 +13,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import { AlignHorizontalCenter } from "@mui/icons-material";
-import './Navbartwo.css'
+import "./Navbartwo.css";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
-
-export default function  Navbartwo() {
-
+export default function Navbartwo() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -33,7 +32,7 @@ export default function  Navbartwo() {
     { name: "Contato", href: "/contato" },
     { name: "Categorias", href: "/categoria" },
     { name: "Cadastrar Categoria", href: "/cadastroCategoria" },
-    { name: "Cadastrar Produto", href: "/cadastroProduto" }
+    { name: "Cadastrar Produto", href: "/cadastroProduto" },
   ];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -43,6 +42,8 @@ export default function  Navbartwo() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const [open, setOpen] = React.useState(false);
 
   return (
     <Box sx={{ padding: 0, margin: 0 }}>
@@ -65,7 +66,7 @@ export default function  Navbartwo() {
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleOpenNavMenu}
+                onClick={() => setOpen(true)}
                 color="inherit"
                 className="buttonNavDois"
               >
@@ -115,14 +116,27 @@ export default function  Navbartwo() {
               }}
             >
               {pagesLinksTwo.map((item) => (
-                <Button className="buttonNavDois" sx={{backgroundColor: '#78a493' }}>
-                  <Link className="linkNavDois" to={item.href} >
+                <Button
+                  className="buttonNavDois"
+                  sx={{ backgroundColor: "#78a493" }}
+                >
+                  <Link className="linkNavDois" to={item.href}>
                     {item.name}
                   </Link>
                 </Button>
               ))}
             </Box>
           </Toolbar>
+          <SwipeableDrawer
+          anchor="top"
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+          sx={{color: '#78a493'}}
+          className="drawer"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nemo voluptatum id voluptatem! Voluptatibus, iure adipisci, molestiae aut repellat laboriosam sequi fugiat quod inventore a accusamus nisi labore error asperiores.
+        </SwipeableDrawer>
         </Container>
       </AppBar>
     </Box>
