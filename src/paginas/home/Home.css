@@ -55,9 +55,10 @@
 
 @media screen and (max-width: 350px) {
   .bttnHome button{
-    max-width: 60% !important;
-    max-height: 50vh;
+    max-width: 200px !important;
+    max-height: 40vh;
     font-size: x-small;
-    
+    display: flex !important;
+    justify-content: center !important;
   }
 }
