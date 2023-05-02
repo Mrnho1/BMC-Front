@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
-import { Produto } from '../../../models/Produto';
+import { Produto } from "../../../models/Produto";
 import { getAll, getById, post, put } from "../../../services/Service";
 import { Box, FormControl } from "@mui/material";
 import {
@@ -14,7 +14,8 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import "./CadastroProduto.css";
+import './CadastroProduto.css';
+import { InputNumber } from "primereact/inputnumber";
 import { Categoria } from "../../../models/Categoria";
 import { toast } from "react-toastify";
 
@@ -25,8 +26,8 @@ function CadastroProduto() {
     (state) => state.tokens
   );
 
-  const { id } = useParams();
-  const [categoria, setCategoria] = useState({
+  const { id } = useParams<{ id: string }>();
+  const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
     tipo: "",
     cor: "",
@@ -36,9 +37,10 @@ function CadastroProduto() {
   const [produto, setProduto] = useState<Produto>({
     id: 0,
     nome: "",
-    descricao: "",
-    preco: "",
+    preco: 0,
     img: "",
+    descricao: "",
+    data: "",
     categoria: null,
   });
 
@@ -74,7 +76,7 @@ function CadastroProduto() {
 
   useEffect(() => {
     if (token === "") {
-      toast.info('Efetue o login', {
+      toast.info("Efetue o login", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -83,7 +85,7 @@ function CadastroProduto() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       history("/login");
     }
   }, [token]);
@@ -97,7 +99,7 @@ function CadastroProduto() {
             Authorization: token,
           },
         });
-        toast.success('Produto atualizado com sucesso!', {
+        toast.success("Produto atualizado com sucesso!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -106,10 +108,10 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
         history("/produtos");
       } catch (error) {
-        toast.error('Falha ao atualizar o produto!', {
+        toast.error("Falha ao atualizar o produto!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -118,7 +120,7 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     } else {
       try {
@@ -127,7 +129,7 @@ function CadastroProduto() {
             Authorization: token,
           },
         });
-        toast.success('Produto cadastrado com sucesso!', {
+        toast.success("Produto cadastrado com sucesso!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -136,10 +138,10 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
         history("/produtos");
       } catch (error) {
-        toast.error('Falha ao cadastrar o produto!', {
+        toast.error("Falha ao cadastrar o produto!", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -148,7 +150,7 @@ function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     }
   }
@@ -162,12 +164,11 @@ function CadastroProduto() {
               variant="h3"
               component="h1"
               align="center"
-              className="textoCP"
-            >
+              className="textoCP">
               {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
             </Typography>
           </Grid>
-          <Grid item xs={12} className="formProduto">
+          <Grid item xs={12}>
             <form
               onSubmit={onSubmit}
               style={{ display: "flex", justifyContent: "center" }}
@@ -175,7 +176,9 @@ function CadastroProduto() {
               <Box className="formCadastro">
                 <TextField
                   value={produto.nome}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="nome"
                   label="Nome"
                   variant="outlined"
@@ -185,44 +188,49 @@ function CadastroProduto() {
                 />
                 <TextField
                   value={produto.descricao}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="descricao"
-                  label="Descrição"
-                  variant="outlined"
+                  label="Descricao"
                   name="descricao"
+                  variant="outlined"
                   margin="normal"
                   multiline
-                  minRows={3}
-                  fullWidth
-                />
-                <TextField
-                  value={produto.preco}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
-                  id="preco"
-                  label="Preço"
-                  variant="outlined"
-                  name="preco"
-                  margin="normal"
+                  minRows={4}
                   fullWidth
                 />
                 <TextField
                   value={produto.img}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateProduto(event)}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateProduto(event)
+                  }
                   id="img"
-                  label="Imagem"
-                  variant="outlined"
+                  label="img"
                   name="img"
+                  variant="outlined"
                   margin="normal"
                   fullWidth
                 />
+
+                <InputNumber
+                  inputId="preco"
+                  value={produto.preco}
+                  name="preco"
+                  onValueChange={(e) => setProduto({
+                    ...produto,
+                    [e.target.name]: e.target.value,
+                    categoria: categoria,
+                  })}
+                  mode="currency"
+                  currency="BRL"
+                  locale="pt-BR"
+                />
+
                 <FormControl
-                  sx={{
-                    m: 1,
-                    minWidth: 120,
-                    width: "40ch",
-                    bottom: "20px",
-                    top: "20px",
-                  }}
+                  variant="outlined"
+                  margin="normal"
+                  className="formularioCategoria"
                 >
                   <InputLabel id="demo-simple-select-helper-label">
                     Categoria
@@ -242,28 +250,30 @@ function CadastroProduto() {
                       )
                     }
                   >
-                    {categorias.map((categoria) => (
-                      <MenuItem value={categoria.id}>
-                        {categoria.tipo} {categoria.fluxo} {categoria.cor}
+                    {categorias.map((categorias) => (
+                      <MenuItem value={categorias.id}>
+                        {categorias.tipo} {categorias.fluxo} {categorias.cor}
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
+
                 <Button
-                  style={{
-                    marginBottom: "20px",
-                    marginTop: "50px",
-                    backgroundColor: "#c75f77",
-                    color: "white",
-                    boxShadow: "0px 0px 1px 1px black",
-                    borderRadius: "5px",
-                  }}
                   type="submit"
                   variant="contained"
                   color="primary"
-                  className="botao"
+                  size="large"
                 >
                   {produto.id !== 0 ? "Editar" : "Cadastrar"}
+                </Button>
+
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={() => history("/produtos")}
+                >
+                  Cancelar
                 </Button>
               </Box>
             </form>
@@ -273,5 +283,4 @@ function CadastroProduto() {
     </>
   );
 }
-
 export default CadastroProduto;
