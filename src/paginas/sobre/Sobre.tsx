@@ -61,7 +61,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloSobre"
             >
               Quem somos?
             </Typography>
@@ -85,7 +85,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloSobre"
             >
               Nossos Valores
             </Typography>
@@ -106,7 +106,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloSobre"
             >
               Nossa Missão
             </Typography>
@@ -127,7 +127,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloSobre"
             >
               Nossa Visão
             </Typography>

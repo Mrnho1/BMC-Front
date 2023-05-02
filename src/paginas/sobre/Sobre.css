@@ -1,3 +1,4 @@
+/* váriaveis de cores padrão do site */
 :root{
     --color-OffWhite: #EBEAE5;
     --color-Yellow: #fefab6;
@@ -8,47 +9,55 @@
     --color-Black: #000000;
 }
 
-
+/* Inserindo a cor de fundo do Container */
 .container {
     background-color: var(--color-Pink);
 
 }
 
+/* Inserindo a cor, mudando o peso e o tamanho do título */
 .titulo {
     color: var(--color-Yellow) !important;
     font-weight: "bold" !important;
-    text-align: justify;
     font-size: 2vw !important;
 }
+
+/* Inserindo a cor, mudando o peso e o tamanho do texto */
 .texto {
     color: var(--color-OffWhite) !important;
     font-weight: "bold" !important;
     font-size: 2vw !important;
 }
 
+/* Padronizando o tamanho e a margem da imagem, além de bloquear a imagem no lugar */
 .fotoSobre {
     width: 60%;
     margin: 0 auto;
     display: block;
 }
+
+/* Espaçamento entre os Grids, centralização dos Cards e definindo a cor de fundo */
 .containerCards{
     padding: 20px;
     justify-content: space-around;
     background-color: var(--color-OffWhite);
-    width: 100vh;
 }
 
+/* Espaçamento entre os Cards */
 .cards{
-    justify-content: start;
     padding: 10px;
 }
 
-.textoCard{
-    color: var(--color-Brown) !important;
-    font-weight: "bold" !important;
-    font-size: 20px;
+/* Inserção da cor e peso do título dos Cards */
+.tituloSobre {
+    color: var(--color-Blue) !important;
+    display: flex;
+    font-weight: bolder !important;
 }
 
-.tituloSobre {
-    display: flex;
+/* Inserção da cor e do peso do texto dos Cards */
+.textoCard{
+    color: var(--color-Brown) !important;
+    font-size: 20px !important;
 }
+
