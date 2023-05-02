@@ -23,6 +23,15 @@ h3 {
   color: #77a493;
 }
 
+.imgBoxProduto {
+    min-width: 350px;
+    min-height: 350px;
+}
+
+.nomeBoxProduto {
+height: 85px;
+} 
+
 
 .descricaoTxt {
   width: 100%;
@@ -41,7 +50,7 @@ h3 {
 }
 
 .cardProduto {
-    
+    height: 700px;
 }
 
 .divProduto {
@@ -67,4 +76,9 @@ h3 {
 .dataProduto {
     padding-bottom: 2rem;
     font-size: 12px;
+}
+
+.btnProdutos {
+    display: flex;
+    justify-content: end;
 }
