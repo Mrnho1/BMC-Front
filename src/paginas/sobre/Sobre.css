@@ -11,6 +11,7 @@
 
 .container {
     background-color: var(--color-Pink);
+    /* display: flex; */
 
 }
 
