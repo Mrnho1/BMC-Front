@@ -77,7 +77,7 @@ useEffect(() => {
           {/* Grid item que abriga os botões de ver produtos e apoiar nosso projeto  */}
           <Grid item>
             {/* Box para abrigar e estilizar o botão que leva até a página de produtos */}
-            <Box className="botaoHome" marginX={15}>
+            <Box className="botaoHome, bttnHome" marginX={15}>
               {/* Inserção do link para redirecionar o usuário para a página de produtos */}
                 <Link to={"/produtos"}>
                   <Button fullWidth variant="outlined" style={{margin: '10px'}}>

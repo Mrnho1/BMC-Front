@@ -36,6 +36,28 @@
   padding: 3rem;
 }
 
+.bttnHome{
+  width: 100%;
+}
+
+
 .imgHome {
   border-radius: 50%
+}
+
+@media screen and (max-width: 480px) {
+  .bttnHome button{
+    max-width: 50% !important;
+    max-height: 50vh;
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .bttnHome button{
+    max-width: 60% !important;
+    max-height: 50vh;
+    font-size: x-small;
+    
+  }
 }

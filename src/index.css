@@ -20,7 +20,7 @@
 }
 
 Button {
-  color: var(--color-Yellow) !important;
+  /* color: var(--color-Yellow) !important; */
   background-color: var(--color-Pink) !important;
   border-color: var(--color-Brown) !important;
   margin-left: 3px !important;
