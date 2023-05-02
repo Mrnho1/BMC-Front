@@ -6,6 +6,7 @@ import "./Sobre.css";
 function Sobre() {
   return (
     <>
+    {/* Início do Grid container que abriga um breve resumo do nosso projeto e uma imagem ilustrativa */}
       <Grid
         container
         direction="row"
@@ -16,6 +17,7 @@ function Sobre() {
         <Grid item className="tituloSobre" alignItems="center">
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={4} display='flex' flexDirection='column'>
+            {/* Início do breve resumo do Projeto */}
             <Typography
               variant="h3"
               gutterBottom
@@ -35,21 +37,21 @@ function Sobre() {
               revertemos parte de nossas vendas para distribuição de absorventes
               em escolas públicas periféricas.
             </Typography>
+            {/* Final do breve resumo do Projeto */}
           </Box>
         </Grid>
         <Grid item xs={6}>
+          {/* Imagem ilustrativa */}
           <img
-            src="/src/assets/BMC-IMAGENS/fotoSobre.png"
+            src="https://i.imgur.com/0M0QFmi.png"
             alt=""
             className="fotoSobre"
           />
         </Grid>
-        </Grid>
-       
-        
-        <Grid xs={12} className="postagens"></Grid>
+        </Grid>       
       </Grid>
-
+       {/* Final do Grid container que abriga um breve resumo do nosso projeto e uma imagem ilustrativa */}
+       {/* Início do Grid container que abriga pequenos textos sobre o Projeto  e uma imagem de nossa logomarca*/}
       <Grid
         container
         direction="row"
@@ -57,6 +59,7 @@ function Sobre() {
       >
         <Grid item xs={10}>
           <Box paddingX={5} className="cards">
+            {/* Início dos pequenos textos */}
             <Typography
               variant="h5"
               gutterBottom
@@ -142,14 +145,17 @@ function Sobre() {
               acolhidos, independentemente de gênero e condições sociais, além
               de contribuirmos na diminuição de produção de lixo.
             </Typography>
+            {/* Final dos pequenos textos */}
           </Box>
         </Grid>
         <Grid item xs={10}>
           <Box display='flex' justifyContent='space-around'>
-          <img src="/src/assets/icon/logoRoxo.png" alt="" style={{width: '20%'}}/>
+            {/* Logomarca do Projeto */}
+          <img src="https://i.imgur.com/Hktg1Kv.png" alt="" style={{width: '20%'}}/>
           </Box>          
           </Grid>
       </Grid>
+       {/* Final do Grid container que abriga pequenos textos sobre o Projeto e nossa logomarca */}
     </>
   );
 }
