@@ -1,7 +1,84 @@
-h3{
-    font-weight: 100 ;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root{
+  --color-OffWhite: #EBEAE5;
+  --color-Yellow: #fefab6;
+  --color-Blue: #77a493;
+  --color-Pink: #c75f77;
+  --color-Purple: #836177;
+  --color-Brown: #654b49;
+  --color-Black: #000000;
 }
 
-.imgProduto{
-    width: 100%;
+h3 {
+  font-weight: 100;
+}
+
+.imgProduto {
+  /* max-width: 350px;
+  max-height: 350px; */
+  font-size: 11px;
+  word-break: break-word;
+  padding-top: 1rem;
+  color: #77a493;
+}
+
+.imgBoxProduto {
+    min-width: 350px;
+    min-height: 350px;
+}
+
+.nomeBoxProduto {
+height: 85px;
+} 
+
+
+.descricaoTxt {
+  width: 100%;
+  word-break: break-word;
+  font-size: 17px;
+  padding-bottom: 1.5rem;
+  color: #654b49;
+}
+
+.gridCard {
+  display: flex;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+
+}
+
+.cardProduto {
+    height: 700px;
+}
+
+.divProduto {
+    font-family: 'Montserrat', sans-serif !important;
+  padding: 25px;
+  margin: 15px;
+}
+
+.nomeProduto {
+  width: 100%;
+  word-break: break-word;
+  font-size: 26px;
+  color: #836177;
+}
+
+.txtPreco {
+  font-weight:bolder;
+  padding: 1rem;
+  font-size: 24px;
+  color: #c75f77;
+}
+
+.dataProduto {
+    padding-bottom: 2rem;
+    font-size: 12px;
+}
+
+.btnProdutos {
+    display: flex;
+    justify-content: end;
 }
