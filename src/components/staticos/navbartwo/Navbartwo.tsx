@@ -5,8 +5,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@mui/material/styles";
-import { Container, IconButton } from "@mui/material";
+import { makeStyles } from "@material-ui/core";
+import { Container, IconButton, Paper } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -44,6 +44,14 @@ export default function Navbartwo() {
   };
 
   const [open, setOpen] = React.useState(false);
+
+  const useStyles = makeStyles({
+    drawer: {
+      background: '#c75f77',
+    },
+  });
+
+  const classes = useStyles();
 
   return (
     <Box sx={{ padding: 0, margin: 0 }}>
@@ -134,8 +142,28 @@ export default function Navbartwo() {
           onClose={() => setOpen(false)}
           sx={{color: '#78a493'}}
           className="drawer"
+          classes={{ paper: classes.drawer }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nemo voluptatum id voluptatem! Voluptatibus, iure adipisci, molestiae aut repellat laboriosam sequi fugiat quod inventore a accusamus nisi labore error asperiores.
+          <Paper style={{backgroundColor: '#c75f77'}} >
+          {pagesLinksTwo.map((pageTw) => (
+                  <List>
+                    <MenuItem key={pageTw.href} onClick={handleCloseNavMenu}>
+                      <ListItem>
+                        <Link to={pageTw.href}>
+                          <Typography
+                            textAlign="center"
+                            className="botoesNavbarTwo"
+                          >
+                            <Button>
+                            {pageTw.name}
+                            </Button>
+                          </Typography>
+                        </Link>
+                      </ListItem>
+                    </MenuItem>
+                  </List>
+                ))}
+                </Paper>
         </SwipeableDrawer>
         </Container>
       </AppBar>
