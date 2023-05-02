@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Contato.css";
-import ImgContato from "../../assets/img/pessoaBMC.png";
 import { Link } from "react-router-dom";
 
 function Contato() {
@@ -96,7 +95,7 @@ function Contato() {
         <Grid md={5}>
           {/* Box que estiliza onde a imagem fica na tela */}
           <Box display={"flex"} justifyContent={"center"}>
-            <img className="ImgContato" src={ImgContato} alt="" width="75%" />
+            <img className="ImgContato" src='https://i.imgur.com/TXAnLph.png' alt="" width="75%" />
           </Box>
         </Grid>
          {/* Início da Grid que abriga a imagem ilustrativa escolhida para a página */}
