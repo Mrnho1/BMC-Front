@@ -16,6 +16,7 @@ import "./Navbartwo.css";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
+// Início componente NavbarTwo
 export default function Navbartwo() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -24,6 +25,7 @@ export default function Navbartwo() {
     null
   );
 
+  // Array para redirecionamentos de rota
   const pagesLinksTwo = [
     { name: "Home", href: "/home" },
     { name: "Sobre", href: "/sobre" },
@@ -128,18 +130,15 @@ export default function Navbartwo() {
                 sx={{ backgroundColor: "#78a493" }}
               >
                 <Link className="linkNavTwo" to={item.href}>
-                <Typography
-                          textAlign="center"
-                          className="buttonNavTwo"
-                        >
-                  {item.name}
+                  <Typography textAlign="center" className="buttonNavTwo">
+                    {item.name}
                   </Typography>
                 </Link>
               </Button>
             ))}
           </Box>
         </Toolbar>
-  
+
         <SwipeableDrawer
           anchor="right"
           open={open}
@@ -149,35 +148,35 @@ export default function Navbartwo() {
           classes={{ paper: classes.drawer }}
         >
           <div
-          onClick={() => setOpen(false)}
-          onKeyPress={() => setOpen(false)}
-          role="button"
-          tabIndex={0}
-        >
-          <IconButton>
-            <ChevronRightIcon />
-          </IconButton>
-        </div>
-        <Divider />
-            {pagesLinksTwo.map((pageTw) => (
-              <List>
-                <MenuItem key={pageTw.href} onClick={handleCloseNavMenu}>
-                  <ListItem>
-                    <Link to={pageTw.href}>
-                      <Typography
-                        textAlign="center"
-                        className="botoesNavbarTwo"
-                        variant="h5"
-                        gutterBottom
-                        component="h5"
-                      >
-                        <Button>{pageTw.name}</Button>
-                      </Typography>
-                    </Link>
-                  </ListItem>
-                </MenuItem>
-              </List>
-            ))}
+            onClick={() => setOpen(false)}
+            onKeyPress={() => setOpen(false)}
+            role="button"
+            tabIndex={0}
+          >
+            <IconButton>
+              <ChevronRightIcon />
+            </IconButton>
+          </div>
+          <Divider />
+          {pagesLinksTwo.map((pageTw) => (
+            <List>
+              <MenuItem key={pageTw.href} onClick={handleCloseNavMenu}>
+                <ListItem>
+                  <Link to={pageTw.href}>
+                    <Typography
+                      textAlign="center"
+                      className="botoesNavbarTwo"
+                      variant="h5"
+                      gutterBottom
+                      component="h5"
+                    >
+                      <Button>{pageTw.name}</Button>
+                    </Typography>
+                  </Link>
+                </ListItem>
+              </MenuItem>
+            </List>
+          ))}
         </SwipeableDrawer>
       </Container>
     </AppBar>
