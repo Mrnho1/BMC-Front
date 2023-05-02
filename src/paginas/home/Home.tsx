@@ -10,8 +10,8 @@ import TabProdutos from '../../components/produtos/tabProdutos/TabProdutos';
 
 function Home() {
   // Início da lógica
+
   // Variáveis usados na página Home
-  
 const history = useNavigate();
 const token = useSelector<TokenState, TokenState["tokens"]>(
   (state) => state.tokens
