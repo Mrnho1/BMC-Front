@@ -35,7 +35,6 @@ useEffect(() => {
 
   return (
     <>
-      <Navbartwo/>
       <Grid
         container
         direction="row"
@@ -43,6 +42,7 @@ useEffect(() => {
         alignItems="center"
         alignContent="center"
         className="caixa"
+        md={12}
       >
         <Grid
           container
