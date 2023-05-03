@@ -15,8 +15,8 @@ h3 {
 }
 
 .imgProduto {
-  /* max-width: 350px;
-  max-height: 350px; */
+  max-width: 350px;
+  max-height: 350px;
   font-size: 11px;
   word-break: break-word;
   padding-top: 1rem;
@@ -24,8 +24,8 @@ h3 {
 }
 
 .imgBoxProduto {
-    min-width: 350px;
-    min-height: 350px;
+    width: 350px;
+    height: 350px;
 }
 
 .nomeBoxProduto {
