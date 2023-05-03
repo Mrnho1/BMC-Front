@@ -7,7 +7,7 @@ import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
-import { addToken } from "../../store/tokens/actions";
+import { addId, addToken } from "../../store/tokens/actions";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -18,6 +18,15 @@ function Login() {
   const theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [userLogin, setUserLogin] = useState<UserLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    foto: "",
+    senha: "",
+    token: "",
+  });
+
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
     usuario: "",
@@ -38,7 +47,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      await login("/usuarios/logar", userLogin, setToken);
+      await login("/usuarios/logar", userLogin, setRespUserLogin);
       toast.success("Usuario logado com sucesso", {
         position: "top-right",
         autoClose: 2000,
@@ -74,6 +83,14 @@ function Login() {
     }
   }, [token]);
 
+  useEffect(() => {
+    if (respUserLogin.token !== "") {
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString()));
+      useHistory("/home");
+    }
+  }, [respUserLogin.token]);
+
   return (
     // Início da estrutura da tela de Login para aparecer na tela
     <Grid
@@ -81,7 +98,8 @@ function Login() {
       justifyContent="center"
       alignItems="center"
       direction={largeScreen ? "row" : "column-reverse"}
-      className="FundoLogin">
+      className="FundoLogin"
+    >
       <Grid item xs={12} md={6}>
         <Box paddingX={6}>
           {/* Início do formulário para o usuário entrar com os dados de e-mail e senha cadastrado*/}
@@ -92,7 +110,8 @@ function Login() {
               color="textPrimary"
               component="h3"
               align="center"
-              className="tituloLogin">
+              className="tituloLogin"
+            >
               Faça o seu Login
             </Typography>
             {/* Início do input para o usuário digitar o e-mail cadastrado */}
@@ -136,7 +155,13 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Typography variant="subtitle1" gutterBottom align="center" className="btnCadastreSeLogin">
+
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              align="center"
+              className="btnCadastro"
+            >
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
