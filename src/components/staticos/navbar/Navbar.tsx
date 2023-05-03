@@ -12,8 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link as linkUm, useNavigate } from "react-router-dom";
-import Link from "@mui/material/Link";
+import { Link, useNavigate } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import "./Navbar.css";
 import { colors } from "@material-ui/core";
@@ -137,9 +136,9 @@ function ResponsiveAppBar() {
                   }}
                 >
                   <Link
-                    href={"/login"}
+                    to={"/login"}
                     className="link"
-                    sx={{
+                    style={{
                       textDecoration: "none",
                     }}
                   >
@@ -153,7 +152,7 @@ function ResponsiveAppBar() {
                   />
 
                   <Link
-                    href={"/cadastro"}
+                    to={"/cadastro"}
                     className="link"
                     sx={{
                       textDecoration: "none",
@@ -186,17 +185,12 @@ function ResponsiveAppBar() {
                   <ListItem key={setting.name}>
                     {setting.name === "Logout" ? (
                       <Link
-                        onClick={goLogout}
-                        variant="button"
-                        underline="none"
-                      >
+                        onClick={goLogout} to={""}                      >
                         {setting.name}
                       </Link>
                     ) : (
                       <Link
-                        variant="button"
-                        underline="none"
-                        href={setting.href}
+                        to={setting.href}
                       >
                         {setting.name}
                       </Link>

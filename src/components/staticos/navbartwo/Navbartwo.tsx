@@ -21,7 +21,7 @@ export default function Navbartwo() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  
+
   // Array para redirecionamentos de rota
   const pagesLinksTwo = [
     { name: "Home", href: "/home" },
@@ -142,7 +142,7 @@ export default function Navbartwo() {
           </Box>
         </Toolbar>
 
-       {/* Menu lateral */}
+       {/* MENU LATERAL */}
         <SwipeableDrawer
           anchor="right"
           open={open}
