@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ButtonAppBar from "./components/staticos/navbar/Navbar";
+import Navbartwo from "./components/staticos/navbartwo/Navbartwo";
 import Footer from "./components/staticos/footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./paginas/login/Login";
@@ -19,7 +20,6 @@ import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCat
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import Navbartwo from "./components/staticos/navbartwo/Navbartwo";
 import TesteFooter from "./components/staticos/testeFooter/TesteFooter";
 
 function App() {
