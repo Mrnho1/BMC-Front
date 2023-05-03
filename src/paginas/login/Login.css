@@ -11,38 +11,6 @@
   background-color: #ebeae5;
 }
 
-.text-decorator-none {
-  text-decoration: none;
-}
-
-.btnCadastro {
-  color: #836177 !important;
-  font-weight: bold !important;
-}
-
-.tituloLogin {
-  font-weight: bold !important;
-  color: #836177 !important;
-  font-size: 50px !important;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.imagem {
-  background-image: url(https://i.imgur.com/r23fCU8.png);
-  background-repeat: no-repeat;
-  width: 100vh;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
-.reverse {
-  display: flex;
-  flex-direction: direction-xs-column-reverse;
-}
-
 .formLogin input {
   background-color: #fefab6;
   border: #c75f77 1px solid;
@@ -77,14 +45,37 @@
   color: #836177 !important;
 }
 
-@media screen and (max-width: 480px) {
-  .imagem {
-    min-width: 50%;
-    min-height: 50vh;
-  }
+.tituloLogin {
+  font-weight: bold !important;
+  color: #836177 !important;
+  font-size: 50px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+.btnCadastreSeLogin {
+  color: #836177 !important;
+  font-weight: bold !important;
+}
+
+.imagem {
+  background-image: url(https://i.imgur.com/r23fCU8.png);
+  background-repeat: no-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 480px) {
   .tituloLogin {
     font-size: 20px !important;
     padding-top: 10%;
+  }
+
+  .imagem {
+    min-width: 50%;
+    min-height: 50vh;
   }
 }

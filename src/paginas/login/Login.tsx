@@ -104,8 +104,8 @@ function Login() {
               margin="normal"
               value={userLogin.usuario}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)}
-              fullWidth/>
+                updateModel(event)}
+              fullWidth />
             {/* Fim do input para o usuário digitar o e-mail cadastrado */}
             {/* Início do input para o usuário digitar a senha cadastrada */}
             <TextField
@@ -117,12 +117,12 @@ function Login() {
               type="password"
               value={userLogin.senha}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)}
-              fullWidth/>
+                updateModel(event)}
+              fullWidth />
             {/* Fim do input para o usuário digitar a senha cadastrada */}
             <Box marginTop={2} textAlign="center">
               {/* Início do botão para o usuário entrar na plataforma */}
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained">
                 Entrar
               </Button>
             </Box>
@@ -136,7 +136,7 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Typography variant="subtitle1" gutterBottom align="center" className="btnCadastro">
+            <Typography variant="subtitle1" gutterBottom align="center" className="btnCadastreSeLogin">
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
