@@ -7,9 +7,11 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import TabProdutos from '../../components/produtos/tabProdutos/TabProdutos';
+import Navbartwo from '../../components/staticos/navbartwo/Navbartwo';
 
 function Home() {
   // Início da lógica
+
 
   // Variáveis usados na página Home
 const history = useNavigate();
@@ -41,6 +43,7 @@ useEffect(() => {
         container
         direction="row"
         className="caixa"
+        md={12}
       >
         {/* Grid container que centraliza o conteúdo do item */}
         <Grid
