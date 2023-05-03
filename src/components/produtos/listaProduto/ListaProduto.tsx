@@ -80,6 +80,9 @@ function ListaProduto() {
                             </Box>
                             </Link>
                             </Box>
+                            <Typography variant="body2" component='p'>
+                              Postado por: {produto.usuario?.nome}
+                            </Typography>
                     </div>
                   </Box>
                 </Grid>
