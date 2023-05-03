@@ -14,8 +14,9 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import './CadastroProduto.css';
+import "./CadastroProduto.css";
 import { InputNumber } from "primereact/inputnumber";
+import InputMask from "react-input-mask";
 import { Categoria } from "../../../models/Categoria";
 import { toast } from "react-toastify";
 
@@ -164,7 +165,8 @@ function CadastroProduto() {
               variant="h3"
               component="h1"
               align="center"
-              className="textoCP">
+              className="textoCP"
+            >
               {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
             </Typography>
           </Grid>
@@ -213,18 +215,13 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <InputNumber
-                  inputId="preco"
+                <InputMask
+                  mask={"99"+'.'+"99"}
                   value={produto.preco}
                   name="preco"
-                  onValueChange={(e) => setProduto({
-                    ...produto,
-                    [e.target.name]: e.target.value,
-                    categoria: categoria,
-                  })}
-                  mode="currency"
-                  currency="BRL"
-                  locale="pt-BR"
+                  onChange={(e) => setProduto({ ...produto, preco: parseFloat(e.target.value.replace(',', '.')) })}
+                  type="text"
+                  alwaysShowMask
                 />
 
                 <FormControl
