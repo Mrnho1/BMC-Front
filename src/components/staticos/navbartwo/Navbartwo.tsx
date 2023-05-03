@@ -21,10 +21,7 @@ export default function Navbartwo() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
-
+  
   // Array para redirecionamentos de rota
   const pagesLinksTwo = [
     { name: "Home", href: "/home" },
@@ -63,11 +60,13 @@ export default function Navbartwo() {
             justifyContent: "center",
           }}
         >
+
+          {/* NAVBAR EM TELAS PEQUENAS */}
           <Box
             sx={{
               justifyContent: "center",
               flexGrow: 1,
-              display: { xs: "flex", md: "none" },
+              display: { sm: "flex", md: "none" },
             }}
           >
             <IconButton
@@ -81,6 +80,7 @@ export default function Navbartwo() {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -118,11 +118,12 @@ export default function Navbartwo() {
             </Menu>
           </Box>
           
+          {/* NAVBAR EM TELAS MÉDIAS */}
           <Box
             sx={{
               justifyContent: "center",
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              display: { sm: "none", md: "flex" },
             }}
           >
             {pagesLinksTwo.map((item) => (
@@ -137,9 +138,11 @@ export default function Navbartwo() {
                 </Link>
               </Button>
             ))}
+
           </Box>
         </Toolbar>
 
+       {/* Menu lateral */}
         <SwipeableDrawer
           anchor="right"
           open={open}
@@ -179,6 +182,7 @@ export default function Navbartwo() {
             </List>
           ))}
         </SwipeableDrawer>
+
       </Container>
     </AppBar>
   );

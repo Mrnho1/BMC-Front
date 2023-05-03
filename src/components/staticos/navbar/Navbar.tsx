@@ -21,8 +21,10 @@ import { useEffect, useState } from "react";
 import useLocalStorage from "react-use-localstorage";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem/ListItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
+import { addToken } from "../../../store/tokens/actions";
 
 const pages = ["Home", "Sobre", "Contato", "Produtos", "Sobre", "Cadastro"];
 
@@ -35,10 +37,7 @@ const pageslinks = [
   "/cadastro",
 ];
 
-const settings = [
-  { name: "Perfil", href: "" },
-  { name: "Logout", href: "/login" },
-];
+const settings = [{ name: "Perfil", href: "/perfil" }, { name: "Logout" }];
 
 function ResponsiveAppBar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -47,9 +46,11 @@ function ResponsiveAppBar() {
 
   const [log, setLog] = useState(token);
 
+  const dispatch = useDispatch();
+
   function goLogout() {
-    setLog(token);
-    alert("Usuário deslogado");
+    dispatch(addToken(""));
+    toast.info("Usuário deslogado");
   }
 
   console.log(log);
@@ -63,15 +64,8 @@ function ResponsiveAppBar() {
     null
   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -83,9 +77,11 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo  */}
-          <Box sx={{
-            marginRight: 'auto'
-          }}>
+          <Box
+            sx={{
+              marginRight: "auto",
+            }}
+          >
             <img
               src="https://avatars.githubusercontent.com/u/129092790?s=96&v=4"
               alt="Logo da marca BMC"
@@ -93,27 +89,26 @@ function ResponsiveAppBar() {
             />
           </Box>
 
-         
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "flex" },
-                flexGrow: 1,
-                fontFamily: "sans-serif",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: '#ebeae5',
-                textDecoration: "none",
-              }}
-              className="link"
-            >
-              BEM ME CARE
-            </Typography>
-          
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "flex" },
+              flexGrow: 1,
+              fontFamily: "sans-serif",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "#ebeae5",
+              textDecoration: "none",
+            }}
+            className="link"
+          >
+            BEM ME CARE
+          </Typography>
+
           <Box sx={{ flexGrow: 0 }}>
             <Box
               sx={{
@@ -141,9 +136,13 @@ function ResponsiveAppBar() {
                     justifyItems: "center",
                   }}
                 >
-                  <Link href={"/login"} className="link" sx={{
-                    textDecoration: 'none'
-                  }}>
+                  <Link
+                    href={"/login"}
+                    className="link"
+                    sx={{
+                      textDecoration: "none",
+                    }}
+                  >
                     <Typography className="text-color">Login</Typography>
                   </Link>
 
@@ -153,9 +152,13 @@ function ResponsiveAppBar() {
                     flexItem
                   />
 
-                  <Link href={"/cadastro"} className="link" sx={{
-                    textDecoration: 'none'
-                  }}>
+                  <Link
+                    href={"/cadastro"}
+                    className="link"
+                    sx={{
+                      textDecoration: "none",
+                    }}
+                  >
                     <Typography className="text-color">Cadastro</Typography>
                   </Link>
                 </Box>
@@ -181,21 +184,27 @@ function ResponsiveAppBar() {
               <List>
                 {settings.map((setting) => (
                   <ListItem key={setting.name}>
-                    <Link
-                      onClick={goLogout}
-                      variant="button"
-                      underline="none"
-                      href={setting.href}
-                    >
-                      {setting.name}
-                      {/* {setting.name === 'LOGOUT' ? (goLogout) : ('') } */}
-                    </Link>
+                    {setting.name === "Logout" ? (
+                      <Link
+                        onClick={goLogout}
+                        variant="button"
+                        underline="none"
+                      >
+                        {setting.name}
+                      </Link>
+                    ) : (
+                      <Link
+                        variant="button"
+                        underline="none"
+                        href={setting.href}
+                      >
+                        {setting.name}
+                      </Link>
+                    )}
                   </ListItem>
                 ))}
               </List>
-
             </Menu>
-            
           </Box>
         </Toolbar>
       </Container>
