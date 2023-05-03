@@ -60,6 +60,39 @@ function ListaProduto() {
         <div>
           <Grid container spacing={4} className='gridCard' >
             {produtos.map((produto) => (
+<<<<<<< HEAD
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                  <Box boxShadow={4}>
+                    <div className='produto' style={{ padding: "25px", margin: "15px" }}>
+                      <h1>{produto.nome}</h1>
+                      <img src={produto.img} alt={produto.nome} className='imgProduto'/>
+                      <h3>{produto.descricao}</h3>
+                      <h3>{produto.preco}</h3>
+                      <h3> Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'short'}).format(new Date(produto.data))}</h3>
+                      <Box display='flex' justifyContent='center' mb={1.5}>
+                            <Link to={`/editar-produto/${produto.id}`}>
+                            <Box mx={1}>
+                                <Button variant='contained' size="small">Editar</Button>
+                            </Box>
+                            </Link>
+                            <Link to={`/deletar-produto/${produto.id}`}>
+                            <Box mx={1}>
+                                <Button variant='contained' size="small">Deletar</Button>
+                            </Box>
+                            </Link>
+                            </Box>
+                            <Typography variant="body2" component='p'>
+                              Postado por: {produto.usuario?.nome}
+                            </Typography>
+                    </div>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+            </div>
+          </Paper>
+        </>
+=======
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <Box boxShadow={4} className='cardProduto'>
                   <div className='divProduto'>
@@ -67,7 +100,7 @@ function ListaProduto() {
                     <h1 className='nomeProduto'>{produto.nome}</h1>
                     </Box>
                     <Box className='imgBoxProduto'>
-                      <img src={produto.img} alt={produto.nome} height="350" width="350" className='imgProduto' />
+                      <img src={produto.img} alt={produto.nome}  className='imgProduto' />
                     </Box>
                     <h3 className='txtPreco'>R$ {produto.preco}</h3>
                     <p className='descricaoTxt'>{produto.descricao}</p>
@@ -93,6 +126,7 @@ function ListaProduto() {
         </div>
       </Paper>
     </>
+>>>>>>> 65bd49e29f346c38eab8737aa3123ac4796a597f
   )
 }
 

@@ -7,7 +7,7 @@ import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
-import { addToken } from "../../store/tokens/actions";
+import { addId, addToken } from "../../store/tokens/actions";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -26,6 +26,15 @@ function Login() {
     token: "",
   });
 
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    foto: "",
+    senha: "",
+    token: "",
+  });
+
   function updateModel(event: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
       ...userLogin,
@@ -33,11 +42,12 @@ function Login() {
     });
   }
 
+  // Início do balão de informação de Login realizado com sucesso
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
     try {
-      await login("/usuarios/logar", userLogin, setToken);
+      await login("/usuarios/logar", userLogin, setRespUserLogin);
       toast.success("Usuario logado com sucesso", {
         position: "top-right",
         autoClose: 2000,
@@ -48,8 +58,11 @@ function Login() {
         progress: undefined,
         theme: "colored",
       });
+      // Fim do balão de informação de Login realizado com sucesso
+
+      // Início do balão de informação de Usuário ou senha inválidos
     } catch (error) {
-      toast.error("Usúario ou senha invalidos", {
+      toast.error("Usuário ou senha inválidos", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -61,6 +74,7 @@ function Login() {
       });
     }
   }
+  // Fim do balão de informação de Usuário ou senha inválidos
 
   useEffect(() => {
     if (token !== "") {
@@ -69,15 +83,26 @@ function Login() {
     }
   }, [token]);
 
+  useEffect(() => {
+    if (respUserLogin.token !== "") {
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString()));
+      useHistory("/home");
+    }
+  }, [respUserLogin.token]);
+
   return (
+    // Início da estrutura da tela de Login para aparecer na tela
     <Grid
       container
       justifyContent="center"
       alignItems="center"
       direction={largeScreen ? "row" : "column-reverse"}
-      className="FundoLogin">
+      className="FundoLogin"
+    >
       <Grid item xs={12} md={6}>
         <Box paddingX={6}>
+          {/* Início do formulário para o usuário entrar com os dados de e-mail e senha cadastrado*/}
           <form onSubmit={onSubmit} className="formLogin">
             <Typography
               variant="h3"
@@ -85,9 +110,11 @@ function Login() {
               color="textPrimary"
               component="h3"
               align="center"
-              className="tituloLogin">
+              className="tituloLogin"
+            >
               Faça o seu Login
             </Typography>
+            {/* Início do input para o usuário digitar o e-mail cadastrado */}
             <TextField
               id="usuario"
               label="Digite o seu e-mail"
@@ -96,10 +123,10 @@ function Login() {
               margin="normal"
               value={userLogin.usuario}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                updateModel(event)
-              }
-              fullWidth
-            />
+                updateModel(event)}
+              fullWidth />
+            {/* Fim do input para o usuário digitar o e-mail cadastrado */}
+            {/* Início do input para o usuário digitar a senha cadastrada */}
             <TextField
               id="senha"
               label="Digite a sua senha"
@@ -109,16 +136,19 @@ function Login() {
               type="password"
               value={userLogin.senha}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                updateModel(event)
-              }
-              fullWidth
-            />
+                updateModel(event)}
+              fullWidth />
+            {/* Fim do input para o usuário digitar a senha cadastrada */}
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary">
-                Logar
+              {/* Início do botão para o usuário entrar na plataforma */}
+              <Button type="submit" variant="contained">
+                Entrar
               </Button>
             </Box>
+            {/* Fim do botão para o usuário entrar na plataforma */}
           </form>
+          {/* Fim do formulário para o usuário entrar com os dados de e-mail e senha cadastrado*/}
+          {/* Início do convite para o usuário que não possui conta, se cadastrar */}
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
@@ -126,15 +156,23 @@ function Login() {
               </Typography>
             </Box>
 
-            <Typography variant="subtitle1" gutterBottom align="center" className="btnCadastro">
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              align="center"
+              className="btnCadastro"
+            >
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
+          {/* Fim do convite para o usuário que não possui conta, se cadastrar */}
         </Box>
       </Grid>
-
-      <Grid item xs={12} md={6} className="imagem"></Grid>
+      {/* Início da imagem que aparece na lateral direita do form login */}
+      <Grid item xs={12} md={6} className="imagemLogin"></Grid>
+      {/* Fim da imagem que aparece na lateral direita do form login */}
     </Grid>
+    // Fim da estrutura do login para aparecer na tela
   );
 }
 
