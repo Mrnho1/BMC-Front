@@ -33,6 +33,7 @@ function Login() {
     });
   }
 
+  // Início do balão de informação de Login realizado com sucesso
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -48,8 +49,11 @@ function Login() {
         progress: undefined,
         theme: "colored",
       });
+      // Fim do balão de informação de Login realizado com sucesso
+
+      // Início do balão de informação de Usuário ou senha inválidos
     } catch (error) {
-      toast.error("Usúario ou senha invalidos", {
+      toast.error("Usuário ou senha inválidos", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -61,6 +65,7 @@ function Login() {
       });
     }
   }
+// Fim do balão de informação de Usuário ou senha inválidos
 
   useEffect(() => {
     if (token !== "") {
@@ -70,6 +75,7 @@ function Login() {
   }, [token]);
 
   return (
+    // Início da estrutura do login para aprecer na tela
     <Grid
       container
       justifyContent="center"
@@ -78,6 +84,7 @@ function Login() {
       className="FundoLogin">
       <Grid item xs={12} md={6}>
         <Box paddingX={6}>
+        {/* Início do formulário para o usuário entrar com os dados de e-mail e senha */}
           <form onSubmit={onSubmit} className="formLogin">
             <Typography
               variant="h3"
@@ -115,10 +122,13 @@ function Login() {
             />
             <Box marginTop={2} textAlign="center">
               <Button type="submit" variant="contained" color="primary">
-                Logar
+                Entrar
               </Button>
             </Box>
           </form>
+            {/* Fim do formulário para o usuário entrar com os dados de e-mail e senha */}
+
+              {/* Início do convite para o usuário que não possui conta, se cadastrar */}
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
@@ -130,11 +140,13 @@ function Login() {
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
+            {/* Fim do convite para o usuário que não possui conta, se cadastrar */}
         </Box>
       </Grid>
 
       <Grid item xs={12} md={6} className="imagem"></Grid>
     </Grid>
+     // Fim da estrutura do login para aprecer na tela
   );
 }
 
