@@ -1,0 +1,71 @@
+.imagem2 {
+  background-image: url(/src/assets/BMC-IMAGENS/login-cadastro//imgCad.png);
+  background-repeat: no-repeat;
+  min-width: 90vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.tituloCadastro {
+  color: #836177 !important;
+  font-weight: bold !important;
+  font-size: 50px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.fundoCadastro {
+  background-color: #EBEAE5;
+}
+
+.form-Cadastro {
+  width: 90%;
+  height: 90%;
+}
+
+.form-Cadastro input {
+  background-color: #fefab6;
+  border: #c75f77 1px solid;
+  border-radius: 0;
+  border-bottom: 1px solid #654b49;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  color: #654b49;
+}
+.form-Cadastro input:hover {
+  background-color: #fefab6;
+  border: #c75f77 1px solid;
+  border-radius: 0;
+  border-bottom: 1px solid #654b49;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  color: #654b49;
+}
+
+.form-Cadastro label {
+  position: relative;
+  top: 29%;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #836177 !important;
+}
+
+@media screen and (max-width: 480px) {
+  .imagem2 {
+    min-width: 50%;
+    min-height: 50vh;
+  }
+
+  .tituloCadastro {
+    font-size: 20px !important;
+    padding-top: 20%;
+  }
+}

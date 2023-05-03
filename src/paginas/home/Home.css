@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root{
+  --color-OffWhite: #EBEAE5;
+  --color-Yellow: #fefab6;
+  --color-Blue: #77a493;
+  --color-Pink: #c75f77;
+  --color-Purple: #836177;
+  --color-Brown: #654b49;
+  --color-Black: #000000;
+}
+
+
+.caixa {
+  background-color: var(--color-Purple);
+}
+
+.titulo-bem-vindo {
+  color: var(--color-Yellow) !important;
+  font-weight: bolder !important;
+  padding-top: 3rem;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.sub-titulo {
+  font-size: 40px !important;
+  color: #77a493;
+  align-items: center;
+  padding-bottom: 2rem;
+  font-weight: 400;
+}
+
+.bttnHome{
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+
+.imgHome {
+  border-radius: 50%
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .bttnHome button{
+    max-width: 100% !important;
+    max-height: 50vh;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 481px){
+  .bttnHome button{
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}

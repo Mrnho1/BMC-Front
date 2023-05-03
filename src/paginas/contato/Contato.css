@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root {
+  --color-OffWhite: #ebeae5;
+  --color-Yellow: #fefab6;
+  --color-Blue: #77a493;
+  --color-Pink: #c75f77;
+  --color-Purple: #836177;
+  --color-Brown: #654b49;
+  --color-Black: #000000;
+}
+
+.caixaContato {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-OffWhite);
+}
+
+.tituloContato {
+  color: #836177 !important;
+  font-weight: bolder !important;
+  font-size: 35px !important;
+  display: flex;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.txtContato {
+  font-size: 22px !important;
+  color: #77a493;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500 !important;
+}
+
+.txtContato2{
+  font-size: 24px !important;
+  color: #c75f77;
+  font-weight: bold !important;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.bttnImagens{
+  display: flex;
+  justify-content: center;
+}
+
+.btnContato {
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.btnContato button {
+  display: flex;
+  justify-content: center;
+}
+
