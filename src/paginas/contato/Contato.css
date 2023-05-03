@@ -1,7 +1,5 @@
-/* Importação da fonte usada na página */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-/* váriaveis de cores padrão do site */
 :root {
   --color-OffWhite: #ebeae5;
   --color-Yellow: #fefab6;
@@ -12,15 +10,13 @@
   --color-Black: #000000;
 }
 
-/* Centralizando e estilizando o fundo da página */
 .caixaContato {
   display: flex;
   align-items: center;
   background-color: var(--color-OffWhite);
 }
 
-/* Inserção de cor, mudança de fonte, peso e tamanho do texto, centralização dos items e espaçamento */
-.titulo1 {
+.tituloContato {
   color: #836177 !important;
   font-weight: bolder !important;
   font-size: 35px !important;
@@ -30,8 +26,7 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
-/* Inserção de cor, mudança de peso e tamanho de texto, centralização do texto e espaçamento */
-.texto1 {
+.txtContato {
   font-size: 22px !important;
   color: #77a493;
   text-align: center;
@@ -39,8 +34,7 @@
   font-weight: 500 !important;
 }
 
-/* Inserção de cor, mudança de fonte, peso e tamanho de texto, centralização do texto e espaçamento */
-.texto2 {
+.txtContato2{
   font-size: 24px !important;
   color: #c75f77;
   font-weight: bold !important;
@@ -50,19 +44,16 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
-/* Centralizando as imagens que vão funcionar com link */
 .bttnImagens{
   display: flex;
   justify-content: center;
 }
 
-/* Transformando em coluna e espaçando os botões */
 .btnContato {
   flex-direction: column;
   padding: 3rem;
 }
 
-/* Centralizando os botões */
 .btnContato button {
   display: flex;
   justify-content: center;
