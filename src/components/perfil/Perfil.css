@@ -1,7 +1,8 @@
 
-
 .cont{
-    
+    display: flex;
+    width: 85vw;
+    margin: 0 auto;
 }
 
 .grid{
@@ -12,9 +13,36 @@
     margin: 100px 50px;
 }
 
-@media screen and (max-width: 830px){
-	.cont{
-        display: inline !important;
+.perfilFoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.perfilFoto img {
+    border-radius: 50%;
+    width: 250px;
+    aspect-ratio: 1;
+}
+
+.perfilFoto h5 {
+    text-align: center;
+}
+
+.perfilDados {
+    flex: 3;
+}
+
+.Typo{
+    font-family: monospace !important;
+}
+
+@media screen and (max-width: 600px){
+    .cont{
+        flex-direction: column;
+        gap: 1rem;
     }
     .typog{
         margin: auto;
@@ -23,6 +51,4 @@
         flex-direction: column;
         margin: 10px 30px;
     }
-
-
 }

@@ -36,28 +36,22 @@ function Perfil() {
 
   return (
     <>
-      <Container style={{display: 'flex'}}  className="cont">
-        <Grid xs={3} alignItems="center" justifyContent="center" >
-          <Avatar
-            src={usuario.foto}
-            alt=""
-            style={{ width: "15rem", height: "15rem", margin: "0 auto" }} className="grid"
-          />
-          <Typography variant="h5" align="center">
-            {usuario.nome}
-          </Typography>
-        </Grid>
-        <Grid justifyContent="flex-start" className="typog" >
-          <Typography variant="h4">
-            {""}
-            Produtos de {usuario.nome}
-          </Typography>
-          Seu total de {usuario.produto?.length} postagens
-          {usuario.produto?.map((post) => (
-            <p>{post.categoria}</p>
+      <div className="cont">
+        <div className="perfilFoto">
+          <img src='https://github.com/Kaluribr.png' alt="" />
+          <Typography>{usuario.nome}</Typography>
+        </div>
+        <div className="perfilDados">
+          <Typography variant="h5" className="Typo" fontWeight='800'>Produtos de {usuario.nome}</Typography>
+          <Typography fontWeight='600'>Seu total de produtos: {usuario.produto?.length}</Typography>
+
+          {usuario.produto?.map((prod) => (
+            <>
+              <Typography>{prod.nome}</Typography>
+            </>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </>
   );
 }
