@@ -48,44 +48,45 @@ function ListaProduto() {
   }, [token])
 
   return (
-    <>
+    <div className='fundoCardCompleto'>
       <Grid container spacing={1}>
-        <Grid item xs={12} sm={12}>
+        <Grid item xs={12} sm={12} >
 
           <Carousel />
         </Grid>
 
-      </Grid>
-          <Grid container spacing={4} className='gridCard' >
-            {produtos.map((produto) => (
-              <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Box boxShadow={4} className='cardProduto'>
-                  <div className='fundoCard'>
-                    <h1 className='nomeProduto'>{produto.nome}</h1>
-                    <img className='imgProduto' src={produto.img} alt={produto.nome}   />
-                    <h3 className='txtPreco'>R$ {produto.preco}</h3>
-                    <p className='txtDescricao'>{produto.descricao}</p>
-                    <h3 className='dataProduto'> {Intl.DateTimeFormat('pt-BR', {
-                      dateStyle: 'short', timeStyle: 'short'
-                    }).format(new Date(produto.data))}</h3>
-                    <Box className='btnProdutos' mb={1.5}>
-                      <Link to={`/editar-produto/${produto.id}`}>
-                        <Box mx={1} >
-                          <Button variant='contained' size="small">Editar</Button>
-                        </Box>
-                      </Link>
-                      <Link to={`/deletar-produto/${produto.id}`}>
-                        <Box mx={1}>
-                          <Button variant='contained' size="small">Deletar</Button>
-                        </Box>
-                      </Link>
+      </Grid >
+      <Grid container spacing={4} className='gridCard' >
+        {produtos.map((produto) => (
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Box boxShadow={4} className='cardProduto'>
+              <div className='fundoCard'>
+                <h1 className='nomeProduto'>{produto.nome}</h1>
+                <img className='imgProduto' src={produto.img} alt={produto.nome} />
+                <h3 className='txtPreco'>R$ {produto.preco}</h3>
+                <p className='txtDescricao'>{produto.descricao}</p>
+                <h3 className='dataProduto'> {Intl.DateTimeFormat('pt-BR', {
+                  dateStyle: 'short', timeStyle: 'short'
+                }).format(new Date(produto.data))}</h3>
+                <Box className='btnProdutos' mb={1.5}>
+                  <Link to={`/editar-produto/${produto.id}`}>
+                    <Box mx={1} >
+                      <Button variant='contained' size="small">Editar</Button>
                     </Box>
-                  </div>
+                  </Link>
+                  <Link to={`/deletar-produto/${produto.id}`}>
+                    <Box mx={1}>
+                      <Button variant='contained' size="small">Deletar</Button>
+                    </Box>
+                  </Link>
                 </Box>
-              </Grid>
-            ))}
+              </div>
+            </Box>
           </Grid>
-    </>
+        ))}
+      </Grid>
+    </div>
+
   )
 }
 
