@@ -48,19 +48,19 @@ function Contato() {
           <Grid item className="bttnImagens">
             {/* Imagem que terá um link para doações (implementação futura) */}
           <img
-              src='/src/assets/BMC-IMAGENS/doacoes.png'
+              src='https://i.imgur.com/V7zTxzN.png'
               alt=""
               width="26%"
             />
              {/* Imagem que terá um link para parcerias (implementação futura) */}
             <img
-              src='/src/assets/BMC-IMAGENS/juntese.png'
+              src='https://i.imgur.com/Px02JcO.png'
               alt=""
               width="33%"
             />
              {/* Imagem com um link para nosso instagram utilizando o onClick para não fechar nosso site */}
              <img
-              src='/src/assets/BMC-IMAGENS/compartilhe.png'
+              src='https://i.imgur.com/X6wje8J.png'
               alt=""
               width="33%"
               onClick={() =>
