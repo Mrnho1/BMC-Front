@@ -18,11 +18,11 @@ function Contato() {
         >
           {/* Início de Grid item que abriga o texto principal da página */}
           <Grid item>
-              <Typography className="titulo1">
+              <Typography className="tituloContato">
                 Você sabia que algumas pessoas não conseguem comprar
                 absorventes?
               </Typography>
-              <Typography className="texto1">
+              <Typography className="txtContato">
                 Infelizmente, essa é a realidade algumas pessoas não têm acesso
                 a produtos básicos de higiene.
                 <br />
@@ -39,7 +39,7 @@ function Contato() {
                   AQUI
                 </a>
               </Typography>
-              <Typography className="texto2">
+              <Typography className="txtContato2">
                 Mas com sua ajuda, há esperança!
               </Typography>
           </Grid>
@@ -48,21 +48,18 @@ function Contato() {
           <Grid item className="bttnImagens">
             {/* Imagem que terá um link para doações (implementação futura) */}
           <img
-              className="ApoieContato"
               src='/src/assets/BMC-IMAGENS/doacoes.png'
               alt=""
               width="26%"
             />
              {/* Imagem que terá um link para parcerias (implementação futura) */}
             <img
-              className="ApoieContato"
               src='/src/assets/BMC-IMAGENS/juntese.png'
               alt=""
               width="33%"
             />
              {/* Imagem com um link para nosso instagram utilizando o onClick para não fechar nosso site */}
              <img
-              className="ApoieContato"
               src='/src/assets/BMC-IMAGENS/compartilhe.png'
               alt=""
               width="33%"
