@@ -30,12 +30,29 @@
   font-weight: 400;
 }
 
-.botaoHome {
+.bttnHome{
   justify-content: center;
   flex-direction: column;
   padding: 3rem;
 }
 
+
 .imgHome {
   border-radius: 50%
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .bttnHome button{
+    max-width: 100% !important;
+    max-height: 50vh;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 481px){
+  .bttnHome button{
+    font-size: 12px;
+    white-space: nowrap;
+  }
 }

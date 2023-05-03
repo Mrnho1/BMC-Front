@@ -20,7 +20,7 @@ import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Navbartwo from "./components/staticos/navbartwo/Navbartwo";
-
+import TesteFooter from "./components/staticos/testeFooter/TesteFooter";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -51,7 +51,9 @@ function App() {
           </Routes>
         </div>
 
-        <Footer />
+{/* teste teste */}
+        {/* <Footer /> */}
+        <TesteFooter/>
       </BrowserRouter>
     </Provider>
   );
