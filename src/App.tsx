@@ -20,6 +20,8 @@ import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Perfil from "./components/perfil/Perfil";
+import Navbartwo from "./components/staticos/navbartwo/Navbartwo";
+import TesteFooter from "./components/staticos/testeFooter/TesteFooter";
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
       <ToastContainer/>
       <BrowserRouter>
         <ButtonAppBar />
+        <Navbartwo/>
         <div style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<Login />} />
@@ -51,7 +54,9 @@ function App() {
           </Routes>
         </div>
 
-        <Footer />
+{/* teste teste */}
+        {/* <Footer /> */}
+        <TesteFooter/>
       </BrowserRouter>
     </Provider>
   );
