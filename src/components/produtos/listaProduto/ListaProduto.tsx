@@ -62,17 +62,14 @@ function ListaProduto() {
             {produtos.map((produto) => (
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <Box boxShadow={4} className='cardProduto'>
-                  <div className='divProduto'>
-                  <Box className='nomeBoxProduto'>
+                  <div>
                     <h1 className='nomeProduto'>{produto.nome}</h1>
-                    </Box>
-                    <Box className='imgBoxProduto'>
-                      <img src={produto.img} alt={produto.nome}  className='imgProduto' />
-                    </Box>
+                    <img className='imgProduto' src={produto.img} alt={produto.nome}   />
                     <h3 className='txtPreco'>R$ {produto.preco}</h3>
                     <p className='descricaoTxt'>{produto.descricao}</p>
-
-                    <h3 className='dataProduto'> {Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(produto.data))}</h3>
+                    <h3 className='dataProduto'> {Intl.DateTimeFormat('pt-BR', {
+                      dateStyle: 'short', timeStyle: 'short'
+                    }).format(new Date(produto.data))}</h3>
                     <Box display='flex' justifyContent='center' mb={1.5}>
                       <Link to={`/editar-produto/${produto.id}`}>
                         <Box mx={1} className='btnProdutos'>
