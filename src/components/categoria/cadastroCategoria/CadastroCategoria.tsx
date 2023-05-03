@@ -53,7 +53,7 @@ function CadastroCategoria() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                });
+            });
             history('/login')
         }
     }, [token])
@@ -76,7 +76,7 @@ function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
                 history("/categoria")
             } catch (error) {
                 toast.error('Falha ao atualizar a categoria!', {
@@ -88,10 +88,11 @@ function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
             }
         } else {
-            try { console.log(categoria)
+            try {
+                console.log(categoria)
                 await post("/categoria", categoria, setCategoria, {
                     headers: {
                         'Authorization': token,
@@ -106,7 +107,7 @@ function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
                 history("/categoria")
             } catch (error) {
                 toast.error('Falha ao cadastrar a categoria!', {
@@ -118,7 +119,7 @@ function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
             }
         }
     }

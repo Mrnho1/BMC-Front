@@ -92,6 +92,7 @@ function ListaProduto() {
           </Paper>
         </>
   )
+
 }
 
 export default ListaProduto

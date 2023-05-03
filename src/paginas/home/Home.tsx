@@ -14,31 +14,31 @@ function Home() {
 
 
   // Variáveis usados na página Home
-const history = useNavigate();
-const token = useSelector<TokenState, TokenState["tokens"]>(
-  (state) => state.tokens
-);
+  const history = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
-// Condição para que o usuário só tenha acesso a página após realizar o Login
-useEffect(() => {
-  if (token == "") {
-    toast.info('Você precisa estar logado', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
+  // Condição para que o usuário só tenha acesso a página após realizar o Login
+  useEffect(() => {
+    if (token == "") {
+      toast.info('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
-    history("/login");
-  }
-}, [token]);
+      history("/login");
+    }
+  }, [token]);
 
   return (
-    <>
-     {/* Início da Grid container que abriga a face da nossa Home */}
+    <> <div className="fundoHome">
+      {/* Início da Grid container que abriga a face da nossa Home */}
       <Grid
         container
         direction="row"
@@ -82,15 +82,15 @@ useEffect(() => {
             {/* Box para abrigar e estilizar o botão que leva até a página de produtos */}
             <Box className="bttnHome" marginX={15}>
               {/* Inserção do link para redirecionar o usuário para a página de produtos */}
-                <Link to={"/produtos"}>
-                  <Button fullWidth variant="outlined" style={{margin: '10px'}}>
-                    Veja os nossos produtos
-                  </Button>
-                </Link>
-                {/* Botão que deverá recirecionar a uma forma de apoiar nosso projeto (implementação futura) */}
-                <Button fullWidth variant="outlined">
-                  Apoie o nosso trabalho
+              <Link to={"/produtos"}>
+                <Button fullWidth variant="outlined" style={{ margin: '10px' }}>
+                  Veja os nossos produtos
                 </Button>
+              </Link>
+              {/* Botão que deverá recirecionar a uma forma de apoiar nosso projeto (implementação futura) */}
+              <Button fullWidth variant="outlined">
+                Apoie o nosso trabalho
+              </Button>
             </Box>
           </Grid>
         </Grid>
@@ -109,7 +109,9 @@ useEffect(() => {
         <TabProdutos />
       </Grid>
       {/* Final da Grid que abriga a Tab de podutos, onde podemos ter acesso a sua lista mesmo fora da página de produtos */}
+    </div>
     </>
+
   );
 }
 
