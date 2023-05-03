@@ -67,7 +67,7 @@ function ListaProduto() {
                     <h1 className='nomeProduto'>{produto.nome}</h1>
                     </Box>
                     <Box className='imgBoxProduto'>
-                      <img src={produto.img} alt={produto.nome} height="350" width="350" className='imgProduto' />
+                      <img src={produto.img} alt={produto.nome}  className='imgProduto' />
                     </Box>
                     <h3 className='txtPreco'>R$ {produto.preco}</h3>
                     <p className='descricaoTxt'>{produto.descricao}</p>
