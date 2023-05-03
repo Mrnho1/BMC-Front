@@ -46,7 +46,7 @@ function Sobre() {
         {/* Grid que contém a foto ilustrativa */}
         <Grid item xs={6}>
           <img
-            src="/src/assets/BMC-IMAGENS/fotoSobre.png"
+            src="https://i.imgur.com/0M0QFmi.png"
             alt=""
             className="fotoSobre"
           />
@@ -157,7 +157,7 @@ function Sobre() {
         {/* Início da Grid que contém a logomarca do projeto */}
         <Grid item xs={10}>
           <Box display='flex' justifyContent='space-around'>
-          <img src="/src/assets/icon/logoRoxo.png" alt="" style={{width: '20%'}}/>
+          <img src="https://i.imgur.com/Hktg1Kv.png" alt="" style={{width: '20%'}}/>
           </Box>          
           </Grid>
           {/* Final da Grid que contém a logomarca do projeto */}
