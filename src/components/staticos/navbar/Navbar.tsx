@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import "./Navbar.css"
+import { styled } from '@material-ui/core';
 
 const pages = ['Home', 'Sobre', 'Contato', 'Produtos', 'Sobre', 'Categorias', 'Cadastrar Categoria', 'Cadastrar Produto','Cadastro'];
 
@@ -128,9 +129,8 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to={pageslinks[pages.indexOf(page)]} className='link'>
+                <Link to={pageslinks[pages.indexOf(page)]} className='link' >
                   {page}
-
                 </Link>
 
 
