@@ -35,6 +35,7 @@ export default function Navbartwo() {
     { name: "Categorias", href: "/categoria" },
     { name: "Cadastrar Categoria", href: "/cadastroCategoria" },
     { name: "Cadastrar Produto", href: "/cadastroProduto" },
+    { name: "Perfil", href: "/perfil/:id" }
   ];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {

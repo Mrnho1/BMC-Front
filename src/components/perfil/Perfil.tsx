@@ -5,6 +5,7 @@ import { TokenState } from "../../store/tokens/tokensReducer";
 import User from "../../models/User";
 import { Avatar, Container, Typography } from "@mui/material";
 import { Grid } from "@material-ui/core";
+import "./Perfil.css"
 
 function Perfil() {
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
@@ -35,23 +36,23 @@ function Perfil() {
 
   return (
     <>
-      <Container>
-        <Grid xs={3} alignItems="center" justifyContent="center">
+      <Container style={{display: 'flex'}}  className="cont">
+        <Grid xs={3} alignItems="center" justifyContent="center" >
           <Avatar
             src={usuario.foto}
             alt=""
-            style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
+            style={{ width: "15rem", height: "15rem", margin: "0 auto" }} className="grid"
           />
           <Typography variant="h5" align="center">
             {usuario.nome}
           </Typography>
         </Grid>
-        <Grid xs={9} justifyContent="center">
-          <Typography variant="h4" align="center">
-            {" "}
+        <Grid justifyContent="flex-start" className="typog" >
+          <Typography variant="h4">
+            {""}
             Produtos de {usuario.nome}
           </Typography>
-          Você tem um total de {usuario.produto?.length} postagens feiras
+          Seu total de {usuario.produto?.length} postagens
           {usuario.produto?.map((post) => (
             <p>{post.categoria}</p>
           ))}

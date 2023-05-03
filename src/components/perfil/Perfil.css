@@ -1,0 +1,28 @@
+
+
+.cont{
+    
+}
+
+.grid{
+    margin-top: 10px !important;
+}
+
+.typog{
+    margin: 100px 50px;
+}
+
+@media screen and (max-width: 830px){
+	.cont{
+        display: inline !important;
+    }
+    .typog{
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin: 10px 30px;
+    }
+
+
+}
