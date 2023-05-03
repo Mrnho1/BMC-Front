@@ -189,8 +189,9 @@ function TesteFooter() {
                             variant="body2"
                             gutterBottom
                             className="ods-t"
+
                         >
-                            Todos os direitos e agradecimos reservados à Generation Brasil
+                            Todos os direitos e agradecimentos reservados à Generation Brasil
                         </Typography>
                         </Box>
                     </Box>
