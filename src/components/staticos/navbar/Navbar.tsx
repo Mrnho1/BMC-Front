@@ -21,6 +21,8 @@ import { useEffect, useState } from "react";
 import useLocalStorage from "react-use-localstorage";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem/ListItem";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 const pages = ["Home", "Sobre", "Contato", "Produtos", "Sobre", "Cadastro"];
 
@@ -40,10 +42,13 @@ const settings = [
 ];
 
 function ResponsiveAppBar() {
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
   const [log, setLog] = useState(token);
+  
   function goLogout() {
-    setToken("");
     setLog(token);
     alert("Usuário deslogado");
   }
