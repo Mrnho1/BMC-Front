@@ -51,7 +51,6 @@ function ListaProduto() {
     <>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={12}>
-
           <Carousel />
         </Grid>
 
