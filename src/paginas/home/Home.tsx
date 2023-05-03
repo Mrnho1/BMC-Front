@@ -7,11 +7,13 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import TabProdutos from '../../components/produtos/tabProdutos/TabProdutos';
+import Navbartwo from '../../components/staticos/navbartwo/Navbartwo';
 
 function Home() {
   // Início da lógica
+
+
   // Variáveis usados na página Home
-  
 const history = useNavigate();
 const token = useSelector<TokenState, TokenState["tokens"]>(
   (state) => state.tokens
@@ -41,6 +43,7 @@ useEffect(() => {
         container
         direction="row"
         className="caixa"
+        md={12}
       >
         {/* Grid container que centraliza o conteúdo do item */}
         <Grid
@@ -77,7 +80,7 @@ useEffect(() => {
           {/* Grid item que abriga os botões de ver produtos e apoiar nosso projeto  */}
           <Grid item>
             {/* Box para abrigar e estilizar o botão que leva até a página de produtos */}
-            <Box className="botaoHome" marginX={15}>
+            <Box className="bttnHome" marginX={15}>
               {/* Inserção do link para redirecionar o usuário para a página de produtos */}
                 <Link to={"/produtos"}>
                   <Button fullWidth variant="outlined" style={{margin: '10px'}}>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-
 :root {
   --color-OffWhite: #ebeae5;
   --color-Yellow: #fefab6;
@@ -13,54 +12,44 @@
 
 .caixaContato {
   display: flex;
-  justify-content: center;
   align-items: center;
-  align-content: center;
   background-color: var(--color-OffWhite);
 }
 
-.titulo1 {
+.tituloContato {
   color: #836177 !important;
   font-weight: bolder !important;
   font-size: 35px !important;
   display: flex;
-  justify-content: center;
   text-align: center;
   padding: 2rem;
   font-family: 'Montserrat', sans-serif !important;
 }
 
-.texto1 {
+.txtContato {
   font-size: 22px !important;
   color: #77a493;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 1rem;
   font-weight: 500 !important;
 }
 
-.texto2 {
+.txtContato2{
   font-size: 24px !important;
   color: #c75f77;
   font-weight: bold !important;
-  align-items: center;
   display: flex;
   justify-content: center;
-  text-align: center;
   padding: 2rem;
   font-family: 'Montserrat', sans-serif !important;
 }
 
 .bttnImagens{
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
 .btnContato {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
   padding: 3rem;
 }

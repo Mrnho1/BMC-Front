@@ -6,6 +6,7 @@ import "./Sobre.css";
 function Sobre() {
   return (
     <>
+    {/* Início de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
       <Grid
         container
         direction="row"
@@ -13,15 +14,18 @@ function Sobre() {
         alignItems="center"
         className="container"
       >
-        <Grid item className="tituloSobre" alignItems="center">
+      {/* Início do Grid com a o texto e a imagem ilustrativa do Sobre */}
+        <Grid item  className="tituloCards" alignItems="center">
+          {/* Início da Grid que alinha os items e define tamanho das colunas do texto */}
         <Grid alignItems="center" item xs={6}>
+          {/* Início da Box que abriga o resumo do Projeto */}
           <Box paddingX={4} display='flex' flexDirection='column'>
             <Typography
               variant="h3"
               gutterBottom
               color="textPrimary"
               component="h3"
-              className="titulo"
+              className="tituloSobre"
             >
               Sobre o Bem Me Care
             </Typography>
@@ -29,39 +33,43 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="texto"
+              className="textoSobre"
             >
               Nossa marca preza pelo fim da pobreza menstrual, por isso nós
               revertemos parte de nossas vendas para distribuição de absorventes
               em escolas públicas periféricas.
             </Typography>
           </Box>
+          {/* Final da Box que abriga o resumo do Projeto */}
         </Grid>
+        {/* Final da Grid que alinha os items e define tamanho das colunas do texto */}
+        {/* Grid que contém a foto ilustrativa */}
         <Grid item xs={6}>
           <img
-            src="/src/assets/BMC-IMAGENS/fotoSobre.png"
+            src="https://i.imgur.com/0M0QFmi.png"
             alt=""
             className="fotoSobre"
           />
         </Grid>
         </Grid>
-       
-        
-        <Grid xs={12} className="postagens"></Grid>
+        {/* Final do Grid com a o texto e a imagem ilustrativa do Sobre */}
       </Grid>
-
+        {/* Final de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
+        {/* Início da Grid que abriga os Cards */}
       <Grid
         container
         direction="row"
         className="containerCards"
       >
+        {/* Início da Grid que define quantas colunas os Cards ocupam */}
         <Grid item xs={10}>
+          {/* Início das Boxes que estiliza os Cards */}
           <Box paddingX={5} className="cards">
             <Typography
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Quem somos?
             </Typography>
@@ -85,7 +93,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Nossos Valores
             </Typography>
@@ -106,7 +114,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Nossa Missão
             </Typography>
@@ -127,7 +135,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Nossa Visão
             </Typography>
@@ -143,13 +151,18 @@ function Sobre() {
               de contribuirmos na diminuição de produção de lixo.
             </Typography>
           </Box>
+        {/*Final das Boxes que estiliza os Cards */}
         </Grid>
+        {/* Final da Grid que define quantas colunas os Cards ocupam */}
+        {/* Início da Grid que contém a logomarca do projeto */}
         <Grid item xs={10}>
           <Box display='flex' justifyContent='space-around'>
-          <img src="/src/assets/icon/logoRoxo.png" alt="" style={{width: '20%'}}/>
+          <img src="https://i.imgur.com/Hktg1Kv.png" alt="" style={{width: '20%'}}/>
           </Box>          
           </Grid>
+          {/* Final da Grid que contém a logomarca do projeto */}
       </Grid>
+      {/* Final da Grid que abriga os Cards */}
     </>
   );
 }
