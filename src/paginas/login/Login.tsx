@@ -143,7 +143,9 @@ function Login() {
           {/* Fim do convite para o usuário que não possui conta, se cadastrar */}
         </Box>
       </Grid>
-      <Grid item xs={12} md={6} className="imagem"></Grid>
+      {/* Início da imagem que aparece na lateral direita do form login */}
+      <Grid item xs={12} md={6} className="imagemLogin"></Grid>
+      {/* Fim da imagem que aparece na lateral direita do form login */}
     </Grid>
     // Fim da estrutura do login para aparecer na tela
   );

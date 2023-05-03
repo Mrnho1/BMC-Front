@@ -109,7 +109,9 @@ function CadastroUsuario() {
   return (
     // Início da estrutura da tela de Cadastro para aparecer na tela
     <Grid container direction="row" justifyContent="center" alignItems="center" className="fundoCadastro">
-      <Grid item xs={12} md={6} className="imagem2"></Grid>
+      {/* Início da imagem que aparece na lateral esquerda do form de Cadastro */}
+      <Grid item xs={12} md={6} className="imagemCadastro"></Grid>
+      {/* Fim da imagem que aparece na lateral esquerda do form de Cadastro */}
       <Grid item xs={12} md={6} alignItems="center">
         <Box paddingX={10} marginBottom={5}>
           {/* Início do formulário para o usuário se cadastrar preenchendo os dados solicitados */}
@@ -133,8 +135,8 @@ function CadastroUsuario() {
               required
               value={user.nome}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)}
-              fullWidth/>
+                updateModel(event)}
+              fullWidth />
             {/* Fim do input para o usuário digitar nome e sobrenome */}
             {/* Início do input para o usuário digitar e-mail */}
             <TextField
@@ -147,8 +149,8 @@ function CadastroUsuario() {
               required
               value={user.usuario}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)}
-              fullWidth/>
+                updateModel(event)}
+              fullWidth />
             {/* Fim do input para o usuário digitar e-mail */}
             {/* Início do input para o usuário colar a URL de uma foto - não é obrigatória */}
             <TextField
@@ -159,8 +161,8 @@ function CadastroUsuario() {
               margin="normal"
               value={user.foto}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)}
-              fullWidth/>
+                updateModel(event)}
+              fullWidth />
             {/* Fim do input para o usuário colar a URL de uma foto - não é obrigatória */}
             {/* Início do input para o usuário digitar uma senha */}
             <TextField
@@ -173,8 +175,8 @@ function CadastroUsuario() {
               required
               value={user.senha}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)}
-              fullWidth/>
+                updateModel(event)}
+              fullWidth />
             {/* Fim do input para o usuário digitar uma senha */}
             {/* Início do input para o usuário confirmar a senha digitada anteriormente */}
             <TextField
@@ -187,8 +189,8 @@ function CadastroUsuario() {
               required
               value={confirmarSenha}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              confirmarSenhaHandle(event)}
-              fullWidth/>
+                confirmarSenhaHandle(event)}
+              fullWidth />
             {/* Fim do input para o usuário confirmar a senha digitada anteriormente */}
             {/* Início dos botões para cancelar = voltar para login ou para cadastrar = finalizar o cadastro e ir para logar */}
             <Box marginTop={2} textAlign="center">
