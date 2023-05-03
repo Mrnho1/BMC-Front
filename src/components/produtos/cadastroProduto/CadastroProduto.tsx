@@ -5,15 +5,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Produto } from "../../../models/Produto";
 import { getAll, getById, post, put } from "../../../services/Service";
 import { Box, FormControl } from "@mui/material";
-import {
-  Button,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-} from "@material-ui/core";
+import {Button, Grid, InputLabel, MenuItem, Select, TextField, Typography} from "@material-ui/core";
 import './CadastroProduto.css';
 import { InputNumber } from "primereact/inputnumber";
 import { Categoria } from "../../../models/Categoria";

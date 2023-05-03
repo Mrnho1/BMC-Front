@@ -6,7 +6,7 @@ import "./Sobre.css";
 function Sobre() {
   return (
     <>
-    {/* Início de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
+      {/* Início de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
       <Grid
         container
         direction="row"
@@ -14,48 +14,48 @@ function Sobre() {
         alignItems="center"
         className="container"
       >
-      {/* Início do Grid com a o texto e a imagem ilustrativa do Sobre */}
-        <Grid item  className="tituloCards" alignItems="center">
+        {/* Início do Grid com a o texto e a imagem ilustrativa do Sobre */}
+        <Grid item className="tituloCards" alignItems="center">
           {/* Início da Grid que alinha os items e define tamanho das colunas do texto */}
-        <Grid alignItems="center" item xs={6}>
-          {/* Início da Box que abriga o resumo do Projeto */}
-          <Box paddingX={4} display='flex' flexDirection='column'>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              className="tituloSobre"
-            >
-              Sobre o Bem Me Care
-            </Typography>
-            <Typography
-              variant="h5"
-              gutterBottom
-              component="h5"
-              className="textoSobre"
-            >
-              Nossa marca preza pelo fim da pobreza menstrual, por isso nós
-              revertemos parte de nossas vendas para distribuição de absorventes
-              em escolas públicas periféricas.
-            </Typography>
-          </Box>
-          {/* Final da Box que abriga o resumo do Projeto */}
-        </Grid>
-        {/* Final da Grid que alinha os items e define tamanho das colunas do texto */}
-        {/* Grid que contém a foto ilustrativa */}
-        <Grid item xs={6}>
-          <img
-            src="https://i.imgur.com/0M0QFmi.png"
-            alt=""
-            className="fotoSobre"
-          />
-        </Grid>
+          <Grid alignItems="center" item xs={6}>
+            {/* Início da Box que abriga o resumo do Projeto */}
+            <Box paddingX={4} display='flex' flexDirection='column'>
+              <Typography
+                variant="h3"
+                gutterBottom
+                color="textPrimary"
+                component="h3"
+                className="tituloSobre"
+              >
+                Sobre o Bem Me Care
+              </Typography>
+              <Typography
+                variant="h5"
+                gutterBottom
+                component="h5"
+                className="textoSobre"
+              >
+                Nossa marca preza pelo fim da pobreza menstrual, por isso nós
+                revertemos parte de nossas vendas para distribuição de absorventes
+                em escolas públicas periféricas.
+              </Typography>
+            </Box>
+            {/* Final da Box que abriga o resumo do Projeto */}
+          </Grid>
+          {/* Final da Grid que alinha os items e define tamanho das colunas do texto */}
+          {/* Grid que contém a foto ilustrativa */}
+          <Grid item xs={6}>
+            <img
+              src="https://i.imgur.com/0M0QFmi.png"
+              alt=""
+              className="fotoSobre"
+            />
+          </Grid>
         </Grid>
         {/* Final do Grid com a o texto e a imagem ilustrativa do Sobre */}
       </Grid>
-        {/* Final de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
-        {/* Início da Grid que abriga os Cards */}
+      {/* Final de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
+      {/* Início da Grid que abriga os Cards */}
       <Grid
         container
         direction="row"
@@ -144,23 +144,23 @@ function Sobre() {
               gutterBottom
               component="h6"
               className="textoCard"
-            > 
+            >
               Nossa ideia é incluir todas as pessoas que menstruam em um
               movimento sustentável e inovador, onde todes possam se sentir
               acolhidos, independentemente de gênero e condições sociais, além
               de contribuirmos na diminuição de produção de lixo.
             </Typography>
           </Box>
-        {/*Final das Boxes que estiliza os Cards */}
+          {/*Final das Boxes que estiliza os Cards */}
         </Grid>
         {/* Final da Grid que define quantas colunas os Cards ocupam */}
         {/* Início da Grid que contém a logomarca do projeto */}
         <Grid item xs={10}>
           <Box display='flex' justifyContent='space-around'>
-          <img src="https://i.imgur.com/Hktg1Kv.png" alt="" style={{width: '20%'}}/>
-          </Box>          
-          </Grid>
-          {/* Final da Grid que contém a logomarca do projeto */}
+            <img src="https://i.imgur.com/Hktg1Kv.png" alt="" style={{ width: '20%' }} />
+          </Box>
+        </Grid>
+        {/* Final da Grid que contém a logomarca do projeto */}
       </Grid>
       {/* Final da Grid que abriga os Cards */}
     </>

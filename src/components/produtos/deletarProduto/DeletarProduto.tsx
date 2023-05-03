@@ -69,7 +69,6 @@ function DeletarProduto() {
         history('/produtos')
       }
     
-
   return (
     <>
       <Box m={2}>
@@ -83,7 +82,6 @@ function DeletarProduto() {
               Produto
               </Typography>
             </Box>
-
           </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
