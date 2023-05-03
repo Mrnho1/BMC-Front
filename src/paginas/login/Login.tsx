@@ -42,6 +42,7 @@ function Login() {
     });
   }
 
+  // Início do balão de informação de Login realizado com sucesso
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -57,8 +58,11 @@ function Login() {
         progress: undefined,
         theme: "colored",
       });
+      // Fim do balão de informação de Login realizado com sucesso
+
+      // Início do balão de informação de Usuário ou senha inválidos
     } catch (error) {
-      toast.error("Usúario ou senha invalidos", {
+      toast.error("Usuário ou senha inválidos", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -70,6 +74,7 @@ function Login() {
       });
     }
   }
+  // Fim do balão de informação de Usuário ou senha inválidos
 
   useEffect(() => {
     if (token !== "") {
@@ -87,6 +92,7 @@ function Login() {
   }, [respUserLogin.token]);
 
   return (
+    // Início da estrutura da tela de Login para aparecer na tela
     <Grid
       container
       justifyContent="center"
@@ -96,6 +102,7 @@ function Login() {
     >
       <Grid item xs={12} md={6}>
         <Box paddingX={6}>
+          {/* Início do formulário para o usuário entrar com os dados de e-mail e senha cadastrado*/}
           <form onSubmit={onSubmit} className="formLogin">
             <Typography
               variant="h3"
@@ -107,6 +114,7 @@ function Login() {
             >
               Faça o seu Login
             </Typography>
+            {/* Início do input para o usuário digitar o e-mail cadastrado */}
             <TextField
               id="usuario"
               label="Digite o seu e-mail"
@@ -115,10 +123,10 @@ function Login() {
               margin="normal"
               value={userLogin.usuario}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                updateModel(event)
-              }
-              fullWidth
-            />
+                updateModel(event)}
+              fullWidth />
+            {/* Fim do input para o usuário digitar o e-mail cadastrado */}
+            {/* Início do input para o usuário digitar a senha cadastrada */}
             <TextField
               id="senha"
               label="Digite a sua senha"
@@ -128,16 +136,19 @@ function Login() {
               type="password"
               value={userLogin.senha}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                updateModel(event)
-              }
-              fullWidth
-            />
+                updateModel(event)}
+              fullWidth />
+            {/* Fim do input para o usuário digitar a senha cadastrada */}
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary">
-                Logar
+              {/* Início do botão para o usuário entrar na plataforma */}
+              <Button type="submit" variant="contained">
+                Entrar
               </Button>
             </Box>
+            {/* Fim do botão para o usuário entrar na plataforma */}
           </form>
+          {/* Fim do formulário para o usuário entrar com os dados de e-mail e senha cadastrado*/}
+          {/* Início do convite para o usuário que não possui conta, se cadastrar */}
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
@@ -154,11 +165,14 @@ function Login() {
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
+          {/* Fim do convite para o usuário que não possui conta, se cadastrar */}
         </Box>
       </Grid>
-
-      <Grid item xs={12} md={6} className="imagem"></Grid>
+      {/* Início da imagem que aparece na lateral direita do form login */}
+      <Grid item xs={12} md={6} className="imagemLogin"></Grid>
+      {/* Fim da imagem que aparece na lateral direita do form login */}
     </Grid>
+    // Fim da estrutura do login para aparecer na tela
   );
 }
 
