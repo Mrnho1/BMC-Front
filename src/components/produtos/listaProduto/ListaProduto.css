@@ -28,15 +28,11 @@ h3 {
 }
 
 .imgProduto {
-  /* width: 350px;
-  height: 350px; */
   font-size: 11px;
   word-break: break-word;
   color: #77a493;
   margin: auto;
-  display: block;
   width: 90%;
-  justify-content: center;
 }
 
 /* .imgBoxProduto {
@@ -64,6 +60,8 @@ h3 {
   font-size: 12px;
 }
 
-/* .btnProdutos {
-  color: red;
-} */
+.btnProdutos {
+  display: flex;
+  justify-content: center;
+
+}

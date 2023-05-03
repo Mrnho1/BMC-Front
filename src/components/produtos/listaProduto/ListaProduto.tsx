@@ -70,9 +70,9 @@ function ListaProduto() {
                     <h3 className='dataProduto'> {Intl.DateTimeFormat('pt-BR', {
                       dateStyle: 'short', timeStyle: 'short'
                     }).format(new Date(produto.data))}</h3>
-                    <Box display='flex' justifyContent='center' mb={1.5}>
+                    <Box className='btnProdutos' mb={1.5}>
                       <Link to={`/editar-produto/${produto.id}`}>
-                        <Box mx={1} className='btnProdutos'>
+                        <Box mx={1} >
                           <Button variant='contained' size="small">Editar</Button>
                         </Box>
                       </Link>
