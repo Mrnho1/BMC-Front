@@ -215,14 +215,14 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                <InputMask
+                {/* <InputMask
                   mask={"99"+'.'+"99"}
                   value={produto.preco}
                   name="preco"
                   onChange={(e) => setProduto({ ...produto, preco: parseFloat(e.target.value.replace(',', '.')) })}
                   type="text"
                   alwaysShowMask
-                />
+                /> */}
 
                 <FormControl
                   variant="outlined"
