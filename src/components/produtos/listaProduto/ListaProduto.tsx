@@ -56,17 +56,15 @@ function ListaProduto() {
         </Grid>
 
       </Grid>
-      <Paper>
-        <div>
           <Grid container spacing={4} className='gridCard' >
             {produtos.map((produto) => (
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <Box boxShadow={4} className='cardProduto'>
-                  <div>
+                  <div className='fundoCard'>
                     <h1 className='nomeProduto'>{produto.nome}</h1>
                     <img className='imgProduto' src={produto.img} alt={produto.nome}   />
                     <h3 className='txtPreco'>R$ {produto.preco}</h3>
-                    <p className='descricaoTxt'>{produto.descricao}</p>
+                    <p className='txtDescricao'>{produto.descricao}</p>
                     <h3 className='dataProduto'> {Intl.DateTimeFormat('pt-BR', {
                       dateStyle: 'short', timeStyle: 'short'
                     }).format(new Date(produto.data))}</h3>
@@ -87,8 +85,6 @@ function ListaProduto() {
               </Grid>
             ))}
           </Grid>
-        </div>
-      </Paper>
     </>
   )
 }
