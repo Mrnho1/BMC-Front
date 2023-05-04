@@ -36,7 +36,7 @@ const pageslinks = [
   "/cadastro",
 ];
 
-const settings = [{ name: "Perfil", href: "/perfil" }, { name: "Logout" }];
+const settings = [{ name: "Perfil", href: "/perfil/:id" }, { name: "Logout", href: '' }];
 
 function ResponsiveAppBar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -154,9 +154,6 @@ function ResponsiveAppBar() {
                   <Link
                     to={"/cadastro"}
                     className="link"
-                    sx={{
-                      textDecoration: "none",
-                    }}
                   >
                     <Typography className="text-color">Cadastro</Typography>
                   </Link>
@@ -189,9 +186,7 @@ function ResponsiveAppBar() {
                         {setting.name}
                       </Link>
                     ) : (
-                      <Link
-                        to={setting.href}
-                      >
+                      <Link to={setting.href}>
                         {setting.name}
                       </Link>
                     )}
