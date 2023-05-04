@@ -92,6 +92,8 @@ function CadastroProduto() {
   }, [token]);
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+    console.log(produto)
+    console.log(categoria)
     event.preventDefault();
     if (id !== undefined) {
       try {
@@ -215,15 +217,16 @@ function CadastroProduto() {
                   fullWidth
                 />
 
-                {/* <InputMask
+                <InputMask
                   mask={"99"+'.'+"99"}
                   value={produto.preco}
                   name="preco"
                   onChange={(e) => setProduto({ ...produto, preco: parseFloat(e.target.value.replace(',', '.')) })}
                   type="text"
                   alwaysShowMask
-                /> */}
+                />
 
+                {/* SELETOR DE CATEGORIA */}
                 <FormControl
                   variant="outlined"
                   margin="normal"
@@ -260,6 +263,7 @@ function CadastroProduto() {
                   variant="contained"
                   color="primary"
                   size="large"
+                  disabled={categoria.id === 0}
                 >
                   {produto.id !== 0 ? "Editar" : "Cadastrar"}
                 </Button>
