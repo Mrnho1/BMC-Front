@@ -1,44 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
-:root{
-  --color-OffWhite: #EBEAE5;
-  --color-Yellow: #fefab6;
-  --color-Blue: #77a493;
-  --color-Pink: #c75f77;
-  --color-Purple: #836177;
-  --color-Brown: #654b49;
-  --color-Black: #000000;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 h3 {
   font-weight: 100;
 }
 
-.imgProduto {
-  max-width: 350px;
-  max-height: 350px;
-  font-size: 11px;
-  word-break: break-word;
-  padding-top: 1rem;
-  color: #77a493;
+* {
+  font-family: "Montserrat", sans-serif !important;
 }
 
-.imgBoxProduto {
-    width: 350px;
-    height: 350px;
-}
-
-.nomeBoxProduto {
-height: 85px;
-} 
-
-
-.descricaoTxt {
-  width: 100%;
-  word-break: break-word;
-  font-size: 17px;
-  padding-bottom: 1.5rem;
-  color: #654b49;
+.fundoCardCompleto {
+  background-color: #ebeae5;
 }
 
 .gridCard {
@@ -46,39 +17,79 @@ height: 85px;
   padding: 24px;
   width: 100%;
   text-align: center;
-
 }
 
 .cardProduto {
-    height: 700px;
+  height: 100%;
+  background-color: #feffff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.divProduto {
-    font-family: 'Montserrat', sans-serif !important;
-  padding: 25px;
-  margin: 15px;
+.fundoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
 }
 
 .nomeProduto {
-  width: 100%;
   word-break: break-word;
-  font-size: 26px;
+  font-size: 26px !important;
   color: #836177;
+  padding: 25px;
+}
+
+.imgProduto {
+  font-size: 11px !important;
+  word-break: break-word;
+  color: #77a493;
+  margin: auto;
+  width: 90%;
 }
 
 .txtPreco {
-  font-weight:bolder;
+  font-weight: bolder;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 24px !important;
+  color: #c75f77;
+  height: 100%;
+}
+
+.txtDescricao {
+  height: 100%;
+  word-break: break-word;
+  font-size: 17px !important;
+  padding-bottom: 1.5rem;
+  color: #654b49;
+}
+
+.txtCategoria {
+  height: 100%;
+  word-break: break-word;
+  font-size: 14px !important;
+  padding-bottom: 1rem;
   color: #c75f77;
 }
 
+.txtAutor {
+  height: 100%;
+  word-break: break-word;
+  font-size: 12px !important;
+  color: #77a493;
+}
+
 .dataProduto {
-    padding-bottom: 2rem;
-    font-size: 12px;
+  padding-bottom: 1rem;
+  font-size: 12px !important;
+  height: 100%;
+  color: #77a493;
 }
 
 .btnProdutos {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: center;
 }

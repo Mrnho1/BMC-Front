@@ -5,6 +5,7 @@ import { TokenState } from "../../store/tokens/tokensReducer";
 import User from "../../models/User";
 import { Avatar, Container, Typography } from "@mui/material";
 import { Grid } from "@material-ui/core";
+import "./Perfil.css"
 
 function Perfil() {
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
@@ -35,28 +36,22 @@ function Perfil() {
 
   return (
     <>
-      <Container>
-        <Grid xs={3} alignItems="center" justifyContent="center">
-          <Avatar
-            src={usuario.foto}
-            alt=""
-            style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
-          />
-          <Typography variant="h5" align="center">
-            {usuario.nome}
-          </Typography>
-        </Grid>
-        <Grid xs={9} justifyContent="center">
-          <Typography variant="h4" align="center">
-            {" "}
-            Produtos de {usuario.nome}
-          </Typography>
-          Você tem um total de {usuario.produto?.length} postagens feiras
-          {usuario.produto?.map((post) => (
-            <p>{post.categoria}</p>
+      <div className="cont">
+        <div className="perfilFoto">
+          <img src='https://github.com/Kaluribr.png' alt="" />
+          <Typography>{usuario.nome}</Typography>
+        </div>
+        <div className="perfilDados">
+          <Typography variant="h5" className="Typo" fontWeight='800'>Produtos de {usuario.nome}</Typography>
+          <Typography fontWeight='600'>Seu total de produtos: {usuario.produto?.length}</Typography>
+
+          {usuario.produto?.map((prod) => (
+            <>
+              <Typography>{prod.nome}</Typography>
+            </>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </>
   );
 }

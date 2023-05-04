@@ -193,7 +193,7 @@ function CadastroUsuario() {
               fullWidth />
             {/* Fim do input para o usuário confirmar a senha digitada anteriormente */}
             {/* Início dos botões para cancelar = voltar para login ou para cadastrar = finalizar o cadastro e ir para logar */}
-            <Box marginTop={2} textAlign="center">
+            <Box marginTop={2} textAlign="center" className="btnsCadastro">
               <Button onClick={back} variant="contained">
                 Cancelar
               </Button>

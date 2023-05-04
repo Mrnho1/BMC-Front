@@ -1,39 +1,33 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
 import '../carousel/Carousel.css'
 
-
-
 function Carousel() {
   const items = [
-    <img className='imgCar' src='https://i.imgur.com/T6qYVJR.png' alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/eWrfSlT.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/rFj22Vd.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/VRGhATR.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/xquMUpQ.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/7CXltqL.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/BsKfZn8.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/Z9XTO7S.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/98wCNx5.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/XWxCHXK.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/Ke3yTPm.png" alt="" />,
-    <img className='imgCar' src="https://i.imgur.com/r42ujtF.png" alt="" />,
+    <img className='imgCarousel' src='https://i.imgur.com/Ysu3EyN.png' alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/hwGeOjE.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/KSGth0S.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/ShOqpb4.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/qNG82mn.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/UreEBRn.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/G8180Ca.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/XUhx0QK.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/zcd3HDJ.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/MuWqC7d.png" alt="" />,
+    <img className='imgCarousel' src="https://i.imgur.com/7mfYkud.png" alt="" />,
   ]
 
   const responsivo = {
     0: {
-        items: 1,
+      items: 1,
     },
     1024: {
-        items: 3,
-        itemsFit: 'contain',
+      items: 4,
+      itemsFit: 'contain',
     }
   }
 
   return (
-    
     <AliceCarousel
       mouseTracking
       items={items}

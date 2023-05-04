@@ -1,5 +1,6 @@
 .FundoLogin {
   background-color: #ebeae5;
+  min-height: 100vh;
 }
 
 .formLogin input {
@@ -10,7 +11,7 @@
   outline: none;
   height: 50px;
   width: 100%;
-  font-size: 16px;
+  font-size: 16px !important;
   padding: 0 10px;
   color: #654b49;
 }
@@ -23,7 +24,7 @@
   outline: none;
   height: 50px;
   width: 100%;
-  font-size: 16px;
+  font-size: 16px !important;
   padding: 0 10px;
   color: #654b49;
 }
@@ -54,19 +55,41 @@
   background-image: url(https://i.imgur.com/r23fCU8.png);
   background-repeat: no-repeat;
   width: 100vh;
-  min-height: 100vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 580px) {
   .tituloLogin {
     font-size: 20px !important;
-    padding-top: 10%;
+    padding-top: -4rem !important;
   }
 
   .imagemLogin {
-    min-width: 50%;
     min-height: 50vh;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width: 780px) {
+  .tituloLogin {
+    font-size: 25px !important;
+  }
+
+  .imagemLogin {
+    min-height: 65vh;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 781px) and (max-width: 980px) {
+  .tituloLogin {
+    font-size: 25px !important;
+  }
+
+  .imagemLogin {
+    min-height: 70vh;
+    width: 70%;
   }
 }
