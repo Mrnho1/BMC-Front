@@ -101,7 +101,7 @@ function Login() {
       className="FundoLogin"
     >
       <Grid item xs={12} md={6}>
-        <Box paddingX={6}>
+        <Box paddingX={10} marginBottom={5}>
           {/* Início do formulário para o usuário entrar com os dados de e-mail e senha cadastrado*/}
           <form onSubmit={onSubmit} className="formLogin">
             <Typography

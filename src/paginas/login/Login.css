@@ -63,7 +63,7 @@
 @media screen and (min-width: 320px) and (max-width: 580px) {
   .tituloLogin {
     font-size: 20px !important;
-    padding-top: 1px;
+    padding-top: -4rem !important;
   }
 
   .imagemLogin {
