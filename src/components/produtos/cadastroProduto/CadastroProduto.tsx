@@ -5,9 +5,18 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Produto } from "../../../models/Produto";
 import { getAll, getById, post, put } from "../../../services/Service";
 import { Box, FormControl } from "@mui/material";
-import {Button, Grid, InputLabel, MenuItem, Select, TextField, Typography} from "@material-ui/core";
-import './CadastroProduto.css';
+import {
+  Button,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import "./CadastroProduto.css";
 import { InputNumber } from "primereact/inputnumber";
+import InputMask from "react-input-mask";
 import { Categoria } from "../../../models/Categoria";
 import { toast } from "react-toastify";
 import User from "../../../models/User";
@@ -35,26 +44,26 @@ function CadastroProduto() {
     descricao: "",
     data: "",
     categoria: null,
-    usuario: null
+    // usuario: null
   });
 
-  const userId = useSelector<TokenState, TokenState['id']>(
-    (state) => state.id
-  )
+  // const userId = useSelector<TokenState, TokenState['id']>(
+  //   (state) => state.id
+  // )
 
-  const [usuario, setUsuario] = useState<User>({
-    id: +userId,
-    nome: "",
-    usuario: "",
-    senha:'',
-    foto:''
-  })
+  // const [usuario, setUsuario] = useState<User>({
+  //   id: +userId,
+  //   nome: "",
+  //   usuario: "",
+  //   senha:'',
+  //   foto:''
+  // })
 
   useEffect(()=>{
     setProduto({
       ...produto,
       categoria: categoria,
-      usuario: usuario
+      // usuario: usuario
     });
   },[categoria])
 
@@ -105,6 +114,8 @@ function CadastroProduto() {
   }, [token]);
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+    console.log(produto);
+    console.log(categoria);
     event.preventDefault();
     if (id !== undefined) {
       try {
@@ -178,7 +189,8 @@ function CadastroProduto() {
               variant="h3"
               component="h1"
               align="center"
-              className="textoCP">
+              className="textoCP"
+            >
               {produto.id !== 0 ? "Editar produto" : "Cadastrar produto"}
             </Typography>
           </Grid>
@@ -226,21 +238,21 @@ function CadastroProduto() {
                   margin="normal"
                   fullWidth
                 />
+                <Box display={"flex"} alignItems={"center"}>
+                  R$
+                  <InputMask
+                    mask={"99" + "." + "99"}
+                    value={produto.preco}
+                    name="preco"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateProduto(e)
+                    }
+                    type="text"
+                    alwaysShowMask
+                  />
+                </Box>
 
-                <InputNumber
-                  inputId="preco"
-                  value={produto.preco}
-                  name="preco"
-                  onValueChange={(e) => setProduto({
-                    ...produto,
-                    [e.target.name]: e.target.value,
-                    categoria: categoria,
-                  })}
-                  mode="currency"
-                  currency="BRL"
-                  locale="pt-BR"
-                />
-
+                {/* SELETOR DE CATEGORIA */}
                 <FormControl
                   variant="outlined"
                   margin="normal"
@@ -264,9 +276,9 @@ function CadastroProduto() {
                       )
                     }
                   >
-                    {categorias.map((categorias) => (
-                      <MenuItem value={categorias.id}>
-                        {categorias.tipo} {categorias.fluxo} {categorias.cor}
+                    {categorias.map((categoria) => (
+                      <MenuItem value={categoria.id}>
+                        {categoria.tipo} {categoria.fluxo} {categoria.cor}
                       </MenuItem>
                     ))}
                   </Select>
@@ -277,6 +289,11 @@ function CadastroProduto() {
                   variant="contained"
                   color="primary"
                   size="large"
+                  disabled={categoria.id === 0}
+                  onClick={() => {
+                    (event: ChangeEvent<HTMLInputElement>) =>
+                      updateProduto(event);
+                  }}
                 >
                   {produto.id !== 0 ? "Editar" : "Cadastrar"}
                 </Button>

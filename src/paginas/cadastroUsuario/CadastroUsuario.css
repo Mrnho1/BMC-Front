@@ -56,6 +56,8 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  white-space: nowrap;
+  margin-top: 3rem !important;
 }
 
 @media screen and (max-width: 480px) {
@@ -67,5 +69,15 @@
   .tituloCadastro {
     font-size: 20px !important;
     padding-top: 20%;
+  }
+
+  .btnsCadastro {
+    display:flex;
+    flex-direction: row;
+    font-size: 12px !important;
+  }
+
+  .form-Cadastro label {
+    top: 1rem !important;
   }
 }
