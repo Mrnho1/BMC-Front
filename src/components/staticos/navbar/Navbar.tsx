@@ -182,7 +182,7 @@ function ResponsiveAppBar() {
                   <ListItem key={setting.name}>
                     {setting.name === "Logout" ? (
                       <Link
-                        onClick={goLogout} to={""}                      >
+                        onClick={goLogout} to={""} >
                         {setting.name}
                       </Link>
                     ) : (
