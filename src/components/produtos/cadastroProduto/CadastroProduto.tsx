@@ -238,7 +238,7 @@ function CadastroProduto() {
                   margin="normal"
                   fullWidth
                 />
-                {/* <Box display={"flex"} alignItems={"center"}>
+                <Box display={"flex"} alignItems={"center"}>
                   R$
                   <InputMask
                     mask={"999" + "." + "99"}
@@ -250,7 +250,7 @@ function CadastroProduto() {
                     type="text"
                     alwaysShowMask
                   />
-                </Box> */}
+                </Box>
 
                 {/* SELETOR DE CATEGORIA */}
                 <FormControl
