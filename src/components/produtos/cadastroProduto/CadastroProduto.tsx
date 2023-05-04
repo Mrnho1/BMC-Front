@@ -241,7 +241,7 @@ function CadastroProduto() {
                 <Box display={"flex"} alignItems={"center"}>
                   R$
                   <InputMask
-                    mask={"999" + "." + "99"}
+                    mask={"99" + "." + "99"}
                     value={produto.preco}
                     name="preco"
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
