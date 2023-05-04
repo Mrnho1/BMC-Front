@@ -1,7 +1,7 @@
 import React from "react";
 import { jsx } from "@emotion/react";
-import { Grid, Typography, styled } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Grid, Typography} from "@material-ui/core";
+import { Box, styled } from "@mui/material";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 

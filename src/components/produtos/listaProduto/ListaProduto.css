@@ -38,13 +38,13 @@ h3 {
 
 .nomeProduto {
   word-break: break-word;
-  font-size: 26px;
+  font-size: 26px !important;
   color: #836177;
   padding: 25px;
 }
 
 .imgProduto {
-  font-size: 11px;
+  font-size: 11px !important;
   word-break: break-word;
   color: #77a493;
   margin: auto;
@@ -54,7 +54,7 @@ h3 {
 .txtPreco {
   font-weight: bolder;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 24px !important;
   color: #c75f77;
   height: 100%;
 }
@@ -62,14 +62,29 @@ h3 {
 .txtDescricao {
   height: 100%;
   word-break: break-word;
-  font-size: 17px;
+  font-size: 17px !important;
   padding-bottom: 1.5rem;
   color: #654b49;
 }
 
+.txtCategoria {
+  height: 100%;
+  word-break: break-word;
+  font-size: 14px !important;
+  padding-bottom: 1rem;
+  color: #c75f77;
+}
+
+.txtAutor {
+  height: 100%;
+  word-break: break-word;
+  font-size: 12px !important;
+  color: #77a493;
+}
+
 .dataProduto {
-  padding-bottom: 2rem;
-  font-size: 12px;
+  padding-bottom: 1rem;
+  font-size: 12px !important;
   height: 100%;
   color: #77a493;
 }

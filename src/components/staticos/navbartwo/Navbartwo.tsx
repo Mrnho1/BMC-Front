@@ -5,23 +5,21 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core";
-import { Container, Divider, IconButton, Paper } from "@mui/material";
+import { SwipeableDrawer, makeStyles } from "@material-ui/core";
+import { Container, Divider, Drawer, IconButton, Paper } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import "./Navbartwo.css";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import { useState } from "react";
 
 // Início componente NavbarTwo
 export default function Navbartwo() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
@@ -34,8 +32,7 @@ export default function Navbartwo() {
     { name: "Contato", href: "/contato" },
     { name: "Categorias", href: "/categoria" },
     { name: "Cadastrar Categoria", href: "/cadastroCategoria" },
-    { name: "Cadastrar Produto", href: "/cadastroProduto" },
-    { name: "Perfil", href: "/perfil/:id" }
+    { name: "Cadastrar Produto", href: "/cadastroProduto" }
   ];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -46,7 +43,7 @@ export default function Navbartwo() {
     setAnchorElNav(null);
   };
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const useStyles = makeStyles({
     drawer: {
@@ -64,11 +61,13 @@ export default function Navbartwo() {
             justifyContent: "center",
           }}
         >
+
+          {/* NAVBAR EM TELAS PEQUENAS */}
           <Box
             sx={{
               justifyContent: "center",
               flexGrow: 1,
-              display: { xs: "flex", md: "none" },
+              display: { sm: "flex", md: "none" },
             }}
           >
             <IconButton
@@ -82,6 +81,7 @@ export default function Navbartwo() {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -118,11 +118,13 @@ export default function Navbartwo() {
               ))}
             </Menu>
           </Box>
+          
+          {/* NAVBAR EM TELAS MÉDIAS */}
           <Box
             sx={{
               justifyContent: "center",
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              display: { sm: "none", md: "flex" },
             }}
           >
             {pagesLinksTwo.map((item) => (
@@ -137,13 +139,13 @@ export default function Navbartwo() {
                 </Link>
               </Button>
             ))}
+
           </Box>
         </Toolbar>
 
-        <SwipeableDrawer
+        <Drawer
           anchor="right"
           open={open}
-          onOpen={() => setOpen(true)}
           onClose={() => setOpen(false)}
           className="drawer"
           classes={{ paper: classes.drawer }}
@@ -178,7 +180,7 @@ export default function Navbartwo() {
               </MenuItem>
             </List>
           ))}
-        </SwipeableDrawer>
+        </Drawer>
       </Container>
     </AppBar>
   );
