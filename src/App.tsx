@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ButtonAppBar from "./components/staticos/navbar/Navbar";
+import Navbartwo from "./components/staticos/navbartwo/Navbartwo";
 import Footer from "./components/staticos/footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./paginas/login/Login";
@@ -19,7 +20,9 @@ import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCat
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Perfil from "./components/perfil/Perfil";
 import TesteFooter from "./components/staticos/testeFooter/TesteFooter";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +32,7 @@ function App() {
       <ToastContainer/>
       <BrowserRouter>
         <ButtonAppBar />
+        <Navbartwo/>
         <div style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<Login />} />
@@ -46,6 +50,7 @@ function App() {
             <Route path="/cadastroCategoria" element={<CadastroCategoria />} />
             <Route path="/categoria" element={<ListaCategoria />} />
             <Route path="/cadastroProduto" element={<CadastroProduto />} />
+            <Route path="/perfil/:id" element={<Perfil />} />
           </Routes>
         </div>
 

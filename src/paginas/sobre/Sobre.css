@@ -1,15 +1,15 @@
-:root{
-    --color-OffWhite: #EBEAE5;
-    --color-Yellow: #fefab6;
-    --color-Blue: #77a493;
-    --color-Pink: #c75f77;
-    --color-Purple: #836177;
-    --color-Brown: #654b49;
-    --color-Black: #000000;
+:root {
+  --color-OffWhite: #ebeae5;
+  --color-Yellow: #fefab6;
+  --color-Blue: #77a493;
+  --color-Pink: #c75f77;
+  --color-Purple: #836177;
+  --color-Brown: #654b49;
+  --color-Black: #000000;
 }
 
-
 .container {
+<<<<<<< HEAD
     background-color: var(--color-Pink);
     /* display: flex; */
 
@@ -48,8 +48,48 @@
     color: var(--color-Brown) !important;
     font-weight: "bold" !important;
     font-size: 20px;
+=======
+  background-color: var(--color-Pink);
+>>>>>>> 82d0233518b8329080a4df6742fc13c4cd951e56
 }
 
 .tituloSobre {
-    display: flex;
+  color: var(--color-Yellow) !important;
+  font-weight: "bold" !important;
+  font-size: 2vw !important;
+  padding-left: 4rem;
+}
+
+.textoSobre {
+  color: var(--color-OffWhite) !important;
+  font-weight: "bold" !important;
+  font-size: 2vw !important;
+  padding-left: 4rem;
+}
+
+.fotoSobre {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+.containerCards {
+  padding: 20px;
+  justify-content: space-around;
+  background-color: var(--color-OffWhite);
+}
+
+.cards {
+  padding: 10px;
+}
+
+.tituloCards {
+  color: var(--color-Blue) !important;
+  display: flex;
+  font-weight: bolder !important;
+}
+
+.textoCard {
+  color: var(--color-Brown) !important;
+  font-size: 20px !important;
 }

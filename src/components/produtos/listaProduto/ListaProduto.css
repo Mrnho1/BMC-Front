@@ -1,7 +1,95 @@
-h3{
-    font-weight: 100 ;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+h3 {
+  font-weight: 100;
 }
 
-.imgProduto{
-    width: 100%;
+* {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.fundoCardCompleto {
+  background-color: #ebeae5;
+}
+
+.gridCard {
+  display: flex;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.cardProduto {
+  height: 100%;
+  background-color: #feffff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fundoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+}
+
+.nomeProduto {
+  word-break: break-word;
+  font-size: 26px !important;
+  color: #836177;
+  padding: 25px;
+}
+
+.imgProduto {
+  font-size: 11px !important;
+  word-break: break-word;
+  color: #77a493;
+  margin: auto;
+  width: 90%;
+}
+
+.txtPreco {
+  font-weight: bolder;
+  padding: 1rem;
+  font-size: 24px !important;
+  color: #c75f77;
+  height: 100%;
+}
+
+.txtDescricao {
+  height: 100%;
+  word-break: break-word;
+  font-size: 17px !important;
+  padding-bottom: 1.5rem;
+  color: #654b49;
+}
+
+.txtCategoria {
+  height: 100%;
+  word-break: break-word;
+  font-size: 14px !important;
+  padding-bottom: 1rem;
+  color: #c75f77;
+}
+
+.txtAutor {
+  height: 100%;
+  word-break: break-word;
+  font-size: 12px !important;
+  color: #77a493;
+}
+
+.dataProduto {
+  padding-bottom: 1rem;
+  font-size: 12px !important;
+  height: 100%;
+  color: #77a493;
+}
+
+.btnProdutos {
+  display: flex;
+  justify-content: center;
 }

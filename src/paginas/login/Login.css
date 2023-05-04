@@ -1,46 +1,6 @@
-:root {
-  --color-OffWhite: #ebeae5;
-  --color-Yellow: #fefab6;
-  --color-Blue: #77a493;
-  --color-Pink: #c75f77;
-  --color-Purple: #836177;
-  --color-Brown: #654b49;
-  --color-Black: #000000;
-}
 .FundoLogin {
   background-color: #ebeae5;
-}
-
-.text-decorator-none {
-  text-decoration: none;
-}
-
-.btnCadastro {
-  color: #836177 !important;
-  font-weight: bold !important;
-}
-
-.tituloLogin {
-  font-weight: bold !important;
-  color: #836177 !important;
-  font-size: 50px !important;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.imagem {
-  background-image: url(/src/assets/BMC-IMAGENS/login-cadastro/imgLog.png);
-  background-repeat: no-repeat;
-  width: 100vh;
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
-.reverse {
-  display: flex;
-  flex-direction: direction-xs-column-reverse;
 }
 
 .formLogin input {
@@ -51,7 +11,7 @@
   outline: none;
   height: 50px;
   width: 100%;
-  font-size: 16px;
+  font-size: 16px !important;
   padding: 0 10px;
   color: #654b49;
 }
@@ -64,7 +24,7 @@
   outline: none;
   height: 50px;
   width: 100%;
-  font-size: 16px;
+  font-size: 16px !important;
   padding: 0 10px;
   color: #654b49;
 }
@@ -77,14 +37,59 @@
   color: #836177 !important;
 }
 
-@media screen and (max-width: 480px) {
-  .imagem {
-    min-width: 50%;
-    min-height: 50vh;
-  }
+.tituloLogin {
+  font-weight: bold !important;
+  color: #836177 !important;
+  font-size: 50px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+.btnCadastreSeLogin {
+  color: #836177 !important;
+  font-weight: bold !important;
+}
+
+.imagemLogin {
+  background-image: url(https://i.imgur.com/r23fCU8.png);
+  background-repeat: no-repeat;
+  width: 100vh;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
   .tituloLogin {
     font-size: 20px !important;
-    padding-top: 10%;
+    padding-top: -4rem !important;
+  }
+
+  .imagemLogin {
+    min-height: 50vh;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width: 780px) {
+  .tituloLogin {
+    font-size: 25px !important;
+  }
+
+  .imagemLogin {
+    min-height: 65vh;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 781px) and (max-width: 980px) {
+  .tituloLogin {
+    font-size: 25px !important;
+  }
+
+  .imagemLogin {
+    min-height: 70vh;
+    width: 70%;
   }
 }

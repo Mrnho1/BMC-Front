@@ -1040,6 +1040,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-input-mask@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@types/react-input-mask@npm:3.0.2"
+  dependencies:
+    "@types/react": "*"
+  checksum: 1fadbba04b72a2898b2b85b9b62a8cbf8043ff98f503e23293f27d4e56843bbe2dd3da51f48de4bc3916aff31eb93083c6090090ce8b0837f1f174c447e81ad4
+  languageName: node
+  linkType: hard
+
 "@types/react-is@npm:^16.7.1 || ^17.0.0":
   version: 17.0.4
   resolution: "@types/react-is@npm:17.0.4"
@@ -1263,12 +1272,14 @@ __metadata:
     "@mui/material": 5.0.6
     "@types/react": ^17
     "@types/react-dom": ^17
+    "@types/react-input-mask": ^3.0.2
     "@types/react-router-dom": ^5.3.3
     "@types/react-swipeable-views": ^0.13.1
     "@types/redux": 3.6.0
     "@vitejs/plugin-react": ^3.1.0
     axios: 0.21.4
     input-currency-react: ^1.0.1
+    moment-timezone: ^0.5.43
     primereact: ^9.3.1
     prop-types: ^15.8.1
     react: ^17
@@ -2286,6 +2297,22 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: a96865108c6c3b1b8e1d5e9f11843de1e077e57737602de1b82030815f311be11f96f09cce59bd5b903d0b29834733e5313f9301e3ed6d6f6fba2eae0df4298f
+  languageName: node
+  linkType: hard
+
+"moment-timezone@npm:^0.5.43":
+  version: 0.5.43
+  resolution: "moment-timezone@npm:0.5.43"
+  dependencies:
+    moment: ^2.29.4
+  checksum: 8075c897ed8a044f992ef26fe8cdbcad80caf974251db424cae157473cca03be2830de8c74d99341b76edae59f148c9d9d19c1c1d9363259085688ec1cf508d0
+  languageName: node
+  linkType: hard
+
+"moment@npm:^2.29.4":
+  version: 2.29.4
+  resolution: "moment@npm:2.29.4"
+  checksum: 0ec3f9c2bcba38dc2451b1daed5daded747f17610b92427bebe1d08d48d8b7bdd8d9197500b072d14e326dd0ccf3e326b9e3d07c5895d3d49e39b6803b76e80e
   languageName: node
   linkType: hard
 

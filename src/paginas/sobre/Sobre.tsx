@@ -6,7 +6,7 @@ import "./Sobre.css";
 function Sobre() {
   return (
     <>
-    {/* Início do Grid container que abriga um breve resumo do nosso projeto e uma imagem ilustrativa */}
+      {/* Início de Grid container que abriga o resumo do projeto e a imagem ilustrativa */}
       <Grid
         container
         direction="row"
@@ -17,7 +17,6 @@ function Sobre() {
         <Grid item className="tituloSobre" alignItems="center">
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={4} display='flex' flexDirection='column'>
-            {/* Início do breve resumo do Projeto */}
             <Typography
               variant="h3"
               gutterBottom
@@ -37,34 +36,36 @@ function Sobre() {
               revertemos parte de nossas vendas para distribuição de absorventes
               em escolas públicas periféricas.
             </Typography>
-            {/* Final do breve resumo do Projeto */}
           </Box>
         </Grid>
         <Grid item xs={6}>
-          {/* Imagem ilustrativa */}
           <img
-            src="https://i.imgur.com/0M0QFmi.png"
+            src="/src/assets/BMC-IMAGENS/fotoSobre.png"
             alt=""
             className="fotoSobre"
           />
         </Grid>
-        </Grid>       
+        </Grid>
+       
+        
+        <Grid xs={12} className="postagens"></Grid>
       </Grid>
-       {/* Final do Grid container que abriga um breve resumo do nosso projeto e uma imagem ilustrativa */}
-       {/* Início do Grid container que abriga pequenos textos sobre o Projeto  e uma imagem de nossa logomarca*/}
+
       <Grid
         container
         direction="row"
         className="containerCards"
       >
+        {/* Início da Grid que define quantas colunas os Cards ocupam */}
         <Grid item xs={10}>
+          {/* Início das Boxes que estiliza os Cards */}
           <Box paddingX={5} className="cards">
             {/* Início dos pequenos textos */}
             <Typography
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Quem somos?
             </Typography>
@@ -88,7 +89,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Nossos Valores
             </Typography>
@@ -109,7 +110,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Nossa Missão
             </Typography>
@@ -130,7 +131,7 @@ function Sobre() {
               variant="h5"
               gutterBottom
               component="h5"
-              className="textoCard"
+              className="tituloCards"
             >
               Nossa Visão
             </Typography>
@@ -147,15 +148,16 @@ function Sobre() {
             </Typography>
             {/* Final dos pequenos textos */}
           </Box>
+          {/*Final das Boxes que estiliza os Cards */}
         </Grid>
+        {/* Final da Grid que define quantas colunas os Cards ocupam */}
+        {/* Início da Grid que contém a logomarca do projeto */}
         <Grid item xs={10}>
           <Box display='flex' justifyContent='space-around'>
-            {/* Logomarca do Projeto */}
-          <img src="https://i.imgur.com/Hktg1Kv.png" alt="" style={{width: '20%'}}/>
+          <img src="/src/assets/icon/logoRoxo.png" alt="" style={{width: '20%'}}/>
           </Box>          
           </Grid>
       </Grid>
-       {/* Final do Grid container que abriga pequenos textos sobre o Projeto e nossa logomarca */}
     </>
   );
 }

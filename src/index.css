@@ -38,3 +38,7 @@ a{
   color: var(--color-Purple) !important;
 }
 
+a.linkNavDois {
+  color: var(--color-OffWhite) !important;
+}
+

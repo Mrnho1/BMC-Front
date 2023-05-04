@@ -10,39 +10,39 @@ import { CategoryOutlined } from '@mui/icons-material'
 import { toast } from 'react-toastify'
 
 export default function listaCategoria() {
-    const [categorias, setCategorias] = useState<Categoria[]>([])
-    const token = useSelector<TokenState, TokenState['tokens']>(
-        (state) => state.tokens
-    )
-    const history = useNavigate();
+  const [categorias, setCategorias] = useState<Categoria[]>([])
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  )
+  const history = useNavigate();
 
-    async function getAllCategorias() {
-        await getAll('/categoria', setCategorias, {
-            headers: {
-                'Authorization': token
-            }
-        });
+  async function getAllCategorias() {
+    await getAll('/categoria', setCategorias, {
+      headers: {
+        'Authorization': token
+      }
+    });
+  }
+
+  useEffect(() => {
+    getAllCategorias();
+  }, [categorias.length])
+
+  useEffect(() => {
+    if (token === '') {
+      toast.info('Efetue o Login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      history('/login')
     }
-
-    useEffect(() => {
-        getAllCategorias();
-    },[categorias.length])
-
-    useEffect(() => {
-        if(token === ''){
-            toast.info('Efetue o Login', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-              });
-            history('/login')
-        }
-    }, [token])
+  }, [token])
 
 
   return (
@@ -70,7 +70,7 @@ export default function listaCategoria() {
             </CardContent>
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
-                  <Box mx={1}>
+                <Box mx={1}>
                   <Link to={`/editar-categoria/${categoria.id}`}>
                     <Button
                       variant="contained"
@@ -78,8 +78,8 @@ export default function listaCategoria() {
                     >
                       Editar
                     </Button>
-                    </Link>
-                  </Box>
+                  </Link>
+                </Box>
                 <Link to={`/deletar-categoria/${categoria.id}`}>
                   <Box mx={1}>
                     <Button
