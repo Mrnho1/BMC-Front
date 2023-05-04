@@ -89,48 +89,8 @@ function ListaProduto() {
             </Grid>
           ))}
         </Grid>
-<<<<<<< HEAD
-
-      </Grid>
-      <Paper>
-        <div>
-          <Grid container spacing={4} className='gridCard' >
-            {produtos.map((produto) => (
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                  <Box boxShadow={4}>
-                    <div className='produto' style={{ padding: "25px", margin: "15px" }}>
-                      <h1>{produto.nome}</h1>
-                      <img src={produto.img} alt={produto.nome} className='imgProduto'/>
-                      <h3>{produto.descricao}</h3>
-                      <h3>{produto.preco}</h3>
-                      <h3> Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'short'}).format(new Date(produto.data))}</h3>
-                      <Box display='flex' justifyContent='center' mb={1.5}>
-                            <Link to={`/editar-produto/${produto.id}`}>
-                            <Box mx={1}>
-                                <Button variant='contained' size="small">Editar</Button>
-                            </Box>
-                            </Link>
-                            <Link to={`/deletar-produto/${produto.id}`}>
-                            <Box mx={1}>
-                                <Button variant='contained' size="small">Deletar</Button>
-                            </Box>
-                            </Link>
-                            </Box>
-                            <Typography variant="body2" component='p'>
-                              Postado por: {produto.usuario?.nome}
-                            </Typography>
-                    </div>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-            </div>
-          </Paper>
-        </>
-=======
       </div>
     </>
->>>>>>> 82d0233518b8329080a4df6742fc13c4cd951e56
   )
 
 }
