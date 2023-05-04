@@ -38,7 +38,7 @@ function Perfil() {
     <>
       <div className="cont">
         <div className="perfilFoto">
-          <img src='https://cdn-icons-png.flaticon.com/512/17/17004.png' alt="" />
+          <img src={usuario.foto} alt="" />
           <Typography>{usuario.nome}</Typography>
         </div>
         <div className="perfilDados">
