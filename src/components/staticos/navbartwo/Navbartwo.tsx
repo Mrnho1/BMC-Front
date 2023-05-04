@@ -22,9 +22,6 @@ export default function Navbartwo() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
 
   // Array para redirecionamentos de rota
   const pagesLinksTwo = [
@@ -35,8 +32,7 @@ export default function Navbartwo() {
     { name: "Contato", href: "/contato" },
     { name: "Categorias", href: "/categoria" },
     { name: "Cadastrar Categoria", href: "/cadastroCategoria" },
-    { name: "Cadastrar Produto", href: "/cadastroProduto" },
-    { name: "Perfil", href: "/perfil/:id" }
+    { name: "Cadastrar Produto", href: "/cadastroProduto" }
   ];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -65,11 +61,13 @@ export default function Navbartwo() {
             justifyContent: "center",
           }}
         >
+
+          {/* NAVBAR EM TELAS PEQUENAS */}
           <Box
             sx={{
               justifyContent: "center",
               flexGrow: 1,
-              display: { xs: "flex", md: "none" },
+              display: { sm: "flex", md: "none" },
             }}
           >
             <IconButton
@@ -83,6 +81,7 @@ export default function Navbartwo() {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -119,11 +118,13 @@ export default function Navbartwo() {
               ))}
             </Menu>
           </Box>
+          
+          {/* NAVBAR EM TELAS MÉDIAS */}
           <Box
             sx={{
               justifyContent: "center",
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              display: { sm: "none", md: "flex" },
             }}
           >
             {pagesLinksTwo.map((item) => (
@@ -138,6 +139,7 @@ export default function Navbartwo() {
                 </Link>
               </Button>
             ))}
+
           </Box>
         </Toolbar>
 
