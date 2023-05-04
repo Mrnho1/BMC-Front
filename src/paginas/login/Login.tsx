@@ -151,7 +151,7 @@ function Login() {
           {/* Início do convite para o usuário que não possui conta, se cadastrar */}
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
-              <Typography variant="subtitle1" gutterBottom align="center">
+              <Typography >
                 Não tem uma conta?
               </Typography>
             </Box>
@@ -160,8 +160,7 @@ function Login() {
               variant="subtitle1"
               gutterBottom
               align="center"
-              className="btnCadastro"
-            >
+              className="btnCadastreSeLogin" >
               <Link to="/cadastro">Cadastre-se</Link>
             </Typography>
           </Box>
