@@ -276,15 +276,9 @@ function CadastroProduto() {
                       )
                     }
                   >
-<<<<<<< HEAD
                     {categorias.map((categorias) => (
                       <MenuItem value={categorias.id}>
                         {categorias.tipo} {categorias.cor} {categorias.fluxo} 
-=======
-                    {categorias.map((categoria) => (
-                      <MenuItem value={categoria.id}>
-                        {categoria.tipo} {categoria.fluxo} {categoria.cor}
->>>>>>> 82d0233518b8329080a4df6742fc13c4cd951e56
                       </MenuItem>
                     ))}
                   </Select>
