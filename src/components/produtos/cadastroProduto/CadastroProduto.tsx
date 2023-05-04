@@ -92,8 +92,8 @@ function CadastroProduto() {
   }, [token]);
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
-    console.log(produto)
-    console.log(categoria)
+    console.log(produto);
+    console.log(categoria);
     event.preventDefault();
     if (id !== undefined) {
       try {
@@ -216,15 +216,19 @@ function CadastroProduto() {
                   margin="normal"
                   fullWidth
                 />
-
-                <InputMask
-                  mask={"99"+'.'+"99"}
-                  value={produto.preco}
-                  name="preco"
-                  onChange={(e) => setProduto({ ...produto, preco: parseFloat(e.target.value.replace(',', '.')) })}
-                  type="text"
-                  alwaysShowMask
-                />
+                <Box display={"flex"} alignItems={"center"}>
+                  R$
+                  <InputMask
+                    mask={"999" + "." + "99"}
+                    value={produto.preco}
+                    name="preco"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updateProduto(e)
+                    }
+                    type="text"
+                    alwaysShowMask
+                  />
+                </Box>
 
                 {/* SELETOR DE CATEGORIA */}
                 <FormControl
@@ -250,9 +254,9 @@ function CadastroProduto() {
                       )
                     }
                   >
-                    {categorias.map((categorias) => (
-                      <MenuItem value={categorias.id}>
-                        {categorias.tipo} {categorias.fluxo} {categorias.cor}
+                    {categorias.map((categoria) => (
+                      <MenuItem value={categoria.id}>
+                        {categoria.tipo} {categoria.fluxo} {categoria.cor}
                       </MenuItem>
                     ))}
                   </Select>
@@ -264,6 +268,10 @@ function CadastroProduto() {
                   color="primary"
                   size="large"
                   disabled={categoria.id === 0}
+                  onClick={() => {
+                    (event: ChangeEvent<HTMLInputElement>) =>
+                      updateProduto(event);
+                  }}
                 >
                   {produto.id !== 0 ? "Editar" : "Cadastrar"}
                 </Button>
