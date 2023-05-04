@@ -9,5 +9,5 @@ export interface Produto {
     descricao: string;
     data: string;
     categoria?: Categoria | null
-    // usuario?: User | null
+    usuario?: User | null
 }
