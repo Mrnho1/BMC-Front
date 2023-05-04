@@ -44,26 +44,26 @@ function CadastroProduto() {
     descricao: "",
     data: "",
     categoria: null,
-    usuario: null
+    // usuario: null
   });
 
-  const userId = useSelector<TokenState, TokenState['id']>(
-    (state) => state.id
-  )
+  // const userId = useSelector<TokenState, TokenState['id']>(
+  //   (state) => state.id
+  // )
 
-  const [usuario, setUsuario] = useState<User>({
-    id: +userId,
-    nome: "",
-    usuario: "",
-    senha:'',
-    foto:''
-  })
+  // const [usuario, setUsuario] = useState<User>({
+  //   id: +userId,
+  //   nome: "",
+  //   usuario: "",
+  //   senha:'',
+  //   foto:''
+  // })
 
   useEffect(()=>{
     setProduto({
       ...produto,
       categoria: categoria,
-      usuario: usuario
+      // usuario: usuario
     });
   },[categoria])
 
@@ -238,7 +238,7 @@ function CadastroProduto() {
                   margin="normal"
                   fullWidth
                 />
-                <Box display={"flex"} alignItems={"center"}>
+                {/* <Box display={"flex"} alignItems={"center"}>
                   R$
                   <InputMask
                     mask={"999" + "." + "99"}
@@ -250,7 +250,7 @@ function CadastroProduto() {
                     type="text"
                     alwaysShowMask
                   />
-                </Box>
+                </Box> */}
 
                 {/* SELETOR DE CATEGORIA */}
                 <FormControl
