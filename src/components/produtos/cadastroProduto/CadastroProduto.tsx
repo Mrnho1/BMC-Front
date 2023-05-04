@@ -19,6 +19,7 @@ import { InputNumber } from "primereact/inputnumber";
 import InputMask from "react-input-mask";
 import { Categoria } from "../../../models/Categoria";
 import { toast } from "react-toastify";
+import User from "../../../models/User";
 
 function CadastroProduto() {
   const history = useNavigate();
@@ -43,7 +44,28 @@ function CadastroProduto() {
     descricao: "",
     data: "",
     categoria: null,
+    usuario: null
   });
+
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+  )
+
+  const [usuario, setUsuario] = useState<User>({
+    id: +userId,
+    nome: "",
+    usuario: "",
+    senha:'',
+    foto:''
+  })
+
+  useEffect(()=>{
+    setProduto({
+      ...produto,
+      categoria: categoria,
+      usuario: usuario
+    });
+  },[categoria])
 
   function updateProduto(event: ChangeEvent<HTMLInputElement>) {
     setProduto({
